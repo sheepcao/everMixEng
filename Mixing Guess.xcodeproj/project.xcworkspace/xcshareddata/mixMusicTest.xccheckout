@@ -12,22 +12,34 @@
 	<dict>
 		<key>A8ED4A9AE4BC1A98B78F3662C809FC320148E5DD</key>
 		<string>https://github.com/sheepcao/everMix.git</string>
+		<key>E27C48132B373DFD857538F74A22E9C0CAEA2FEB</key>
+		<string>https://github.com/sheepcao/everMixEng.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>mixMusicTest.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>A8ED4A9AE4BC1A98B78F3662C809FC320148E5DD</key>
+		<string>../../../mixMusicTest</string>
+		<key>E27C48132B373DFD857538F74A22E9C0CAEA2FEB</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/sheepcao/everMix.git</string>
+	<string>https://github.com/sheepcao/everMixEng.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>A8ED4A9AE4BC1A98B78F3662C809FC320148E5DD</string>
+	<string>E27C48132B373DFD857538F74A22E9C0CAEA2FEB</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>E27C48132B373DFD857538F74A22E9C0CAEA2FEB</string>
+			<key>IDESourceControlWCCName</key>
+			<string>mixMusicENG</string>
+		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>

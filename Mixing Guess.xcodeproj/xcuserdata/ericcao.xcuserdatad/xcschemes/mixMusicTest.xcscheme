@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "A4AC86001A36CFE700CD19CA"
-               BuildableName = "mixMusicTest.app"
-               BlueprintName = "mixMusicTest"
-               ReferencedContainer = "container:mixMusicTest.xcodeproj">
+               BuildableName = "MagicSongGuess.app"
+               BlueprintName = "Mixing Guess"
+               ReferencedContainer = "container:Mixing Guess.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -29,9 +29,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "A4AC86191A36CFE700CD19CA"
-               BuildableName = "mixMusicTestTests.xctest"
-               BlueprintName = "mixMusicTestTests"
-               ReferencedContainer = "container:mixMusicTest.xcodeproj">
+               BuildableName = "Magic Song GuessTests.xctest"
+               BlueprintName = "Magic Song GuessTests"
+               ReferencedContainer = "container:Mixing Guess.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -47,9 +47,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "A4AC86191A36CFE700CD19CA"
-               BuildableName = "mixMusicTestTests.xctest"
-               BlueprintName = "mixMusicTestTests"
-               ReferencedContainer = "container:mixMusicTest.xcodeproj">
+               BuildableName = "Magic Song GuessTests.xctest"
+               BlueprintName = "Magic Song GuessTests"
+               ReferencedContainer = "container:Mixing Guess.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -57,9 +57,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A4AC86001A36CFE700CD19CA"
-            BuildableName = "mixMusicTest.app"
-            BlueprintName = "mixMusicTest"
-            ReferencedContainer = "container:mixMusicTest.xcodeproj">
+            BuildableName = "MagicSongGuess.app"
+            BlueprintName = "Mixing Guess"
+            ReferencedContainer = "container:Mixing Guess.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -76,9 +76,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A4AC86001A36CFE700CD19CA"
-            BuildableName = "mixMusicTest.app"
-            BlueprintName = "mixMusicTest"
-            ReferencedContainer = "container:mixMusicTest.xcodeproj">
+            BuildableName = "MagicSongGuess.app"
+            BlueprintName = "Mixing Guess"
+            ReferencedContainer = "container:Mixing Guess.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -94,9 +94,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A4AC86001A36CFE700CD19CA"
-            BuildableName = "mixMusicTest.app"
-            BlueprintName = "mixMusicTest"
-            ReferencedContainer = "container:mixMusicTest.xcodeproj">
+            BuildableName = "MagicSongGuess.app"
+            BlueprintName = "Mixing Guess"
+            ReferencedContainer = "container:Mixing Guess.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

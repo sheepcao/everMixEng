@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>6E7EA1E8-54B7-4C7B-887F-2B847B6B2A31</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Magic Song Guess</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>E27C48132B373DFD857538F74A22E9C0CAEA2FEB</key>
+		<string>https://github.com/sheepcao/everMixEng.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Magic Song Guess.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>E27C48132B373DFD857538F74A22E9C0CAEA2FEB</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/sheepcao/everMixEng.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>E27C48132B373DFD857538F74A22E9C0CAEA2FEB</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>E27C48132B373DFD857538F74A22E9C0CAEA2FEB</string>
+			<key>IDESourceControlWCCName</key>
+			<string>mixMusicENG</string>
+		</dict>
+	</array>
+</dict>
+</plist>

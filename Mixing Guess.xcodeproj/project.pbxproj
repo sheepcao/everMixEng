@@ -209,7 +209,6 @@
 		A4AC860D1A36CFE700CD19CA /* gameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4AC860C1A36CFE700CD19CA /* gameViewController.m */; };
 		A4AC86101A36CFE700CD19CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4AC860E1A36CFE700CD19CA /* Main.storyboard */; };
 		A4AC86121A36CFE700CD19CA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4AC86111A36CFE700CD19CA /* Images.xcassets */; };
-		A4AC86211A36CFE700CD19CA /* mixMusicTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A4AC86201A36CFE700CD19CA /* mixMusicTestTests.m */; };
 		A4AC86401A36F47100CD19CA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4AC863F1A36F47100CD19CA /* ViewController.m */; };
 		A4ACD30D1A7B580400C60454 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4ACD30C1A7B580400C60454 /* QuartzCore.framework */; };
 		A4ADB5F81A83B5C200D991F8 /* note0.png in Resources */ = {isa = PBXBuildFile; fileRef = A4ADB5EE1A83B5C200D991F8 /* note0.png */; };
@@ -271,16 +270,6 @@
 		A4E0A30D1A86661800AFF6D5 /* nextBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = A4E0A30C1A86661800AFF6D5 /* nextBtn.png */; };
 		A4E47CE81A539FC00039BDF6 /* myAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = A4E47CE71A539FC00039BDF6 /* myAlertView.m */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		A4AC861B1A36CFE700CD19CA /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A4AC85F91A36CFE700CD19CA /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = A4AC86001A36CFE700CD19CA;
-			remoteInfo = mixMusicTest;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		A40CA8FE1A72469E00ED071F /* CommonUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonUtility.h; sourceTree = "<group>"; };
@@ -532,7 +521,7 @@
 		A4ABE9E71A8889120012E956 /* ZipArchive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZipArchive.h; sourceTree = "<group>"; };
 		A4ABE9E81A8889120012E956 /* ZipArchive.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ZipArchive.mm; sourceTree = "<group>"; };
 		A4ABE9FC1A888A3E0012E956 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
-		A4AC86011A36CFE700CD19CA /* mixMusicTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mixMusicTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A4AC86011A36CFE700CD19CA /* Mixing Guess.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mixing Guess.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4AC86051A36CFE700CD19CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A4AC86061A36CFE700CD19CA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A4AC86081A36CFE700CD19CA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -541,7 +530,6 @@
 		A4AC860C1A36CFE700CD19CA /* gameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = gameViewController.m; sourceTree = "<group>"; };
 		A4AC860F1A36CFE700CD19CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A4AC86111A36CFE700CD19CA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		A4AC861A1A36CFE700CD19CA /* mixMusicTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mixMusicTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4AC861F1A36CFE700CD19CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A4AC86201A36CFE700CD19CA /* mixMusicTestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = mixMusicTestTests.m; sourceTree = "<group>"; };
 		A4AC863E1A36F47100CD19CA /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
@@ -651,13 +639,6 @@
 				A4A5A2F41A74AAA8005634E9 /* libUMSocial_Sdk_4.2.1.a in Frameworks */,
 				A4A5A30D1A750EF1005634E9 /* libSocialSina.a in Frameworks */,
 				A4A5A3111A750EF2005634E9 /* libSocialWechat.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A4AC86171A36CFE700CD19CA /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1121,8 +1102,7 @@
 		A4AC86021A36CFE700CD19CA /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A4AC86011A36CFE700CD19CA /* mixMusicTest.app */,
-				A4AC861A1A36CFE700CD19CA /* mixMusicTestTests.xctest */,
+				A4AC86011A36CFE700CD19CA /* Mixing Guess.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1282,9 +1262,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A4AC86001A36CFE700CD19CA /* mixMusicTest */ = {
+		A4AC86001A36CFE700CD19CA /* Mixing Guess */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A4AC86241A36CFE700CD19CA /* Build configuration list for PBXNativeTarget "mixMusicTest" */;
+			buildConfigurationList = A4AC86241A36CFE700CD19CA /* Build configuration list for PBXNativeTarget "Mixing Guess" */;
 			buildPhases = (
 				A4AC85FD1A36CFE700CD19CA /* Sources */,
 				A4AC85FE1A36CFE700CD19CA /* Frameworks */,
@@ -1295,28 +1275,10 @@
 			);
 			dependencies = (
 			);
-			name = mixMusicTest;
+			name = "Mixing Guess";
 			productName = mixMusicTest;
-			productReference = A4AC86011A36CFE700CD19CA /* mixMusicTest.app */;
+			productReference = A4AC86011A36CFE700CD19CA /* Mixing Guess.app */;
 			productType = "com.apple.product-type.application";
-		};
-		A4AC86191A36CFE700CD19CA /* mixMusicTestTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = A4AC86271A36CFE700CD19CA /* Build configuration list for PBXNativeTarget "mixMusicTestTests" */;
-			buildPhases = (
-				A4AC86161A36CFE700CD19CA /* Sources */,
-				A4AC86171A36CFE700CD19CA /* Frameworks */,
-				A4AC86181A36CFE700CD19CA /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				A4AC861C1A36CFE700CD19CA /* PBXTargetDependency */,
-			);
-			name = mixMusicTestTests;
-			productName = mixMusicTestTests;
-			productReference = A4AC861A1A36CFE700CD19CA /* mixMusicTestTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -1345,14 +1307,9 @@
 							};
 						};
 					};
-					A4AC86191A36CFE700CD19CA = {
-						CreatedOnToolsVersion = 6.1.1;
-						DevelopmentTeam = DBBLJY69ER;
-						TestTargetID = A4AC86001A36CFE700CD19CA;
-					};
 				};
 			};
-			buildConfigurationList = A4AC85FC1A36CFE700CD19CA /* Build configuration list for PBXProject "mixMusicTest" */;
+			buildConfigurationList = A4AC85FC1A36CFE700CD19CA /* Build configuration list for PBXProject "Mixing Guess" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -1366,8 +1323,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A4AC86001A36CFE700CD19CA /* mixMusicTest */,
-				A4AC86191A36CFE700CD19CA /* mixMusicTestTests */,
+				A4AC86001A36CFE700CD19CA /* Mixing Guess */,
 			);
 		};
 /* End PBXProject section */
@@ -1578,13 +1534,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A4AC86181A36CFE700CD19CA /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
@@ -1642,23 +1591,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A4AC86161A36CFE700CD19CA /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A4AC86211A36CFE700CD19CA /* mixMusicTestTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		A4AC861C1A36CFE700CD19CA /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = A4AC86001A36CFE700CD19CA /* mixMusicTest */;
-			targetProxy = A4AC861B1A36CFE700CD19CA /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		A4A5A2D91A74AAA8005634E9 /* UMSocialLocalizable.strings */ = {
@@ -1766,8 +1699,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = mixMusicTest/mixMusicTest.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer: CAO GUANGXU (JTX9TS223Q)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: CAO GUANGXU (JTX9TS223Q)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/mixMusicTest/UMSocial_Sdk_4.2.1/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI",
@@ -1796,8 +1729,8 @@
 					"-ObjC",
 					"-lstdc++",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "06bea0a2-4c25-4cd9-9cfa-fe1a97aaf444";
+				PRODUCT_NAME = "Mixing Guess";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -1808,8 +1741,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = mixMusicTest/mixMusicTest.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: CAO GUANGXU (DBBLJY69ER)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: CAO GUANGXU (DBBLJY69ER)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/mixMusicTest/UMSocial_Sdk_4.2.1/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI",
@@ -1834,55 +1767,15 @@
 					"-ObjC",
 					"-lstdc++",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "0443f749-ff5f-456a-8cab-207a55f02f19";
-			};
-			name = Release;
-		};
-		A4AC86281A36CFE700CD19CA /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = mixMusicTestTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Mixing Guess";
 				PROVISIONING_PROFILE = "";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/mixMusicTest.app/mixMusicTest";
-			};
-			name = Debug;
-		};
-		A4AC86291A36CFE700CD19CA /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = mixMusicTestTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/mixMusicTest.app/mixMusicTest";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A4AC85FC1A36CFE700CD19CA /* Build configuration list for PBXProject "mixMusicTest" */ = {
+		A4AC85FC1A36CFE700CD19CA /* Build configuration list for PBXProject "Mixing Guess" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A4AC86221A36CFE700CD19CA /* Debug */,
@@ -1891,20 +1784,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A4AC86241A36CFE700CD19CA /* Build configuration list for PBXNativeTarget "mixMusicTest" */ = {
+		A4AC86241A36CFE700CD19CA /* Build configuration list for PBXNativeTarget "Mixing Guess" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A4AC86251A36CFE700CD19CA /* Debug */,
 				A4AC86261A36CFE700CD19CA /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		A4AC86271A36CFE700CD19CA /* Build configuration list for PBXNativeTarget "mixMusicTestTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				A4AC86281A36CFE700CD19CA /* Debug */,
-				A4AC86291A36CFE700CD19CA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

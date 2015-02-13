@@ -86,6 +86,17 @@
 - (IBAction)levelPassTap;
 - (IBAction)difficultyPassTap:(id)sender;
 
+@property (weak, nonatomic)  UIButton *guessNameBtn0;
+@property (weak, nonatomic)  UIButton *guessNameBtn1;
+@property (weak, nonatomic)  UIButton *guessNameBtn2;
+@property (weak, nonatomic)  UIButton *guessNameBtn3;
+@property (weak, nonatomic)  UIButton *guessNameBtn4;
+
+@property (strong, nonatomic) NSMutableArray *guessNameBtnArray;
+
+
+- (IBAction)guessNameTap:(id)sender;
+
 
 @property (strong, nonatomic) NSMutableArray *diskButtonFrameArray;
 //choiceBoard

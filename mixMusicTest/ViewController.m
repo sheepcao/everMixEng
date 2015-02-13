@@ -13,12 +13,9 @@
 #import "fallAnimation.h"
 #import <MessageUI/MessageUI.h>
 
-//#import <CoreVideo/CVOpenGLESTextureCache.h>
-//#import "RippleModel.h"
-//#include <stdlib.h>
 
-#define DMPUBLISHERID        @"56OJxqiIuN5cJKR8fX"
-#define DMPLCAEMENTID_INTER @"16TLej7oApZ2kNUOza5fBhvz"
+//#define DMPUBLISHERID        @"56OJxqiIuN5cJKR8fX"
+//#define DMPLCAEMENTID_INTER @"16TLej7oApZ2kNUOza5fBhvz"
 
 @interface ViewController ()<MFMailComposeViewControllerDelegate>
 {
@@ -98,13 +95,6 @@ int difficultyNow;
     self.interstitialView.delegate = self;
     self.interstitialView.interstitialType = BaiduMobAdViewTypeInterstitialGame;
     [self.interstitialView load];
-    // 初始化插屏⼲⼴广告,此处使⽤用的是测试ID,请登陆多盟官⺴⽹网(www.domob.cn)获取新的ID _dmInterstitial = [[DMInterstitialAdController alloc]
-//    _dmInterstitial = [[DMInterstitialAdController alloc] initWithPublisherId:DMPUBLISHERID
-//                                                                  placementId:DMPLCAEMENTID_INTER
-//                                                           rootViewController:self];
-//    _dmInterstitial.delegate = self;
-//    // load advertisement
-//    [_dmInterstitial loadAd];
     
     backFromGame = NO;
     first = YES;
@@ -162,8 +152,7 @@ int difficultyNow;
         [self bigADshow];
       
     }
-    NSLog(@"view2:%@",self.view);
-    NSLog(@"image:%@",self.backgroundImg);
+;
 
 }
 
@@ -187,26 +176,31 @@ int difficultyNow;
     
     self.difficulty1 = [[UIButton alloc] init];
     [self.difficulty1 setTitle:@"Easy" forState:UIControlStateNormal];
+    self.difficulty1.titleLabel.font = [UIFont boldSystemFontOfSize:15.0f ];
     self.difficulty1.tag = 1;
     
     self.difficulty2 = [[UIButton alloc] init];
     [self.difficulty2 setTitle:@"Medium" forState:UIControlStateNormal];
     self.difficulty2.tag = 2;
+    self.difficulty2.titleLabel.font = [UIFont boldSystemFontOfSize:15.0f ];
 
     
     self.difficulty3 = [[UIButton alloc] init];
     [self.difficulty3 setTitle:@"Difficult" forState:UIControlStateNormal];
     self.difficulty3.tag = 3;
+    self.difficulty3.titleLabel.font = [UIFont boldSystemFontOfSize:15.0f ];
 
     
     self.difficulty4 = [[UIButton alloc] init];
     [self.difficulty4 setTitle:@"Crazy" forState:UIControlStateNormal];
     self.difficulty4.tag = 4;
+    self.difficulty4.titleLabel.font = [UIFont boldSystemFontOfSize:15.0f ];
 
     
     self.difficulty5 = [[UIButton alloc] init];
     [self.difficulty5 setTitle:@"Rampage" forState:UIControlStateNormal];
     self.difficulty5.tag = 5;
+    self.difficulty5.titleLabel.font = [UIFont boldSystemFontOfSize:15.0f ];
 
     
     
@@ -216,19 +210,19 @@ int difficultyNow;
     [self setupPointFor:self.difficulty4];
     [self setupPointFor:self.difficulty5];
     
-    CGRect kframe = CGRectMake(25, 327+17, 63, 30);
+    CGRect kframe = CGRectMake(25-20, 327+17, 63, 30);
     [self.difficulty1 setFrame:kframe];
     
-    CGRect mframe = CGRectMake(98, 300+17, 63, 30);
+    CGRect mframe = CGRectMake(98-20, 300+17, 63, 30);
     [self.difficulty2 setFrame:mframe];
     
-    CGRect nframe = CGRectMake(141, 365+17, 63, 30);
+    CGRect nframe = CGRectMake(141-20, 365+17, 63, 30);
     [self.difficulty3 setFrame:nframe];
     
-    CGRect oframe = CGRectMake(191, 273+17, 63, 30);
+    CGRect oframe = CGRectMake(191-20, 273+17, 63, 30);
     [self.difficulty4 setFrame:oframe];
     
-    CGRect pframe = CGRectMake(257, 308+20, 63, 30);
+    CGRect pframe = CGRectMake(257-20, 308+20, 63, 30);
     [self.difficulty5 setFrame:pframe];
     
     if(IS_IPHONE_5)
@@ -335,7 +329,7 @@ int difficultyNow;
     
     
     
-    NSLog(@"1:%@\n2:%@\n3:%@\n4:%@\n5:%@\n",self.difficulty1,self.difficulty2,self.difficulty3,self.difficulty4,self.difficulty5);
+//    NSLog(@"1:%@\n2:%@\n3:%@\n4:%@\n5:%@\n",self.difficulty1,self.difficulty2,self.difficulty3,self.difficulty4,self.difficulty5);
     
 
 }
@@ -393,8 +387,7 @@ int difficultyNow;
     NSString *currentDifficulty = [self.gameData objectForKey:@"difficulty"];
     NSString *currentLevel = [self.gameData objectForKey:@"currentLevel"];
 
-//    [self drawStars:[currentDifficulty intValue]];
-//    self.difficultySegment.selectedSegmentIndex = [currentDifficulty intValue];
+
     
     [self changeDifficultyTo:currentDifficulty];
     NSMutableArray *currentMusics = [self.gameData objectForKey:@"musicPlaying"];
@@ -419,58 +412,12 @@ int difficultyNow;
         }
         
     }
-//    
-//    if (self.ripple) {
-//        [self.ripple removeFromSuperview];
-//    }
-//    if (self.ripple2) {
-//        [self.ripple2 removeFromSuperview];
-//    }
-//    if (self.ripple3) {
-//        [self.ripple3 removeFromSuperview];
-//    }
-//    
-//    self.ripple = [[UILabel alloc] initWithFrame: CGRectMake(self.begainGame.frame.origin.x+10, self.begainGame.frame.origin.y+10, self.begainGame.frame.size.width-20,self.begainGame.frame.size.height-20) ];
-//    [self.ripple setBackgroundColor:[UIColor clearColor]];
-//    [self.ripple.layer setCornerRadius:self.ripple.bounds.size.height /2]; //Assuming square images
-//    
-//    [self.ripple.layer setBorderColor:[UIColor whiteColor].CGColor];
-//    [self.ripple.layer setBorderWidth:1];
-//    [self.view addSubview:self.ripple];
-//    self.ripple.alpha = 0.4;
-//    
-//    [self buttonAnimate:self.ripple andRange:1.5 andBorderWidth:1];
-//    //
-//    self.ripple2 = [[UILabel alloc] initWithFrame: CGRectMake(self.begainGame.frame.origin.x+10, self.begainGame.frame.origin.y+10, self.begainGame.frame.size.width-20,self.begainGame.frame.size.height-20) ];
-//    [self.ripple2 setBackgroundColor:[UIColor clearColor]];
-//    [self.ripple2.layer setCornerRadius:self.ripple2.bounds.size.height /2]; //Assuming square images
-//    
-//    [self.ripple2.layer setBorderColor:[UIColor whiteColor].CGColor];
-//    [self.ripple2.layer setBorderWidth:2.5];
-//    [self.view addSubview:self.ripple2];
-//    self.ripple2.alpha = 0.4;
-//    [self buttonAnimate:self.ripple2 andRange:1.35 andBorderWidth:2.5];
-//    
-//    
-//    self.ripple3 = [[UILabel alloc] initWithFrame: CGRectMake(self.begainGame.frame.origin.x+10, self.begainGame.frame.origin.y+10, self.begainGame.frame.size.width-20,self.begainGame.frame.size.height-20) ];
-//    [self.ripple3 setBackgroundColor:[UIColor clearColor]];
-//    [self.ripple3.layer setCornerRadius:self.ripple3.bounds.size.height /2]; //Assuming square images
-//    
-//    [self.ripple3.layer setBorderColor:[UIColor whiteColor].CGColor];
-//    [self.ripple3.layer setBorderWidth:4];
-//    [self.view addSubview:self.ripple3];
-//    self.ripple3.alpha = 0.4;
-//    [self buttonAnimate:self.ripple3 andRange:1.2 andBorderWidth:4];
-//    
-
- 
 }
 
 -(void)changeDifficultyTo:(NSString *)diff
 {
     difficultyNow = [diff intValue];
     
-//    UIButton *button = (UIButton *)[self.view viewWithTag:difficultyNow +1];
     for (UIButton *btn in self.difficultyButtons) {
         if (btn.tag == difficultyNow +1) {
             [btn setEnabled:NO];
@@ -493,7 +440,6 @@ int difficultyNow;
     
     [UIView animateWithDuration:1.5 animations:^{
         view.transform = CGAffineTransformMakeScale(scale, scale);
-//        view.layer.borderWidth = 20;
 
         view.alpha = 0.0;
     }completion:^(BOOL finished) {
@@ -507,21 +453,7 @@ int difficultyNow;
 }
 
 
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-//    // Get the new view controller using [segue destinationViewController].
-//    // Pass the selected object to the new view controller.
-//    
-//    gameViewController *myGameViewController = [segue destinationViewController];
-//    myGameViewController.levelTitle = @"PLAY1234";
-//    NSMutableArray *passMusics = [self configSongs];
-//    
-//    myGameViewController.musicsArray = passMusics;
-//    myGameViewController.delegate = self;
-//    
-//}
 
 #pragma mark ConfigSongs delegate
 -(NSMutableArray *)configSongs
@@ -562,92 +494,14 @@ int difficultyNow;
 
 
 
-//-(void)drawStars:(int)Differentlevel
-//{
-//
-//    
-//    for (int i = 0; i<5; i++) {
-//        if (i <= Differentlevel) {
-//            [(UIButton *)self.starButtons[i] setImage:[UIImage imageNamed:@"star2"] forState:UIControlStateNormal];
-//        }
-//        if (i>Differentlevel) {
-//            [(UIButton *)self.starButtons[i] setImage:[UIImage imageNamed:@"star1"] forState:UIControlStateNormal];
-//        }
-//    }
-//    
-//    [self modifyPlist:@"gameData" withValue:[NSString stringWithFormat:@"%d",Differentlevel] forKey:@"difficulty"];
-//
-//
-//    
-//}
-//
-
-//- (IBAction)starTapped:(UIButton *)sender {
-//    
-//    [MobClick event:@"chooseDifficulty"];
-//
-//    
-//    if ([self.continueGame isHidden]) {
-//        int starNumber = -1; //init with a invalid value.
-//        
-//        for (int i = 0; i<5; i++) {
-//            if(sender == self.starButtons[i])
-//            {
-//                starNumber = i;
-//            }
-//            
-//        }
-//        
-//        [self drawStars:starNumber];
-//        [self modifyPlist:@"gameData" withValue:[NSString stringWithFormat:@"%d",starNumber*20] forKey:@"currentLevel"];
-//        
-//    }else
-//    {
-//        myAlertView *resetAlert = [[myAlertView alloc] initWithTitle:@"且慢!" message:@"变更难度将重置已猜歌曲的进度,请君三思。" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确认", nil];
-//        
-//        resetAlert.chooseWhichButton = sender;
-//        resetAlert.tag = 1;
-//        
-//        [resetAlert show];
-//    }
-//    
-//    
-//    
-////    int starNumber = -1; //init with a invalid value.
-////    
-////    for (int i = 0; i<5; i++) {
-////        if(sender == self.starButtons[i])
-////        {
-////            starNumber = i;
-////        }
-////
-////    }
-////    
-////    [self drawStars:starNumber];
-//
-//}
-
 -(void)resetPlist
 {
     [self removePlistFromDocument:@"gameData"];
-//    NSMutableArray *currentMusics = [[[NSUserDefaults standardUserDefaults] objectForKey:@"currentMusics"] mutableCopy];
-//    [currentMusics removeAllObjects];
-//    [[NSUserDefaults standardUserDefaults] setObject:currentMusics forKey:@"currentMusics"];
+
     
     [self.begainGame setImage:[UIImage imageNamed:@"开始"] forState:UIControlStateNormal];
     [self.begainGame setFrame:CGRectMake([[UIScreen mainScreen] bounds].size.width/2 - self.continueGame.frame.size.width/2 , self.continueGame.frame.origin.y, self.continueGame.frame.size.width, self.continueGame.frame.size.height)];
-//    
-//    [self.ripple setFrame: CGRectMake(self.begainGame.frame.origin.x+10, self.begainGame.frame.origin.y+10, self.begainGame.frame.size.width-20,self.begainGame.frame.size.height-20) ];
-//
-//    //
-//    [self.ripple2 setFrame: CGRectMake(self.begainGame.frame.origin.x+10, self.begainGame.frame.origin.y+10, self.begainGame.frame.size.width-20,self.begainGame.frame.size.height-20) ];
-//    
-//    [self.ripple3 setFrame: CGRectMake(self.begainGame.frame.origin.x+10, self.begainGame.frame.origin.y+10, self.begainGame.frame.size.width-20,self.begainGame.frame.size.height-20) ];
-//
-//
-//    
-//    
-    
+
     [self.continueGame setHidden:YES];
     
     
@@ -720,7 +574,7 @@ int difficultyNow;
     {
         if([currentLevel intValue] == 100 )
         {
-        UIAlertView *finishLevelAlert = [[UIAlertView alloc] initWithTitle:@"赞" message:@"玩爆关啦！我们会尽快更新曲库！重新游戏将对当前曲库重新组合。" delegate:self cancelButtonTitle:@"耐心期待" otherButtonTitles:nil, nil];
+        UIAlertView *finishLevelAlert = [[UIAlertView alloc] initWithTitle:@"Unbelievable" message:@"玩爆关啦！我们会尽快更新曲库！重新游戏将对当前曲库重新组合。" delegate:self cancelButtonTitle:@"耐心期待" otherButtonTitles:nil, nil];
         [finishLevelAlert show];
         return;
         }else

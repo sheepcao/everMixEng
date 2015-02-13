@@ -12,6 +12,7 @@
 #import "BaiduMobAdView.h"
 
 #define kAdViewPortraitRect CGRectMake(0, [[UIScreen mainScreen] bounds].size.height-48-44,[[UIScreen mainScreen] bounds].size.width,48)
+#define cdFrame  CGRectMake(5, 5,40, 40)
 
 
 @interface gameViewController ()<UIAlertViewDelegate>
@@ -35,10 +36,13 @@ bool isplayed;
 BOOL animating;
 int totalRotateTimes;
 int answerPickedCount;
+int answerBtnTag;
 @implementation gameViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+
     
     
     self.musicNote1 = [[UIImageView alloc] init];
@@ -56,6 +60,8 @@ int answerPickedCount;
     
     self.diskArray = [NSMutableArray arrayWithObjects:@"cd1",@"cd2",@"cd3",@"cd4",@"cd5",@"cd6",@"cd7",@"cd8",@"cd9",@"cd10",@"cd11",@"cd12",@"cd13", nil];
 
+    //reset tags
+    answerBtnTag = 0;
     
     [self dropDown];
 
@@ -93,22 +99,6 @@ int answerPickedCount;
     UIBarButtonItem *barButton = [[UIBarButtonItem alloc] initWithCustomView:buttonView];
     self.navigationItem.rightBarButtonItem = barButton;
     
-//    UIButton *aButton = [UIButton buttonWithType:UIButtonTypeCustom];
-//
-//    aButton.frame = CGRectMake(0.0, 0.0, 50 , 30);
-//    
-//    // Initialize the UIBarButtonItem
-//    UIBarButtonItem *aBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:aButton];
-//    self.navigationItem.leftBarButtonItem = aBarButtonItem;
-//
-//    // Set the Target and Action for aButton
-//    [aButton addTarget:self action:@selector(backToLoginForm:) forControlEvents:UIControlEventTouchUpInside];
-    
-    
-
-
-    
-    
     self.ignoreArray = [[NSMutableArray alloc] init];
     
     self.diskButtonFrameArray = [[NSMutableArray alloc] init];
@@ -124,7 +114,7 @@ int answerPickedCount;
     [self setupButtonsView];
 
     [self diskHideToTop];
-    [self diskPopUp];
+//    [self diskPopUp];
     self.gameDataForSingleLevel = [self readDataFromPlist:@"gameData"] ;
     
     NSString *currentDifficulty = [self.gameDataForSingleLevel objectForKey:@"difficulty"];
@@ -168,40 +158,17 @@ int answerPickedCount;
     [self.view addSubview:sharedAdView];
     [sharedAdView start];
 
-    
-//    _dmAdView = [[DMAdView alloc] initWithPublisherId:@"56OJxqiIuN5cJKR8fX" placementId:@"16TLej7oApZ2kNUO7NRnvYss" autorefresh:YES];
-//    _dmAdView.frame = CGRectMake(0, [UIScreen mainScreen].bounds.size.height - FLEXIBLE_SIZE.height-44, FLEXIBLE_SIZE.width,FLEXIBLE_SIZE.height);
-//    _dmAdView.delegate = self;
-//    [_dmAdView setKeywords:@"音乐"];
-//    _dmAdView.rootViewController = self; // 设置 RootViewController
-//    [self.view addSubview:_dmAdView]; // 将广告视图添加到⽗视图中
-//
-//    [_dmAdView loadAd];
+
     
     [self.view bringSubviewToFront:self.playConsoleView];
     
     //control big AD when main page appears.
     backFromGame = YES;
     
-//    if(IS_IPHONE_6P)
-//    {
-//        
-//        CGRect aframe = self.playConsoleView.frame;
-//        aframe.origin.y += 60;
-//        aframe.origin.x = (SCREEN_WIDTH-aframe.size.width)/2;
-//        
-//        [self.playConsoleView setFrame:aframe];
-//        
-//        
-//    }
+
 
 }
 
-//-(void)backToLoginForm:(id)sender
-//{
-//    [CommonUtility tapSound:@"Window_Disappear" withType:@"mp3"];
-//    [self.navigationController popViewControllerAnimated:YES];
-//}
 
 -(void)viewWillAppear:(BOOL)animated
 {
@@ -314,79 +281,36 @@ int answerPickedCount;
 
 -(void)setupButtonsView
 {
-    CGFloat distance = 30;
-    UIButton *cd1Btn;
-    UIButton *cd2Btn;
-    UIButton *cd3Btn;
-    UIButton *cd4Btn;
-    UIButton *cd5Btn;
-    
-    if(IS_IPHONE_5)
-    {
-    
-    cd1Btn = [[UIButton alloc] initWithFrame:CGRectMake(50, distance+3, CD_SZIE, CD_SZIE)];
-    cd2Btn = [[UIButton alloc] initWithFrame:CGRectMake(190, distance+3, CD_SZIE, CD_SZIE)];
-    cd3Btn = [[UIButton alloc] initWithFrame:CGRectMake(50, 2*distance+CD_SZIE, CD_SZIE, CD_SZIE)];
-    cd4Btn = [[UIButton alloc] initWithFrame:CGRectMake(190, 2*distance+CD_SZIE, CD_SZIE, CD_SZIE)];
-    cd5Btn = [[UIButton alloc] initWithFrame:CGRectMake(50, 3*distance+2*CD_SZIE, CD_SZIE, CD_SZIE)];
-        
-    }else if(IS_IPHONE_6 )
-    {
-        distance = 30;
+    self.guessNameBtnArray = [[NSMutableArray alloc] initWithCapacity:5];
 
-        cd1Btn = [[UIButton alloc] initWithFrame:CGRectMake(60, distance-12, CD_SZIE+6, CD_SZIE+6)];
-        cd2Btn = [[UIButton alloc] initWithFrame:CGRectMake(226, distance-12, CD_SZIE+6, CD_SZIE+6)];
-        cd3Btn = [[UIButton alloc] initWithFrame:CGRectMake(60, 2*distance-13+CD_SZIE, CD_SZIE+6, CD_SZIE+6)];
-        cd4Btn = [[UIButton alloc] initWithFrame:CGRectMake(226, 2*distance-13+CD_SZIE, CD_SZIE+6, CD_SZIE+6)];
-        cd5Btn = [[UIButton alloc] initWithFrame:CGRectMake(60, 3*distance-13+2*CD_SZIE, CD_SZIE+6, CD_SZIE+6)];
-    }
-    else if(IS_IPHONE_6P)
-    {
-        distance = 30;
+ 
+    CGFloat first_Y = self.downPartView.frame.size.height/2-15 - ((int)self.musicsArray.count/2)*63;
+    for (int i = 0; i<self.musicsArray.count ; i++) {
+        UIButton *cdBtn = [[UIButton alloc] initWithFrame:CGRectMake(-520,first_Y + i*63, 270, 50)];
+        cdBtn.tag = i;
         
-        cd1Btn = [[UIButton alloc] initWithFrame:CGRectMake(70, distance-12, CD_SZIE+10, CD_SZIE+10)];
-        cd2Btn = [[UIButton alloc] initWithFrame:CGRectMake(256, distance-12, CD_SZIE+10, CD_SZIE+10)];
-        cd3Btn = [[UIButton alloc] initWithFrame:CGRectMake(70, 2*distance-13+CD_SZIE, CD_SZIE+10, CD_SZIE+10)];
-        cd4Btn = [[UIButton alloc] initWithFrame:CGRectMake(256, 2*distance-13+CD_SZIE, CD_SZIE+10, CD_SZIE+10)];
-        cd5Btn = [[UIButton alloc] initWithFrame:CGRectMake(70, 3*distance-13+2*CD_SZIE, CD_SZIE+10, CD_SZIE+10)];
+//        [cdBtn setImage:[UIImage imageNamed:[self randomDiskWithRange:13-i]] forState:UIControlStateNormal];
+        UIImageView *cdImage = [[UIImageView alloc] initWithFrame:cdFrame];
+        [cdImage setImage:[UIImage imageNamed:[self randomDiskWithRange:13-i]]];
+        [cdBtn addSubview:cdImage];
+        cdImage.tag = 10;
+        
+        [cdBtn addTarget:self action:@selector(diskTap:) forControlEvents:UIControlEventTouchUpInside];
+        cdBtn.titleLabel.font = [UIFont systemFontOfSize:14.0f];
+        
+        [cdBtn setTitleEdgeInsets:UIEdgeInsetsMake(0, 28, 0, 0)];
+//        [cdBtn setImageEdgeInsets:UIEdgeInsetsMake(0, 10, 0, 0)];
+//        [cdBtn setContentHorizontalAlignment:UIControlContentHorizontalAlignmentCenter];
+//        [cdBtn setContentVerticalAlignment:UIControlContentVerticalAlignmentFill];
+        [cdBtn setBackgroundImage:[UIImage imageNamed:@"nextBtn"] forState:UIControlStateNormal];
         
 
-    }else if(IS_IPHONE_4_OR_LESS)
-    {
-        cd1Btn = [[UIButton alloc] initWithFrame:CGRectMake(60, distance+55, CD_SZIE-10, CD_SZIE-10)];
-        cd2Btn = [[UIButton alloc] initWithFrame:CGRectMake(190, distance+55, CD_SZIE-10, CD_SZIE-10)];
-        cd3Btn = [[UIButton alloc] initWithFrame:CGRectMake(60, 2*distance+CD_SZIE+35, CD_SZIE-10, CD_SZIE-10)];
-        cd4Btn = [[UIButton alloc] initWithFrame:CGRectMake(190, 2*distance+CD_SZIE+35, CD_SZIE-10, CD_SZIE-10)];
-        cd5Btn = [[UIButton alloc] initWithFrame:CGRectMake(60, 3*distance+2*CD_SZIE+15, CD_SZIE-10, CD_SZIE-10)];
-    }
-        
-    
-    [cd1Btn addTarget:self action:@selector(diskTap:) forControlEvents:UIControlEventTouchUpInside];
-    [cd2Btn addTarget:self action:@selector(diskTap:) forControlEvents:UIControlEventTouchUpInside];
-    [cd3Btn addTarget:self action:@selector(diskTap:) forControlEvents:UIControlEventTouchUpInside];
-    [cd4Btn addTarget:self action:@selector(diskTap:) forControlEvents:UIControlEventTouchUpInside];
-    [cd5Btn addTarget:self action:@selector(diskTap:) forControlEvents:UIControlEventTouchUpInside];
-    
-    
-    [cd1Btn setImage:[UIImage imageNamed:[self randomDiskWithRange:13]] forState:UIControlStateDisabled];
-    [cd2Btn setImage:[UIImage imageNamed:[self randomDiskWithRange:12]] forState:UIControlStateDisabled];
-    [cd3Btn setImage:[UIImage imageNamed:[self randomDiskWithRange:11]] forState:UIControlStateDisabled];
-    [cd4Btn setImage:[UIImage imageNamed:[self randomDiskWithRange:10]] forState:UIControlStateDisabled];
-    [cd5Btn setImage:[UIImage imageNamed:[self randomDiskWithRange:9]] forState:UIControlStateDisabled];
-    
-    self.diskButtons = [NSArray arrayWithObjects:cd1Btn,cd2Btn,cd3Btn,cd4Btn,cd5Btn, nil];
-    for (int i = 0; i<self.diskButtons.count; i++) {
-        UIButton *button = self.diskButtons[i];
-        [button setBackgroundImage:[UIImage imageNamed:@"cycle"] forState:UIControlStateNormal];
-        [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    }
-    
-    [self.downPartView addSubview:cd1Btn];
-    [self.downPartView addSubview:cd2Btn];
-    [self.downPartView addSubview:cd3Btn];
-    [self.downPartView addSubview:cd4Btn];
-    [self.downPartView addSubview:cd5Btn];
+        [cdBtn setHidden:YES];
+        [self.downPartView addSubview:cdBtn];
+        [self.guessNameBtnArray addObject:cdBtn];
 
+    }
+    
 
 }
 
@@ -410,23 +334,25 @@ int answerPickedCount;
 
     int diskNumber = -1;
     
-    for(int i = 0 ; i < self.diskButtons.count ; i++ )
+    for(int i = 0 ; i < self.guessNameBtnArray.count ; i++ )
     {
-        if (sender == self.diskButtons[i]) {
+        if (sender == self.guessNameBtnArray[i]) {
             diskNumber = i;
         }
     }
     NSString *songName = self.musicsArray[diskNumber];
+    NSArray *songNameWord = [songName componentsSeparatedByString:@" "];
+
     NSString *songAnswer = [allAnswers objectForKey:songName];
     NSArray *songAnswerSingleLetter = [songAnswer componentsSeparatedByString:@","];
-    NSLog(@"answer count:%ld",(unsigned long)songAnswerSingleLetter.count);
-    NSLog(@"songName:%@",songName);
+//    NSLog(@"answer count:%ld",(unsigned long)songAnswerSingleLetter.count);
+//    NSLog(@"songName:%@",songName);
 
     
     if(!self.choicesBoardView)
     {
         self.choicesBoardView = [[[NSBundle mainBundle] loadNibNamed:@"choicesBoardView" owner:self options:nil] objectAtIndex:0];
-        [self.choicesBoardView setFrame:CGRectMake(self.downPartView.frame.origin.x,[UIScreen mainScreen].bounds.size.height , self.downPartView.frame.size.width,self.downPartView.frame.size.height - 60)];
+        [self.choicesBoardView setFrame:CGRectMake(self.downPartView.frame.origin.x,[UIScreen mainScreen].bounds.size.height , self.downPartView.frame.size.width,self.downPartView.frame.size.height - 5)];
         self.choicesBoardView.songName = @"";
         [self.choicesBoardView setupBoard];
         [self.view addSubview:self.choicesBoardView];
@@ -440,22 +366,48 @@ int answerPickedCount;
         [self.choicesBoardView addGestureRecognizer:recognizer];
 
     }
-    //only support less than 7 letters.
+    //only support less than 8 letters.
     NSLog(@"center:%f",self.choicesBoardView.center.x);
-    CGFloat firstAnswerSquare_X = (self.choicesBoardView.center.x - (33+4) *songName.length/2 - self.choicesBoardView.frame.origin.x);//considering the distance between two squares . distance = 2.
+    UIButton *answerButton = (UIButton *)[self.choicesBoardView viewWithTag:1];
+    CGFloat firstAnswer_Y = answerButton.frame.origin.y - 40 * songNameWord.count;
     UIImage *buttonBackImage = [UIImage imageNamed:@"answerBack"];
-    for (int i = 0; i<songName.length; i++) {
-         UIButton *answerButton = (UIButton *)[self.choicesBoardView viewWithTag:1];
+
+    for (int j = 0; j<songNameWord.count; j++) {
         
-        AnswerButton *myAnswerBtn = [[AnswerButton alloc] initWithFrame:CGRectMake(firstAnswerSquare_X+1 + i*(4+33), answerButton.frame.origin.y - 75, 33, 33)];
+        CGFloat firstAnswerSquare_X = (self.choicesBoardView.center.x - (26+4) *((NSString *)songNameWord[j]).length/2 - self.choicesBoardView.frame.origin.x);//
+
+        for (int i = 0; i<((NSString *)songNameWord[j]).length; i++) {
+            
+            AnswerButton *myAnswerBtn = [[AnswerButton alloc] initWithFrame:CGRectMake(firstAnswerSquare_X+1 + i*(4+26), firstAnswer_Y+j*38, 25, 25)];
+            
+            [myAnswerBtn addTarget:self action:@selector(answerTapped:) forControlEvents:UIControlEventTouchUpInside];
+            myAnswerBtn.titleLabel.font = [UIFont fontWithName:@"Helvetica Neue" size:15];
+            [myAnswerBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+            myAnswerBtn.tag = 100 + answerBtnTag;
+            answerBtnTag ++;
+            myAnswerBtn.isFromTag = -1;
+            [myAnswerBtn setBackgroundImage:buttonBackImage forState:UIControlStateNormal];
+            [self.choicesBoardView addSubview:myAnswerBtn];
+        }
+
         
-        [myAnswerBtn addTarget:self action:@selector(answerTapped:) forControlEvents:UIControlEventTouchUpInside];
-        myAnswerBtn.titleLabel.font = [UIFont fontWithName:@"Helvetica Neue" size:20];        [myAnswerBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-        myAnswerBtn.tag = i+100;
-        myAnswerBtn.isFromTag = -1;
-        [myAnswerBtn setBackgroundImage:buttonBackImage forState:UIControlStateNormal];
-        [self.choicesBoardView addSubview:myAnswerBtn];
     }
+    
+    
+//    CGFloat firstAnswerSquare_X = (self.choicesBoardView.center.x - (33+4) *songName.length/2 - self.choicesBoardView.frame.origin.x);//considering the distance between two squares . distance = 2.
+//    UIImage *buttonBackImage = [UIImage imageNamed:@"answerBack"];
+//    for (int i = 0; i<songName.length; i++) {
+//
+//        
+//        AnswerButton *myAnswerBtn = [[AnswerButton alloc] initWithFrame:CGRectMake(firstAnswerSquare_X+1 + i*(4+33), answerButton.frame.origin.y - 75, 33, 33)];
+//        
+//        [myAnswerBtn addTarget:self action:@selector(answerTapped:) forControlEvents:UIControlEventTouchUpInside];
+//        myAnswerBtn.titleLabel.font = [UIFont fontWithName:@"Helvetica Neue" size:20];        [myAnswerBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+//        myAnswerBtn.tag = i+100;
+//        myAnswerBtn.isFromTag = -1;
+//        [myAnswerBtn setBackgroundImage:buttonBackImage forState:UIControlStateNormal];
+//        [self.choicesBoardView addSubview:myAnswerBtn];
+//    }
     
 //    NSLog(@"sub:%@",[self.choicesBoardView subviews]);
 
@@ -471,7 +423,7 @@ int answerPickedCount;
 
     
     [UIView animateWithDuration:0.9 delay:0.1 usingSpringWithDamping:0.5 initialSpringVelocity:0.89 options:0 animations:^{
-        [self.choicesBoardView setFrame:CGRectMake(self.downPartView.frame.origin.x,self.downPartView.frame.origin.y, self.downPartView.frame.size.width,self.downPartView.frame.size.height - 50)];
+        [self.choicesBoardView setFrame:CGRectMake(self.downPartView.frame.origin.x,self.downPartView.frame.origin.y, self.downPartView.frame.size.width,self.downPartView.frame.size.height - 5)];
     } completion:^(BOOL finished){
         
         [self.navigationItem setHidesBackButton:YES];
@@ -569,47 +521,56 @@ int answerPickedCount;
     }
     if (answerPickedCount == decisions.count) {
         NSString *songNameGuessed = @"";
+        
+        NSString *songNameWithoutBlank = [self.choicesBoardView.songName stringByReplacingOccurrencesOfString:@" " withString:@""];
         for (int i = 0;i<decisions.count;i++) {
             AnswerButton *answer = decisions[i];
             songNameGuessed = [songNameGuessed stringByAppendingString:answer.titleLabel.text];
         }
-        if ([songNameGuessed isEqualToString:self.choicesBoardView.songName]) {
+        if ([songNameGuessed isEqualToString:songNameWithoutBlank]) {
 
             NSLog(@"you got it");
             [MobClick event:@"rightAnswer"];
 
-            [self.diskButtons[self.choicesBoardView.songNumber] setHidden:YES];
-            CGRect diskFrame = [(UIButton *)self.diskButtons[self.choicesBoardView.songNumber] frame];
-            diskFrame.size.width = CD_SZIE;
-            diskFrame.size.height = CD_SZIE;
+            [self.guessNameBtnArray[self.choicesBoardView.songNumber] setHidden:NO];
+            CGRect diskFrame = [(UIButton *)self.guessNameBtnArray[self.choicesBoardView.songNumber] frame];
             
-            UILabel *songResult = [[UILabel alloc] initWithFrame:diskFrame];
-            songResult.center = [(UIButton *)self.diskButtons[self.choicesBoardView.songNumber] center];
-//            UILabel *songResult = [[UILabel alloc] initWithFrame:[(UIButton *)self.diskButtons[self.choicesBoardView.songNumber] frame] ];
-            songResult.text = songNameGuessed;
+            UILabel *songResult = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, diskFrame.size.width, diskFrame.size.height)];
+
+            songResult.text = self.choicesBoardView.songName;
             songResult.font = [UIFont fontWithName:@"Oriya Sangam MN" size:18];
             
             songResult.numberOfLines = 2;
             songResult.textAlignment = NSTextAlignmentCenter;
             [songResult setTextColor:[UIColor whiteColor]];
+            [songResult setBackgroundColor:[UIColor clearColor]];
             
-            UIImageView *rightBackImg = [[UIImageView alloc] initWithFrame:songResult.frame];
-            [rightBackImg setImage:[UIImage imageNamed:@"rightBack"]];
+//            UIImageView *rightBackImg = [[UIImageView alloc] initWithFrame:songResult.frame];
+//            [rightBackImg setImage:[UIImage imageNamed:@"rightBack"]];
             
-            if (songNameGuessed.length >3) {
-                CGRect aframe = songResult.frame;
-                aframe.origin.y -= 6;
-                [rightBackImg setFrame:aframe];
+//            if (songNameGuessed.length >3) {
+//                CGRect aframe = songResult.frame;
+//                aframe.origin.y -= 6;
+//                [rightBackImg setFrame:aframe];
+//            }
+//            [self.downPartView addSubview:rightBackImg];
+
+            UIImageView *CDimage =(UIImageView *)[self.guessNameBtnArray[self.choicesBoardView.songNumber] viewWithTag:10];
+            if (CDimage) {
+                [CDimage removeFromSuperview];
             }
-            [self.downPartView addSubview:rightBackImg];
+            
+            UIButton *buttonGuess =self.guessNameBtnArray[self.choicesBoardView.songNumber];
+            [buttonGuess setTitle:@" " forState:UIControlStateNormal];
 
-            UIImageView *checkMark = [[UIImageView alloc] initWithFrame:CGRectMake(songResult.frame.size.width -15, songResult.frame.size.height-20, 20, 20)  ];
+            
+            
+            UIImageView *checkMark = [[UIImageView alloc] initWithFrame:cdFrame];
             [checkMark setImage:[UIImage imageNamed:@"checkMark"]];
-         
-
             [songResult addSubview:checkMark];
-            [self.downPartView addSubview:songResult];
-            [self.musicsPlayArray removeObject:songNameGuessed];
+            
+            [self.guessNameBtnArray[self.choicesBoardView.songNumber] addSubview:songResult];
+            [self.musicsPlayArray removeObject:self.choicesBoardView.songName];
             [self returnChoicesBoard:nil];
 
             if (self.musicsPlayArray.count == 0) {
@@ -826,7 +787,8 @@ int answerPickedCount;
         
         isplayed =false;
 
-        [self enableButtons];
+       
+//        [self enableButtons];
     }
 
 }
@@ -1031,20 +993,21 @@ int answerPickedCount;
             [CommonUtility tapSound:@"go" withType:@"mp3"];
 
             NSString *songName = self.choicesBoardView.songName;
-            for (int i = 0; i < [songName length]; i++) {
+            NSString *songNameWithoutBlank = [songName stringByReplacingOccurrencesOfString:@" " withString:@""];
+
+            for (int i = 0; i < [songNameWithoutBlank length]; i++) {
                AnswerButton *myAnswerbtn =(AnswerButton *)[self.choicesBoardView viewWithTag:(100+i)];
-                [myAnswerbtn setTitle:[songName substringWithRange:NSMakeRange(i, 1)] forState:UIControlStateNormal];
+                [myAnswerbtn setTitle:[songNameWithoutBlank substringWithRange:NSMakeRange(i, 1)] forState:UIControlStateNormal];
                 
             }
             
             
-            [self.diskButtons[self.choicesBoardView.songNumber] setHidden:YES];
-            CGRect diskFrame = [(UIButton *)self.diskButtons[self.choicesBoardView.songNumber] frame];
-            diskFrame.size.width = CD_SZIE;
-            diskFrame.size.height = CD_SZIE;
+            [self.guessNameBtnArray[self.choicesBoardView.songNumber] setHidden:NO];
+            CGRect diskFrame = [(UIButton *)self.guessNameBtnArray[self.choicesBoardView.songNumber] frame];
 
-            UILabel *songResult = [[UILabel alloc] initWithFrame:diskFrame];
-            songResult.center = [(UIButton *)self.diskButtons[self.choicesBoardView.songNumber] center];
+
+            UILabel *songResult = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, diskFrame.size.width, diskFrame.size.height)];
+//            songResult.center = [(UIButton *)self.diskButtons[self.choicesBoardView.songNumber] center];
           
             songResult.text = songName;
             songResult.font = [UIFont fontWithName:@"Oriya Sangam MN" size:18];
@@ -1052,21 +1015,29 @@ int answerPickedCount;
             songResult.textAlignment = NSTextAlignmentCenter;
             [songResult setTextColor:[UIColor whiteColor]];
             
-            UIImageView *rightBackImg = [[UIImageView alloc] initWithFrame:songResult.frame];
-            [rightBackImg setImage:[UIImage imageNamed:@"rightBack"]];
-           if (songName.length >3) {
-                CGRect aframe = songResult.frame;
-                aframe.origin.y -= 6;
-                [rightBackImg setFrame:aframe];
+            UIImageView *CDimage =(UIImageView *)[self.guessNameBtnArray[self.choicesBoardView.songNumber] viewWithTag:10];
+            if (CDimage) {
+                [CDimage removeFromSuperview];
             }
-            [self.downPartView addSubview:rightBackImg];
             
-            UIImageView *checkMark = [[UIImageView alloc] initWithFrame:CGRectMake(songResult.frame.size.width -15, songResult.frame.size.height-20, 20, 20)  ];
+            UIButton *buttonGuess =self.guessNameBtnArray[self.choicesBoardView.songNumber];
+            [buttonGuess setTitle:@" " forState:UIControlStateNormal];
+            
+//            UIImageView *rightBackImg = [[UIImageView alloc] initWithFrame:songResult.frame];
+//            [rightBackImg setImage:[UIImage imageNamed:@"rightBack"]];
+//           if (songName.length >3) {
+//                CGRect aframe = songResult.frame;
+//                aframe.origin.y -= 6;
+//                [rightBackImg setFrame:aframe];
+//            }
+//            [self.downPartView addSubview:rightBackImg];
+            
+            UIImageView *checkMark = [[UIImageView alloc] initWithFrame:cdFrame ];
             [checkMark setImage:[UIImage imageNamed:@"checkMark"]];
             
             [songResult addSubview:checkMark];
             
-            [self.downPartView addSubview:songResult];
+            [buttonGuess addSubview:songResult];
             [self.musicsPlayArray removeObject:songName];
             
             
@@ -1082,17 +1053,44 @@ int answerPickedCount;
             [CommonUtility tapSound:@"s_remove" withType:@"mp3"];
             int diskNumber = -1;
             
-            for(int i = (int)(self.diskButtons.count -1) ; i >= 0 ; i-- )
+            for(int i = (int)(self.guessNameBtnArray.count -1) ; i >= 0 ; i-- )
             {
-                if (![self.diskButtons[i] isHidden]) {
+                if (![((UIButton *)self.guessNameBtnArray[i]).titleLabel.text isEqualToString:@" "]) {
+                   
                     diskNumber = i;
+                    CGRect diskFrame = [self.guessNameBtnArray[i] frame];
+
                     
-                    UILabel *ignoreLabel = [[UILabel alloc] initWithFrame:[self.diskButtons[i] frame]];
-                    [ignoreLabel setText:@"无视"];
+                    UILabel *ignoreLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, diskFrame.size.width, diskFrame.size.height)];
+                    [ignoreLabel setText:@"Ignore this song"];
+                    ignoreLabel.font = [UIFont fontWithName:@"Oriya Sangam MN" size:18];
                     [ignoreLabel setTextColor:[UIColor whiteColor]];
                     ignoreLabel.textAlignment = NSTextAlignmentCenter;
-                    [self. downPartView addSubview:ignoreLabel];
-                    [self.diskButtons[i] setHidden:YES];
+
+                    UIImageView *CDimage =(UIImageView *)[self.guessNameBtnArray[self.choicesBoardView.songNumber] viewWithTag:10];
+                    if (CDimage) {
+                        [CDimage removeFromSuperview];
+                    }
+                    
+                    UIButton *buttonGuess =self.guessNameBtnArray[i];
+                    [buttonGuess setTitle:@" " forState:UIControlStateNormal];
+                    [buttonGuess addSubview:ignoreLabel];
+
+                    
+                    //            UIImageView *rightBackImg = [[UIImageView alloc] initWithFrame:songResult.frame];
+                    //            [rightBackImg setImage:[UIImage imageNamed:@"rightBack"]];
+                    //           if (songName.length >3) {
+                    //                CGRect aframe = songResult.frame;
+                    //                aframe.origin.y -= 6;
+                    //                [rightBackImg setFrame:aframe];
+                    //            }
+                    //            [self.downPartView addSubview:rightBackImg];
+                    
+                    UIImageView *checkMark = [[UIImageView alloc] initWithFrame:cdFrame ];
+                    [checkMark setImage:[UIImage imageNamed:@"closeBuyBtn"]];
+                    
+                    [ignoreLabel addSubview:checkMark];
+                    
                     
                     break;
                 }
@@ -1122,7 +1120,7 @@ int answerPickedCount;
 
     
     [UIView animateWithDuration:0.5 delay:0.1 usingSpringWithDamping:0.7 initialSpringVelocity:1.0 options:0 animations:^{
-        [self.choicesBoardView setFrame:CGRectMake(self.downPartView.frame.origin.x,[UIScreen mainScreen].bounds.size.height , self.downPartView.frame.size.width,self.downPartView.frame.size.height - 50)];
+        [self.choicesBoardView setFrame:CGRectMake(self.downPartView.frame.origin.x,[UIScreen mainScreen].bounds.size.height , self.downPartView.frame.size.width,self.downPartView.frame.size.height - 5)];
     } completion:^(BOOL finished){
         [self.navigationItem setHidesBackButton:NO];
 
@@ -1136,6 +1134,7 @@ int answerPickedCount;
             [subview removeFromSuperview];
         }
     }
+    answerBtnTag = 0;
     if (self.musicsPlayArray.count == 0) {
         
         [self performSelector:@selector(goOnNext) withObject:nil afterDelay:0.35];
@@ -1153,17 +1152,15 @@ int answerPickedCount;
 #pragma mark disk animation
 
 - (void)spinWithOptions: (UIViewAnimationOptions) options :(UIView *)destRotateView {
-    [UIView animateWithDuration: 0.015f
+    [UIView animateWithDuration: 0.01f
                           delay: 0.0f
                         options: options
                      animations: ^{
-                         destRotateView.transform = CGAffineTransformRotate(destRotateView.transform, M_PI/128 );
+                         destRotateView.transform = CGAffineTransformRotate(destRotateView.transform, M_PI/80 );
                      }
                      completion: ^(BOOL finished) {
                          if (finished) {
-                             if (destRotateView == self.diskButtons[0]) {
-                                 totalRotateTimes ++;
-                             }
+                             
 
                              if (animating) {
                                  // if flag still set, keep spinning with constant speed
@@ -1179,13 +1176,10 @@ int answerPickedCount;
 - (void) startSpin {
     if (!animating) {
         animating = YES;
-        for (UIButton * button in self.diskButtons) {
-            if (button.tag == 0) {
-                [button setEnabled:NO];
-                [button setTitle:@" " forState:UIControlStateNormal];
-                [self spinWithOptions: UIViewAnimationOptionTransitionNone:button];
-                NSLog(@"frame:%f",button.frame.origin.x);
-            }
+        for (UIButton * button in self.guessNameBtnArray) {
+            
+            button.imageView.backgroundColor = [UIColor blueColor];
+                [self spinWithOptions: UIViewAnimationOptionTransitionNone:[button viewWithTag:10]];
 
         }
     }
@@ -1200,21 +1194,49 @@ int answerPickedCount;
 {
     NSInteger musicCount = self.musicsArray.count;
     
-    for (int i = 0;i<self.diskButtons.count;i++) {
-        CGRect destFrame = [self.diskButtons[i] frame];
-        
-        CGRect startFrame = destFrame;
-        startFrame.origin.y = 0 - self.playConsoleView.frame.size.height - destFrame.size.height * 2;
-        [self.diskButtons[i] setFrame:startFrame];
-        
-       
-        
-        [self.diskButtons[i] setTitle:@" " forState:UIControlStateNormal];
+    for (int i = 0;i<musicCount;i++) {
         
         
+        NSString *songName = self.musicsArray[i];
+        NSArray *songNameWord = [songName componentsSeparatedByString:@" "];
         
-        UILabel *ignoreLabel = [[UILabel alloc] initWithFrame:[self.diskButtons[i] frame]];
-        [ignoreLabel setText:@"无视"];
+        NSLog(@"songName:%@,songNameWord:%lu",songName,(unsigned long)songNameWord.count);
+        
+        UIButton *guessBtn = (UIButton *)self.guessNameBtnArray[i];
+        if (songNameWord.count == 1) {
+            
+            [guessBtn setTitle:[NSString stringWithFormat:@"Song Name: 1 word,%lu letters",(unsigned long)(songName.length-songNameWord.count + 1)] forState:UIControlStateNormal];
+        }else
+        {
+            [guessBtn setTitle:[NSString stringWithFormat:@"Song Name: %lu words,%lu letters",(unsigned long)songNameWord.count,(unsigned long)(songName.length-songNameWord.count + 1)] forState:UIControlStateNormal];
+        }
+        
+        
+        
+
+        
+        [UIView animateWithDuration:0.65+i*0.17 delay:(3+4*i)/20
+             usingSpringWithDamping:0.55 initialSpringVelocity:0.4 options:0 animations:^{
+
+                 CGRect aframe = guessBtn.frame;
+                 aframe.origin.x = (SCREEN_WIDTH-aframe.size.width)/2;
+                 [guessBtn setFrame:aframe];
+                 [guessBtn setHidden:NO];
+            
+            
+             } completion:^(BOOL finished){
+             
+                 if (finished) {
+                     NSLog(@"finished:%@",guessBtn);
+                     
+                 }else
+                     NSLog(@"nonono:%@",guessBtn);
+                 
+             }];
+     
+        
+        UILabel *ignoreLabel = [[UILabel alloc] initWithFrame:[self.guessNameBtnArray[i] frame]];
+        [ignoreLabel setText:@"Ignore"];
         ignoreLabel.textAlignment = NSTextAlignmentCenter;
         [ignoreLabel setTextColor:[UIColor whiteColor]];
         [self.ignoreArray insertObject:ignoreLabel atIndex:i];
@@ -1228,56 +1250,44 @@ int answerPickedCount;
         }
         
         
-        [self.diskButtonFrameArray insertObject: [NSValue valueWithCGRect:destFrame] atIndex:i];
-        
-        if (i < musicCount) {
-            [self.diskButtons[i] setHidden:NO];
-
-        }else
-        {
-            [self.diskButtons[i] setHidden:YES];
-
-        }
         
     }
     
     
 }
--(void)diskPopUp
-{
-    for (int i = 0;i<self.diskButtons.count;i++) {
-        
-        [self.diskButtons[i] setEnabled:NO];
+//-(void)diskPopUp
+//{
+//    for (int i = 0;i<self.diskButtons.count;i++) {
+//        
+//        [self.diskButtons[i] setEnabled:NO];
+//        
+//        [UIView animateWithDuration:0.65+i*0.12 delay:0.2 usingSpringWithDamping:0.55 initialSpringVelocity:0.4 options:0 animations:^{
+//            [self.diskButtons[i] setFrame:[[self.diskButtonFrameArray objectAtIndex:i] CGRectValue]];
+//
+//            
+//        } completion:nil];
+//        
+//
+//        if (self.ignoreArray.count > 0 && self.ignoreArray[i]!=nil) {
+//
+//        [UIView animateWithDuration:0.65+i*0.12 delay:0.35 usingSpringWithDamping:0.5 initialSpringVelocity:0.4 options:0 animations:^{
+//            [self.ignoreArray[i] setFrame:[[self.diskButtonFrameArray objectAtIndex:i] CGRectValue]];
+//            
+//            
+//        } completion:nil];
+//    }
+//
+//    }
+//    
+//}
 
-        
-        [UIView animateWithDuration:0.65+i*0.12 delay:0.2 usingSpringWithDamping:0.55 initialSpringVelocity:0.4 options:0 animations:^{
-            [self.diskButtons[i] setFrame:[[self.diskButtonFrameArray objectAtIndex:i] CGRectValue]];
-
-            
-        } completion:nil];
-        
-
-        if (self.ignoreArray.count > 0 && self.ignoreArray[i]!=nil) {
-
-        [UIView animateWithDuration:0.65+i*0.12 delay:0.35 usingSpringWithDamping:0.5 initialSpringVelocity:0.4 options:0 animations:^{
-            [self.ignoreArray[i] setFrame:[[self.diskButtonFrameArray objectAtIndex:i] CGRectValue]];
-            
-            
-        } completion:nil];
-    }
-
-    }
-    
-    
-}
-
-
--(void)tapButton
-{
-    CGRect aframe = self.downPartView.frame;
-    aframe.origin.y -= 100;
-    [self.downPartView setFrame:aframe];
-}
+//
+//-(void)tapButton
+//{
+//    CGRect aframe = self.downPartView.frame;
+//    aframe.origin.y -= 100;
+//    [self.downPartView setFrame:aframe];
+//}
 
 
 -(void)tapSound:(NSString *)name withType:(NSString *)type
@@ -1336,32 +1346,61 @@ int answerPickedCount;
     [self.playBtn setImage:[UIImage imageNamed:@"开始"] forState:UIControlStateNormal];
 
     
-    [self enableButtons];
+//    [self enableButtons];
 }
+//
+//-(void)enableButtons
+//{
+//    for (int i=0;i<self.diskButtons.count;i++) {
+//        
+//        UIButton *button = self.diskButtons[i];
+//        
+//        [UIView animateWithDuration: 0.03f
+//                              delay: 0.0f
+//                            options: 0
+//                         animations: ^{
+//                             button.transform = CGAffineTransformRotate(button.transform, -((totalRotateTimes)%256 ) *( M_PI/128));
+//                         }
+//                         completion:nil];
+//        
+//        if (![button isHidden]) {
+//            [button setEnabled:YES];
+//            [button setTitle:[NSString stringWithFormat:@"%lu字歌",(unsigned long)[self.musicsArray[i] length]] forState:UIControlStateNormal];
+//
+//        }
+//    }
+//    totalRotateTimes = 0;
+//}
 
--(void)enableButtons
-{
-    for (int i=0;i<self.diskButtons.count;i++) {
-        
-        UIButton *button = self.diskButtons[i];
-        
-        [UIView animateWithDuration: 0.03f
-                              delay: 0.0f
-                            options: 0
-                         animations: ^{
-                             button.transform = CGAffineTransformRotate(button.transform, -((totalRotateTimes)%256 ) *( M_PI/128));
-                         }
-                         completion:nil];
-        
-        if (![button isHidden]) {
-            [button setEnabled:YES];
-            [button setTitle:[NSString stringWithFormat:@"%lu字歌",(unsigned long)[self.musicsArray[i] length]] forState:UIControlStateNormal];
-
-        }
-    }
-    totalRotateTimes = 0;
-}
-
+//-(void)enableButtons
+//{
+//    for (int i=0;i<self.diskButtons.count;i++) {
+//        
+//        UIButton *button = self.diskButtons[i];
+//        
+//        [button setHidden:YES];
+//        
+//        NSString *songName = self.musicsArray[i];
+//        NSArray *songNameWord = [songName componentsSeparatedByString:@" "];
+//        
+//        NSLog(@"songName:%@,songNameWord:%lu",songName,(unsigned long)songNameWord.count);
+//        
+//        UIButton *guessBtn = (UIButton *)self.guessNameBtnArray[i];
+//        [guessBtn setTitle:[NSString stringWithFormat:@"Composed of %lu words,%lu letters",(unsigned long)songNameWord.count,songName.length-songNameWord.count + 1] forState:UIControlStateNormal];
+//        CGRect destFrame = guessBtn.frame;
+//        CGRect originFrame = guessBtn.frame;
+//
+//        destFrame.origin.x = -destFrame.size.width - 50;
+//        [guessBtn setFrame:destFrame];
+//        
+//        [UIView beginAnimations:nil context:nil];
+//        [guessBtn setFrame:originFrame];
+//        [guessBtn setHidden:NO];
+//        [UIView commitAnimations];
+//        
+//    }
+//    
+//}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -1666,5 +1705,7 @@ int answerPickedCount;
 //    
 //    [self modifyPlist:@"gameData" withValue:[NSString stringWithFormat:@"%d",[currentDifficulty intValue]+1] forKey:@"difficulty"];
     [self nextLevel];
+}
+- (IBAction)guessNameTap:(id)sender {
 }
 @end
