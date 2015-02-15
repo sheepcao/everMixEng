@@ -153,6 +153,7 @@
 		A49408821A9087EB00A22EDC /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A49408801A9087EB00A22EDC /* libMobClickLibrary.a */; };
 		A49408B51A90899600A22EDC /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A49408B41A90899600A22EDC /* libicucore.dylib */; };
 		A49408B71A9089A300A22EDC /* libz.1.2.5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A49408B61A9089A300A22EDC /* libz.1.2.5.dylib */; };
+		A49408BB1A909C9700A22EDC /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A49408BA1A909C9700A22EDC /* FacebookSDK.framework */; };
 		A4A0A3C61A5128C0007A0876 /* boardView.m in Sources */ = {isa = PBXBuildFile; fileRef = A4A0A3C51A5128C0007A0876 /* boardView.m */; };
 		A4A0C24D1A8108430032DF0B /* coin.png in Resources */ = {isa = PBXBuildFile; fileRef = A4A0C2451A8108430032DF0B /* coin.png */; };
 		A4A0C24F1A8108430032DF0B /* reviewBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = A4A0C2471A8108430032DF0B /* reviewBtn.png */; };
@@ -410,6 +411,7 @@
 		A49408B41A90899600A22EDC /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
 		A49408B61A9089A300A22EDC /* libz.1.2.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.5.dylib; path = usr/lib/libz.1.2.5.dylib; sourceTree = SDKROOT; };
 		A49408B81A908FB500A22EDC /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		A49408BA1A909C9700A22EDC /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		A4A0A3C41A5128C0007A0876 /* boardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = boardView.h; sourceTree = "<group>"; };
 		A4A0A3C51A5128C0007A0876 /* boardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = boardView.m; sourceTree = "<group>"; };
 		A4A0C2451A8108430032DF0B /* coin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coin.png; sourceTree = "<group>"; };
@@ -571,6 +573,7 @@
 				A48B304E1A80D54800A4DF8D /* AudioToolbox.framework in Frameworks */,
 				A48B304C1A80D54100A4DF8D /* AVFoundation.framework in Frameworks */,
 				A48B304A1A80D53A00A4DF8D /* EventKit.framework in Frameworks */,
+				A49408BB1A909C9700A22EDC /* FacebookSDK.framework in Frameworks */,
 				A48B30481A80D53400A4DF8D /* Social.framework in Frameworks */,
 				A4AF18BB1A8AF49E00C5F2D3 /* Crashlytics.framework in Frameworks */,
 				A45C2E6A1A80CC2300CC73F6 /* CoreGraphics.framework in Frameworks */,
@@ -955,6 +958,7 @@
 				A4ABE9FC1A888A3E0012E956 /* CoreMotion.framework */,
 				A422F3611A851579008209D4 /* libstdc++.dylib */,
 				A422F35F1A851521008209D4 /* libiconv.dylib */,
+				A49408BA1A909C9700A22EDC /* FacebookSDK.framework */,
 				A422F35D1A851512008209D4 /* Security.framework */,
 				A4B268A61A8351D30037DA16 /* frameworks */,
 				A4D77CFD1A899D5F007FB122 /* Flurry */,

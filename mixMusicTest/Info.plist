@@ -75,6 +75,10 @@
 	</array>
 	<key>CFBundleVersion</key>
 	<string>1.0.3</string>
+	<key>FacebookAppID</key>
+	<string>1582286702012468</string>
+	<key>FacebookDisplayName</key>
+	<string>Mixing</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UIMainStoryboardFile</key>

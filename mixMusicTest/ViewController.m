@@ -12,6 +12,7 @@
 #import "globalVar.h"
 #import "fallAnimation.h"
 #import <MessageUI/MessageUI.h>
+#import <FacebookSDK/FacebookSDK.h>
 
 //#import <FacebookSDK/FacebookSDK.h>
 
@@ -663,8 +664,55 @@ int difficultyNow;
     [CommonUtility tapSound:@"click" withType:@"mp3"];
     [MobClick event:@"shareFromHome"];
     
+    FBLinkShareParams *params = [[FBLinkShareParams alloc] init];
+    params.link = [NSURL URLWithString:@"https://itunes.apple.com/us/app/mixing-guess-guess-magic-song/id967166808?ls=1&mt=8"];
 
+    params.picture =[NSURL URLWithString:@"http://cdn1.tnwcdn.com/wp-content/blogs.dir/1/files/2012/09/144149793-645x250.jpg"];
+    // If the Facebook app is installed and we can present the share dialog
+    if ([FBDialogs canPresentShareDialogWithParams:params]) {
+        // Present the share dialog
+        [FBDialogs presentShareDialogWithLink:params.link
+    name:nil
+    caption:nil
+    description:nil
+    picture:params.picture
+    clientState:nil
+                                      handler:^(FBAppCall *call, NSDictionary *results, NSError *error) {
+                                          if(error) {
+                                              // An error occurred, we need to handle the error
+                                              // See: https://developers.facebook.com/docs/ios/errors
+                                              NSLog(@"Error publishing story: %@", error.description);
+                                          } else {
+                                              // Success
+                                              NSLog(@"result %@", results);
+                                              if ((int)[[results objectForKey:@"didComplete"] intValue] == 1 && [[results objectForKey:@"completionGesture"] isEqualToString: @"post"]) {
+                                                  NSLog(@"success!!");
+                                              }
+                                          }
+                                      }];
+
+
+//        [FBDialogs presentShareDialogWithLink:params.link
+//                                      handler:^(FBAppCall *call, NSDictionary *results, NSError *error) {
+//                                          if(error) {
+//                                              // An error occurred, we need to handle the error
+//                                              // See: https://developers.facebook.com/docs/ios/errors
+//                                              NSLog(@"Error publishing story: %@", error.description);
+//                                          } else {
+//                                              // Success
+//                                              NSLog(@"result %@", results);
+//                                              if ((int)[[results objectForKey:@"didComplete"] intValue] == 1 && [[results objectForKey:@"completionGesture"] isEqualToString: @"post"]) {
+//                                                  NSLog(@"success!!");
+//                                              }
+//                                          }
+//                                      }];
+    } else {
+        // Present the feed dialog
+        NSLog(@"分享失败");
+        
+    }
    
+
 }
 
 
