@@ -9,9 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "MobClick.h"
 #import "CommonUtility.h"
-#import "UMSocialSinaHandler.h"
-#import "UMSocialSnsService.h"
-#import "UMSocialSnsPlatformManager.h"
+//#import "UMSocialSinaHandler.h"
+//#import "UMSocialSnsService.h"
+//#import "UMSocialSnsPlatformManager.h"
 #import "globalVar.h"
 
 

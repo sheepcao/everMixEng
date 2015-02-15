@@ -9,7 +9,7 @@
     static myIAPHelper * sharedInstance;
     dispatch_once(&once, ^{
         NSSet * productIdentifiers = [NSSet setWithObjects:
-                                      @"sheepcao.mixedMusic.money",@"sheepcao.mixedMusic.money3000",
+                                      @"com.MagicSongGuess.coin1000",@"com.MagicSongGuess.coin2500",@"com.MagicSongGuess.coin4000",
                                       nil];
         sharedInstance = [[self alloc] initWithProductIdentifiers:productIdentifiers];
     });

@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "A4AC86001A36CFE700CD19CA"
-               BuildableName = "MagicSongGuess.app"
+               BuildableName = "Mixing Guess.app"
                BlueprintName = "Mixing Guess"
                ReferencedContainer = "container:Mixing Guess.xcodeproj">
             </BuildableReference>
@@ -57,7 +57,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A4AC86001A36CFE700CD19CA"
-            BuildableName = "MagicSongGuess.app"
+            BuildableName = "Mixing Guess.app"
             BlueprintName = "Mixing Guess"
             ReferencedContainer = "container:Mixing Guess.xcodeproj">
          </BuildableReference>
@@ -76,7 +76,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A4AC86001A36CFE700CD19CA"
-            BuildableName = "MagicSongGuess.app"
+            BuildableName = "Mixing Guess.app"
             BlueprintName = "Mixing Guess"
             ReferencedContainer = "container:Mixing Guess.xcodeproj">
          </BuildableReference>
@@ -94,7 +94,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A4AC86001A36CFE700CD19CA"
-            BuildableName = "MagicSongGuess.app"
+            BuildableName = "Mixing Guess.app"
             BlueprintName = "Mixing Guess"
             ReferencedContainer = "container:Mixing Guess.xcodeproj">
          </BuildableReference>

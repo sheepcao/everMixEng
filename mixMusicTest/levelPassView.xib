@@ -30,13 +30,13 @@
                                 <constraint firstAttribute="height" constant="33" id="gEK-lH-bWU"/>
                             </constraints>
                         </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="奖励：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="54" translatesAutoresizingMaskIntoConstraints="NO" id="bJr-ff-Oid">
-                            <rect key="frame" x="63" y="18" width="53" height="39"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reward:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="54" translatesAutoresizingMaskIntoConstraints="NO" id="bJr-ff-Oid">
+                            <rect key="frame" x="56" y="18" width="63" height="39"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="39" id="7cx-2w-Jf5"/>
-                                <constraint firstAttribute="width" constant="53" id="k90-qp-18F"/>
+                                <constraint firstAttribute="width" constant="63" id="k90-qp-18F"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                             <color key="textColor" red="0.453125" green="0.5237226277" blue="0.31016195260000001" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
@@ -61,13 +61,13 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jd1-7z-4Dn" userLabel="下一关">
-                            <rect key="frame" x="69.5" y="57" width="151" height="35"/>
+                            <rect key="frame" x="69" y="57" width="151" height="35"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="151" id="UqP-At-rln"/>
                                 <constraint firstAttribute="height" constant="35" id="YCY-cy-JDf"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                            <state key="normal" title="下一关" backgroundImage="nextBtn.png">
+                            <state key="normal" title="Next" backgroundImage="nextBtn.png">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
@@ -88,7 +88,7 @@
                         <constraint firstItem="aMc-pE-BI9" firstAttribute="centerY" secondItem="IEM-W5-uVA" secondAttribute="centerY" id="c5T-Bf-5aI"/>
                         <constraint firstItem="IEM-W5-uVA" firstAttribute="centerY" secondItem="bJr-ff-Oid" secondAttribute="centerY" constant="-1" id="cNZ-4I-oM3"/>
                         <constraint firstItem="qOM-aB-qh1" firstAttribute="top" secondItem="abx-z9-wIR" secondAttribute="top" id="jee-QC-Edw"/>
-                        <constraint firstItem="IEM-W5-uVA" firstAttribute="leading" secondItem="bJr-ff-Oid" secondAttribute="trailing" constant="13" id="k6x-av-2a4"/>
+                        <constraint firstItem="IEM-W5-uVA" firstAttribute="leading" secondItem="bJr-ff-Oid" secondAttribute="trailing" constant="10" id="k6x-av-2a4"/>
                         <constraint firstItem="qOM-aB-qh1" firstAttribute="centerX" secondItem="IEM-W5-uVA" secondAttribute="centerX" id="leq-Va-sdh"/>
                         <constraint firstAttribute="bottom" secondItem="jd1-7z-4Dn" secondAttribute="bottom" constant="12" id="nvq-UE-uAz"/>
                         <constraint firstItem="qOM-aB-qh1" firstAttribute="leading" secondItem="abx-z9-wIR" secondAttribute="leading" id="rvG-fC-vcH"/>
@@ -96,13 +96,13 @@
                         <constraint firstItem="qOM-aB-qh1" firstAttribute="centerY" secondItem="IEM-W5-uVA" secondAttribute="centerY" constant="15" id="xc3-rn-3Ut"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q6h-8Q-Tch" userLabel="nextDifficulty">
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q6h-8Q-Tch" userLabel="nextDifficulty">
                     <rect key="frame" x="15" y="144" width="290" height="180"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nextBack.png" translatesAutoresizingMaskIntoConstraints="NO" id="eKc-u9-scB">
+                        <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nextBack.png" translatesAutoresizingMaskIntoConstraints="NO" id="eKc-u9-scB">
                             <rect key="frame" x="0.0" y="0.0" width="290" height="180"/>
                         </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="该难度已被你玩爆 !       来点更刺激的！" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="184" translatesAutoresizingMaskIntoConstraints="NO" id="bvr-la-mLs">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="It is time to challenge a higher difficulty!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="184" translatesAutoresizingMaskIntoConstraints="NO" id="bvr-la-mLs">
                             <rect key="frame" x="54" y="64" width="184" height="63"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="63" id="Dfv-DR-Cy9"/>
@@ -119,13 +119,13 @@
                                 <constraint firstAttribute="height" constant="30" id="kYL-Xa-f58"/>
                             </constraints>
                         </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="奖励：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="54" translatesAutoresizingMaskIntoConstraints="NO" id="z5W-zt-6be">
-                            <rect key="frame" x="64" y="28" width="53" height="39"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reward:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="54" translatesAutoresizingMaskIntoConstraints="NO" id="z5W-zt-6be">
+                            <rect key="frame" x="56" y="28" width="75" height="39"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="39" id="ajW-yQ-yn2"/>
-                                <constraint firstAttribute="width" constant="53" id="nnf-rw-gWN"/>
+                                <constraint firstAttribute="width" constant="75" id="nnf-rw-gWN"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                             <color key="textColor" red="0.453125" green="0.52372262773722633" blue="0.31016195255474449" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
@@ -156,7 +156,7 @@
                                 <constraint firstAttribute="width" constant="151" id="hh3-rD-PCz"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                            <state key="normal" title="勇往直前" backgroundImage="nextBtn.png">
+                            <state key="normal" title="Show me" backgroundImage="nextBtn.png">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
@@ -183,7 +183,7 @@
                         <constraint firstAttribute="height" constant="180" id="aqz-js-GBs"/>
                         <constraint firstAttribute="width" constant="290" id="qU5-Hw-dym"/>
                         <constraint firstItem="bvr-la-mLs" firstAttribute="centerX" secondItem="l7D-Qj-Q8L" secondAttribute="centerX" constant="0.5" id="tPP-dt-ADQ"/>
-                        <constraint firstItem="l7D-Qj-Q8L" firstAttribute="leading" secondItem="z5W-zt-6be" secondAttribute="trailing" constant="13" id="xHS-q8-fYi"/>
+                        <constraint firstItem="l7D-Qj-Q8L" firstAttribute="leading" secondItem="z5W-zt-6be" secondAttribute="trailing" constant="-1" id="xHS-q8-fYi"/>
                         <constraint firstAttribute="bottom" secondItem="eKc-u9-scB" secondAttribute="bottom" id="y7I-HV-ARA"/>
                     </constraints>
                 </view>

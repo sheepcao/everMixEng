@@ -59,7 +59,7 @@
 //            [self.itemsTable reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:idx inSection:0]] withRowAnimation:UITableViewRowAnimationFade];
 //            *stop = YES;
             
-            if ([product.productIdentifier isEqualToString:@"sheepcao.mixedMusic.money"]) {
+            if ([product.productIdentifier isEqualToString:@"com.MagicSongGuess.coin1000"]) {
                 [MobClick event:@"ClickTier1"];
 
                 
@@ -69,10 +69,19 @@
                 
                 [_parentCoinsButton setTitle:[NSString stringWithFormat:@"%d",[CommonUtility fetchCoinAmount]] forState:UIControlStateNormal];
 
-            }else if([product.productIdentifier isEqualToString:@"sheepcao.mixedMusic.money3000"])
+            }else if([product.productIdentifier isEqualToString:@"com.MagicSongGuess.coin2500"])
             {
                 [MobClick event:@"ClickTier2"];
 
+                [CommonUtility coinsChange:2500];//2元买2500coins
+                
+                [currentCoinsLabel setText:[NSString stringWithFormat:@"%d",[CommonUtility fetchCoinAmount]]];
+                
+                [_parentCoinsButton setTitle:[NSString stringWithFormat:@"%d",[CommonUtility fetchCoinAmount]] forState:UIControlStateNormal];
+            }else if([product.productIdentifier isEqualToString:@"com.MagicSongGuess.coin4000"])
+            {
+                [MobClick event:@"ClickTier3"];
+                
                 [CommonUtility coinsChange:4000];//3元买4000coins
                 
                 [currentCoinsLabel setText:[NSString stringWithFormat:@"%d",[CommonUtility fetchCoinAmount]]];
@@ -164,7 +173,7 @@
         
         if(![[[NSUserDefaults standardUserDefaults] objectForKey:@"reviewed"] isEqualToString:@"yes"])
         {
-            cell.textLabel.text = @"好评一下，奖励300金币";
+            cell.textLabel.text = @"Review me-300 coins";
             
         }
         
@@ -247,67 +256,67 @@
 
 -(void)shareToWechat
 {
-    [UMSocialSnsService presentSnsIconSheetView:self.parentControler
-                                         appKey:@"54c46ea7fd98c5071d000668"
-                                      shareText:@"我在玩魔音大师，还挺挑战的，朋友们也来试试!"
-                                     shareImage:[UIImage imageNamed:@"iconNew.png"]
-                                shareToSnsNames:@[UMShareToWechatTimeline]
-                                       delegate:(id)self];
-    
-    // music url
-    [[UMSocialData defaultData].urlResource setResourceType:UMSocialUrlResourceTypeMusic url:@"http://itunes.apple.com/cn/app/mo-yin-da-shi-feng-kuang-cai-ge/id954971485?ls=1&mt=8"];
-    
-    [UMSocialData defaultData].extConfig.wechatTimelineData.url = @"http://itunes.apple.com/cn/app/mo-yin-da-shi-feng-kuang-cai-ge/id954971485?ls=1&mt=8";
-    [UMSocialData defaultData].extConfig.wechatSessionData.url = @"http://itunes.apple.com/cn/app/mo-yin-da-shi-feng-kuang-cai-ge/id954971485?ls=1&mt=8";
+//    [UMSocialSnsService presentSnsIconSheetView:self.parentControler
+//                                         appKey:@"54c46ea7fd98c5071d000668"
+//                                      shareText:@"我在玩魔音大师，还挺挑战的，朋友们也来试试!"
+//                                     shareImage:[UIImage imageNamed:@"iconNew.png"]
+//                                shareToSnsNames:@[UMShareToWechatTimeline]
+//                                       delegate:(id)self];
+//    
+//    // music url
+//    [[UMSocialData defaultData].urlResource setResourceType:UMSocialUrlResourceTypeMusic url:@"http://itunes.apple.com/cn/app/mo-yin-da-shi-feng-kuang-cai-ge/id954971485?ls=1&mt=8"];
+//    
+//    [UMSocialData defaultData].extConfig.wechatTimelineData.url = @"http://itunes.apple.com/cn/app/mo-yin-da-shi-feng-kuang-cai-ge/id954971485?ls=1&mt=8";
+//    [UMSocialData defaultData].extConfig.wechatSessionData.url = @"http://itunes.apple.com/cn/app/mo-yin-da-shi-feng-kuang-cai-ge/id954971485?ls=1&mt=8";
 }
 
 -(void)shareToSina
 {
-    [UMSocialSnsService presentSnsIconSheetView:self.parentControler
-                                         appKey:@"54c46ea7fd98c5071d000668"
-                                      shareText:@"我在玩魔音大师，还挺挑战的，朋友们也来试试!"
-                                     shareImage:[UIImage imageNamed:@"iconNew.png"]
-                                shareToSnsNames:@[UMShareToSina]
-                                       delegate:(id)self];
-    
-    // music url
-    [[UMSocialData defaultData].urlResource setResourceType:UMSocialUrlResourceTypeMusic url:@"http://itunes.apple.com/cn/app/mo-yin-da-shi-feng-kuang-cai-ge/id954971485?ls=1&mt=8"];
-    
-    [UMSocialData defaultData].extConfig.wechatTimelineData.url = @"http://itunes.apple.com/cn/app/mo-yin-da-shi-feng-kuang-cai-ge/id954971485?ls=1&mt=8";
-    [UMSocialData defaultData].extConfig.wechatSessionData.url = @"http://itunes.apple.com/cn/app/mo-yin-da-shi-feng-kuang-cai-ge/id954971485?ls=1&mt=8";
+//    [UMSocialSnsService presentSnsIconSheetView:self.parentControler
+//                                         appKey:@"54c46ea7fd98c5071d000668"
+//                                      shareText:@"我在玩魔音大师，还挺挑战的，朋友们也来试试!"
+//                                     shareImage:[UIImage imageNamed:@"iconNew.png"]
+//                                shareToSnsNames:@[UMShareToSina]
+//                                       delegate:(id)self];
+//    
+//    // music url
+//    [[UMSocialData defaultData].urlResource setResourceType:UMSocialUrlResourceTypeMusic url:@"http://itunes.apple.com/cn/app/mo-yin-da-shi-feng-kuang-cai-ge/id954971485?ls=1&mt=8"];
+//    
+//    [UMSocialData defaultData].extConfig.wechatTimelineData.url = @"http://itunes.apple.com/cn/app/mo-yin-da-shi-feng-kuang-cai-ge/id954971485?ls=1&mt=8";
+//    [UMSocialData defaultData].extConfig.wechatSessionData.url = @"http://itunes.apple.com/cn/app/mo-yin-da-shi-feng-kuang-cai-ge/id954971485?ls=1&mt=8";
 }
 
--(void)didFinishGetUMSocialDataInViewController:(UMSocialResponseEntity *)response
-{
-    //根据`responseCode`得到发送结果,如果分享成功
-    if(response.responseCode == UMSResponseCodeSuccess)
-    {
-        //得到分享到的微博平台名
-        
-
-        NSLog(@"share to sns name is %@",[[response.data allKeys] objectAtIndex:0]);
-        
-        [CommonUtility coinsChange:300];
-        [currentCoinsLabel setText:[NSString stringWithFormat:@"%d",[CommonUtility fetchCoinAmount]]];
-        [_parentCoinsButton setTitle:[NSString stringWithFormat:@"%d",[CommonUtility fetchCoinAmount]] forState:UIControlStateNormal];
-        if([[[response.data allKeys] objectAtIndex:0] isEqualToString:@"sina"])
-        {
-            [MobClick event:@"CoinFromSina"];
-
-            [[NSUserDefaults standardUserDefaults] setObject:@"yes" forKey:@"sinaShare"];
-
-        }else if ([[[response.data allKeys] objectAtIndex:0] isEqualToString:@"wxtimeline"])
-        {
-            [MobClick event:@"CoinFromWechat"];
-
-            [[NSUserDefaults standardUserDefaults] setObject:@"yes" forKey:@"wechatShare"];
-
-        }
-        [self.itemsTable reloadData];
-
-        
-    }
-}
+//-(void)didFinishGetUMSocialDataInViewController:(UMSocialResponseEntity *)response
+//{
+////    //根据`responseCode`得到发送结果,如果分享成功
+////    if(response.responseCode == UMSResponseCodeSuccess)
+////    {
+////        //得到分享到的微博平台名
+////        
+////
+////        NSLog(@"share to sns name is %@",[[response.data allKeys] objectAtIndex:0]);
+////        
+////        [CommonUtility coinsChange:300];
+////        [currentCoinsLabel setText:[NSString stringWithFormat:@"%d",[CommonUtility fetchCoinAmount]]];
+////        [_parentCoinsButton setTitle:[NSString stringWithFormat:@"%d",[CommonUtility fetchCoinAmount]] forState:UIControlStateNormal];
+////        if([[[response.data allKeys] objectAtIndex:0] isEqualToString:@"sina"])
+////        {
+////            [MobClick event:@"CoinFromSina"];
+////
+////            [[NSUserDefaults standardUserDefaults] setObject:@"yes" forKey:@"sinaShare"];
+////
+////        }else if ([[[response.data allKeys] objectAtIndex:0] isEqualToString:@"wxtimeline"])
+////        {
+////            [MobClick event:@"CoinFromWechat"];
+////
+////            [[NSUserDefaults standardUserDefaults] setObject:@"yes" forKey:@"wechatShare"];
+////
+////        }
+////        [self.itemsTable reloadData];
+////
+////        
+////    }
+//}
 
 
 @end

@@ -99,6 +99,9 @@ int answerBtnTag;
     UIBarButtonItem *barButton = [[UIBarButtonItem alloc] initWithCustomView:buttonView];
     self.navigationItem.rightBarButtonItem = barButton;
     
+    self.navigationController.interactivePopGestureRecognizer.enabled = NO;
+
+    
     self.ignoreArray = [[NSMutableArray alloc] init];
     
     self.diskButtonFrameArray = [[NSMutableArray alloc] init];
@@ -675,7 +678,7 @@ int answerBtnTag;
     
     if (levelNow == 100) {
         
-        UIAlertView *finishLevelAlert = [[UIAlertView alloc] initWithTitle:@"赞" message:@"玩爆关啦！我们会尽快更新曲库！重新游戏将对当前曲库重新组合。" delegate:self cancelButtonTitle:@"耐心期待" otherButtonTitles:nil, nil];
+        UIAlertView *finishLevelAlert = [[UIAlertView alloc] initWithTitle:@"Unbelievable" message:@"You are awesome！We will update song library very soon！You may restart the game to recombine songs." delegate:self cancelButtonTitle:@"Wait patiently" otherButtonTitles:nil, nil];
         [finishLevelAlert show];
         
     }else if (levelNow % 20 == 0) {
@@ -741,7 +744,7 @@ int answerBtnTag;
 {
     if ([CommonUtility fetchCoinAmount] < price) {
        
-        UIAlertView *coinsShort = [[UIAlertView alloc] initWithTitle:@"没钱啦" message:@"金币不够啦,买点继续玩呀。" delegate:self cancelButtonTitle:@"暂不购买" otherButtonTitles:@"去看看", nil];
+        UIAlertView *coinsShort = [[UIAlertView alloc] initWithTitle:@"Attention" message:@"Not enough coins. Get coins now?" delegate:self cancelButtonTitle:@"Not now" otherButtonTitles:@"Continue", nil];
         coinsShort.tag = 3;
         [coinsShort show];
         
@@ -759,7 +762,7 @@ int answerBtnTag;
     if ([self checkCoins:DELETE_PRICE])
     {
         
-        UIAlertView *deleteWordsAlert = [[UIAlertView alloc] initWithTitle:@"提示" message:[NSString stringWithFormat:@"确认花掉%d个金币去掉5个错误选项?",DELETE_PRICE] delegate:self cancelButtonTitle:@"否" otherButtonTitles:@"是", nil];
+        UIAlertView *deleteWordsAlert = [[UIAlertView alloc] initWithTitle:@"Attention" message:[NSString stringWithFormat:@"Remove 5 wrong choices by spending %d coins?",DELETE_PRICE] delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil];
         [deleteWordsAlert show];
         deleteWordsAlert.tag = 10;
         
@@ -806,7 +809,7 @@ int answerBtnTag;
     
     if ([self checkCoins:SINGLE_SONG_PRICE]){
         
-        UIAlertView *playSingleAlert = [[UIAlertView alloc] initWithTitle:@"提示" message:[NSString stringWithFormat:@"确认花掉%d个金币进行单曲播放?",SINGLE_SONG_PRICE] delegate:self cancelButtonTitle:@"否" otherButtonTitles:@"是", nil];
+        UIAlertView *playSingleAlert = [[UIAlertView alloc] initWithTitle:@"Attention" message:[NSString stringWithFormat:@"Play this single song by spending %d coins?",SINGLE_SONG_PRICE] delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil];
         [playSingleAlert show];
         playSingleAlert.tag = 11;
        
@@ -820,7 +823,7 @@ int answerBtnTag;
     
     if ([self checkCoins:SHOW_ANSWER_PRICE]){
         
-        UIAlertView *playSingleAlert = [[UIAlertView alloc] initWithTitle:@"提示" message:[NSString stringWithFormat:@"确认花掉%d个金币购买此单曲完整答案?",SHOW_ANSWER_PRICE] delegate:self cancelButtonTitle:@"否" otherButtonTitles:@"是", nil];
+        UIAlertView *playSingleAlert = [[UIAlertView alloc] initWithTitle:@"Attention" message:[NSString stringWithFormat:@"Get this song name by spending %d coins?",SHOW_ANSWER_PRICE] delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil];
         [playSingleAlert show];
         playSingleAlert.tag = 12;
         
@@ -861,38 +864,38 @@ int answerBtnTag;
     
     [MobClick event:@"shareFromGame"];
 
-    [UMSocialSnsService presentSnsIconSheetView:self
-                        appKey:@"54c46ea7fd98c5071d000668"
-                                      shareText:@"谁的耳力还有富裕,快来帮帮忙！"
-                                     shareImage:[UIImage imageNamed:@"iconNew.png"]
-                                shareToSnsNames:@[UMShareToSina,UMShareToWechatSession,UMShareToWechatTimeline,UMShareToWechatFavorite]
-                                       delegate:(id)self];
-    
-    NSString *musicsURL = [self jointURL];
-    NSLog(@"string1:%@",musicsURL);
-    NSMutableString * theURL = [[NSMutableString alloc]initWithString:musicsURL];
-    
-    NSString * escaped = [theURL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-    NSLog(@"string2:%@",escaped);
-
-    // music url
-    [[UMSocialData defaultData].urlResource setResourceType:UMSocialUrlResourceTypeMusic url:escaped];
-    
-    [UMSocialData defaultData].extConfig.wechatTimelineData.url = musicsURL;
-    [UMSocialData defaultData].extConfig.wechatSessionData.url = musicsURL;
-    [UMSocialData defaultData].extConfig.qqData.url = musicsURL;
-    [UMSocialData defaultData].extConfig.qzoneData.url = musicsURL;
+//    [UMSocialSnsService presentSnsIconSheetView:self
+//                        appKey:@"54c46ea7fd98c5071d000668"
+//                                      shareText:@"谁的耳力还有富裕,快来帮帮忙！"
+//                                     shareImage:[UIImage imageNamed:@"iconNew.png"]
+//                                shareToSnsNames:@[UMShareToSina,UMShareToWechatSession,UMShareToWechatTimeline,UMShareToWechatFavorite]
+//                                       delegate:(id)self];
+//    
+//    NSString *musicsURL = [self jointURL];
+//    NSLog(@"string1:%@",musicsURL);
+//    NSMutableString * theURL = [[NSMutableString alloc]initWithString:musicsURL];
+//    
+//    NSString * escaped = [theURL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+//    NSLog(@"string2:%@",escaped);
+//
+//    // music url
+//    [[UMSocialData defaultData].urlResource setResourceType:UMSocialUrlResourceTypeMusic url:escaped];
+//    
+//    [UMSocialData defaultData].extConfig.wechatTimelineData.url = musicsURL;
+//    [UMSocialData defaultData].extConfig.wechatSessionData.url = musicsURL;
+//    [UMSocialData defaultData].extConfig.qqData.url = musicsURL;
+//    [UMSocialData defaultData].extConfig.qzoneData.url = musicsURL;
 
 }
--(void)didFinishGetUMSocialDataInViewController:(UMSocialResponseEntity *)response
-{
-    //根据`responseCode`得到发送结果,如果分享成功
-    if(response.responseCode == UMSResponseCodeSuccess)
-    {
-        //得到分享到的微博平台名
-        NSLog(@"share to sns name is %@",[[response.data allKeys] objectAtIndex:0]);
-    }
-}
+//-(void)didFinishGetUMSocialDataInViewController:(UMSocialResponseEntity *)response
+//{
+//    //根据`responseCode`得到发送结果,如果分享成功
+//    if(response.responseCode == UMSResponseCodeSuccess)
+//    {
+//        //得到分享到的微博平台名
+//        NSLog(@"share to sns name is %@",[[response.data allKeys] objectAtIndex:0]);
+//    }
+//}
 - (IBAction)refreshMusics:(UIButton *)sender {//delete one song
     [MobClick event:@"bombOne"];
 
@@ -900,14 +903,14 @@ int answerBtnTag;
     
     if(self.musicsPlayArray.count <= 1)
     {
-        UIAlertView *noDeleteAlert = [[UIAlertView alloc] initWithTitle:@"注意" message:@"就剩一首了，再删就没得玩啦" delegate:nil cancelButtonTitle:@"继续猜" otherButtonTitles:nil, nil];
+        UIAlertView *noDeleteAlert = [[UIAlertView alloc] initWithTitle:@"Attention" message:@"No more delete!One song left ONLY!" delegate:nil cancelButtonTitle:@"Keep trying" otherButtonTitles:nil, nil];
         [noDeleteAlert show];
         return;
     }
     
     if ([self checkCoins:BOMB_SONG_PRICE]){
         
-        UIAlertView *playSingleAlert = [[UIAlertView alloc] initWithTitle:@"提示" message:[NSString stringWithFormat:@"确认花掉%d个金币去除一首混播歌曲?",BOMB_SONG_PRICE] delegate:self cancelButtonTitle:@"否" otherButtonTitles:@"是", nil];
+        UIAlertView *playSingleAlert = [[UIAlertView alloc] initWithTitle:@"Attention" message:[NSString stringWithFormat:@"Remove a song by spending %d conis?",BOMB_SONG_PRICE] delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil];
         [playSingleAlert show];
         playSingleAlert.tag = 13;
         

@@ -11,9 +11,9 @@
 #import "AnswerButton.h"
 #import "boardView.h"
 #import "CommonUtility.h"
-#import "UMSocialSinaHandler.h"
-#import "UMSocialSnsService.h"
-#import "UMSocialSnsPlatformManager.h"
+//#import "UMSocialSinaHandler.h"
+//#import "UMSocialSnsService.h"
+//#import "UMSocialSnsPlatformManager.h"
 #import "MobClick.h"
 #import "buyCoinsViewController.h"
 #import "BaiduMobAdDelegateProtocol.h"
@@ -33,7 +33,7 @@
 
 //@class buyCoinsViewController;
 
-@protocol prepareSongsDelegate <NSObject,UMSocialUIDelegate>
+@protocol prepareSongsDelegate <NSObject>
 -(NSMutableArray *)configSongs;
 
 @end

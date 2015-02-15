@@ -13,6 +13,9 @@
 #import "fallAnimation.h"
 #import <MessageUI/MessageUI.h>
 
+//#import <FacebookSDK/FacebookSDK.h>
+
+
 
 //#define DMPUBLISHERID        @"56OJxqiIuN5cJKR8fX"
 //#define DMPLCAEMENTID_INTER @"16TLej7oApZ2kNUOza5fBhvz"
@@ -50,7 +53,11 @@ int difficultyNow;
     [super viewDidLoad];
  
     
+//test fb:
 
+//    FBLoginView *loginView = [[FBLoginView alloc] init];
+//    loginView.center = self.view.center;
+//    [self.view addSubview:loginView];
     //eric:check font
 //    NSArray *fontFamilies = [UIFont familyNames];
 //    
@@ -574,7 +581,7 @@ int difficultyNow;
     {
         if([currentLevel intValue] == 100 )
         {
-        UIAlertView *finishLevelAlert = [[UIAlertView alloc] initWithTitle:@"Unbelievable" message:@"玩爆关啦！我们会尽快更新曲库！重新游戏将对当前曲库重新组合。" delegate:self cancelButtonTitle:@"耐心期待" otherButtonTitles:nil, nil];
+        UIAlertView *finishLevelAlert = [[UIAlertView alloc] initWithTitle:@"Unbelievable" message:@"You are awesome！We will update song library very soon！You may restart the game to recombine songs." delegate:self cancelButtonTitle:@"Wait patiently" otherButtonTitles:nil, nil];
         [finishLevelAlert show];
         return;
         }else
@@ -610,7 +617,7 @@ int difficultyNow;
         [MobClick event:@"restart"];
 
         
-        myAlertView *resetAlert = [[myAlertView alloc] initWithTitle:@"注意" message:@"重玩将删除当前已有进度，确定继续么？" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+        myAlertView *resetAlert = [[myAlertView alloc] initWithTitle:@"Attention" message:@"You may restart the game to recombine songs but your current progress will be deleted." delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Continue", nil];
         
         resetAlert.chooseWhichButton = sender;
         resetAlert.tag = 2;
@@ -656,36 +663,10 @@ int difficultyNow;
     [CommonUtility tapSound:@"click" withType:@"mp3"];
     [MobClick event:@"shareFromHome"];
     
-    [UMSocialSnsService presentSnsIconSheetView:self
-                                         appKey:@"54c46ea7fd98c5071d000668"
-                                      shareText:@"我在玩魔音大师，还挺挑战的，朋友们也来试试!"
-                                     shareImage:[UIImage imageNamed:@"iconNew.png"]
-                                shareToSnsNames:@[UMShareToSina,UMShareToWechatSession,UMShareToWechatTimeline,UMShareToWechatFavorite]
-                                       delegate:(id)self];
-    
-    // music url
-    [[UMSocialData defaultData].urlResource setResourceType:UMSocialUrlResourceTypeMusic url:@"http://itunes.apple.com/cn/app/mo-yin-da-shi-feng-kuang-cai-ge/id954971485?ls=1&mt=8"];
 
-    [UMSocialData defaultData].extConfig.wechatTimelineData.url = @"http://itunes.apple.com/cn/app/mo-yin-da-shi-feng-kuang-cai-ge/id954971485?ls=1&mt=8";
-    [UMSocialData defaultData].extConfig.wechatSessionData.url = @"http://itunes.apple.com/cn/app/mo-yin-da-shi-feng-kuang-cai-ge/id954971485?ls=1&mt=8";
-    [UMSocialData defaultData].extConfig.qqData.url = @"http://itunes.apple.com/cn/app/mo-yin-da-shi-feng-kuang-cai-ge/id954971485?ls=1&mt=8";
-    [UMSocialData defaultData].extConfig.qzoneData.url = @"http://itunes.apple.com/cn/app/mo-yin-da-shi-feng-kuang-cai-ge/id954971485?ls=1&mt=8";
-
-
-
-    
-
+   
 }
 
--(void)didFinishGetUMSocialDataInViewController:(UMSocialResponseEntity *)response
-{
-    //根据`responseCode`得到发送结果,如果分享成功
-    if(response.responseCode == UMSResponseCodeSuccess)
-    {
-        //得到分享到的微博平台名
-        NSLog(@"share to sns name is %@",[[response.data allKeys] objectAtIndex:0]);
-    }
-}
 
 
 - (IBAction)commentOnStore {
@@ -939,7 +920,7 @@ int difficultyNow;
     }else
     {
         
-        [picker setSubject:@"Feed back - mixMusic Guess"];
+        [picker setSubject:@"Feed back - Mixing"];
 //        emailBody = @"Dear user,\nJust take a photo of your baby’s painting, and your sweetheart’s masterpiece will likely become the material of our new game level.Only three steps are needed. Simple and easy!\nStep 1: baby draw – your baby can draw whatever he/she like on certain theme, either on a piece of paper or iPad.\nStep 2: parents shoot – please take a photo of your baby’s painting if it’s been drawn on a piece of paper, or just screenshot and save the painting on the iPad.\nStep 3: Sign & Send – please write your baby’s name, age and painting theme in the title of subscription email so that we can make a footnote on your baby’s work.\n\nThen we’ll carefully select suitable and clear paintings, and use them in our new materials of game levels.\nEvery baby is a genius in designing!\n\nExample for subscription email title:\nDaniel Cooper, 5 years old, a singing bird \n(PS: mobile users can add a picture directly by double-click the email message body.)";
     }
     
@@ -1052,7 +1033,7 @@ int difficultyNow;
 {
     [[NSUserDefaults standardUserDefaults] setObject:day forKey:@"lastDailyReword"];
     
-    UIAlertView *rewardAlert = [[UIAlertView alloc] initWithTitle:@"感谢您的支持" message:@"登录奖励,天天都有！这100金币您先用着!" delegate:self cancelButtonTitle:nil otherButtonTitles:@"笑纳", nil];
+    UIAlertView *rewardAlert = [[UIAlertView alloc] initWithTitle:@"Thanks for playing" message:@"Here are your 100 reward coins! Come tomorrow for more" delegate:self cancelButtonTitle:nil otherButtonTitles:@"Continue", nil];
     
     rewardAlert.tag = 100;
     [rewardAlert show];
@@ -1099,29 +1080,7 @@ int difficultyNow;
     [self.coinsShowing setTitle:[NSString stringWithFormat:@"%d",[CommonUtility fetchCoinAmount]] forState:UIControlStateNormal];
     [self.dailyRewardAlert close];
 }
-//-(IBAction)segmentAction:(UISegmentedControl *)Seg{
-//    NSInteger Index = Seg.selectedSegmentIndex;
-////    NSLog(@"Seg.selectedSegmentIndex:%d",Index);
-//    
-//    [MobClick event:@"chooseDifficulty"];
-//    int lastSeg = [[self.gameData objectForKey:@"difficulty"] intValue];
-//
-//    if ([self.continueGame isHidden]) {
-// 
-//        [self modifyPlist:@"gameData" withValue:[NSString stringWithFormat:@"%ld",(long)Index] forKey:@"difficulty"];
-//        
-//        [self modifyPlist:@"gameData" withValue:[NSString stringWithFormat:@"%ld",Index*20] forKey:@"currentLevel"];
-//    }else
-//    {
-//        myAlertView *resetAlert = [[myAlertView alloc] initWithTitle:@"且慢!" message:@"变更难度将重置已猜歌曲的进度,请君三思。" delegate:self cancelButtonTitle:nil otherButtonTitles:@"取消",@"确认", nil];
-//        
-//        resetAlert.lastSegmentIndex = lastSeg;
-//        resetAlert.tag = 1;
-//        
-//        [resetAlert show];
-//    }
-//    
-//}
+
 
 #pragma mark button flash
 
@@ -1174,7 +1133,7 @@ int difficultyNow;
         [self modifyPlist:@"gameData" withValue:[NSString stringWithFormat:@"%ld",Index*20] forKey:@"currentLevel"];
     }else
     {
-        myAlertView *resetAlert = [[myAlertView alloc] initWithTitle:@"注意" message:@"变更难度将删除当前进度,确定要继续？" delegate:self cancelButtonTitle:nil otherButtonTitles:@"取消",@"确定", nil];
+        myAlertView *resetAlert = [[myAlertView alloc] initWithTitle:@"Attention" message:@"You will change the difficulty and your current progress will be deleted." delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Continue", nil];
         
         resetAlert.lastSegmentIndex = lastSeg;
         resetAlert.tag = 1;

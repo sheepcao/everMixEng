@@ -29,7 +29,7 @@
 			<string>weibo</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>sina.54c46ea7fd98c5071d000668</string>
+				<string>wb2919794144</string>
 			</array>
 		</dict>
 		<dict>
@@ -60,6 +60,16 @@
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>tencent1104216238</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>fb</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>fb1582286702012468</string>
 			</array>
 		</dict>
 	</array>
