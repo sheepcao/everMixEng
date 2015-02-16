@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "CommonUtility.h"
 #import "MobClick.h"
+#import "globalVar.h"
 
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>

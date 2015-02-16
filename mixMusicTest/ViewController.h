@@ -11,18 +11,18 @@
 #import "buyCoinsViewController.h"
 #import "MobClick.h"
 //#import "DMInterstitialAdController.h"
-#import "BaiduMobAdInterstitial.h"
+//#import "BaiduMobAdInterstitial.h"
 
 
 #define VERSIONNUMBER   [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]
-
-@interface ViewController : UIViewController<prepareSongsDelegate,closeBuyViewDelegate,BaiduMobAdInterstitialDelegate>
+@import GoogleMobileAds;
+@interface ViewController : UIViewController<prepareSongsDelegate,closeBuyViewDelegate,GADInterstitialDelegate>
 {
 //    DMInterstitialAdController *_dmInterstitial;
-    BaiduMobAdInterstitial *_interstitialView;
+//    BaiduMobAdInterstitial *_interstitialView;
 
 }
-@property (nonatomic,retain) BaiduMobAdInterstitial *interstitialView;
+@property(nonatomic, strong) GADInterstitial *interstitial;
 
 @property (weak, nonatomic) IBOutlet UIImageView *backgroundImg;
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *starButtons;

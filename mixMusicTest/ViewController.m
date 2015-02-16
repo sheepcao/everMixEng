@@ -98,11 +98,8 @@ int difficultyNow;
     timer = [NSTimer scheduledTimerWithTimeInterval:25.0 target:self selector:@selector(bigADshow) userInfo:nil repeats:NO];
 
     //big AD...
+    [self createAndLoadInterstitial];
     
-    self.interstitialView = [[BaiduMobAdInterstitial alloc] init];
-    self.interstitialView.delegate = self;
-    self.interstitialView.interstitialType = BaiduMobAdViewTypeInterstitialGame;
-    [self.interstitialView load];
     
     backFromGame = NO;
     first = YES;
@@ -1073,39 +1070,7 @@ int difficultyNow;
     rewardAlert.tag = 100;
     [rewardAlert show];
     
-//    CustomIOS7AlertView *alert = [[CustomIOS7AlertView alloc] init];
-//    [alert setButtonTitles:[NSMutableArray arrayWithObjects:nil]];
-//    alert.tag = 1;
-//    
-//    alert.parentView.backgroundColor = [UIColor clearColor];
-//    alert.containerView.backgroundColor = [UIColor clearColor];
-//    
-////    UIView *tmpCustomView = [[UIView alloc] initWithFrame:CGRectMake(3  , 3 , 290, 200)];
-////    tmpCustomView.backgroundColor = [UIColor clearColor];
-//    
-//    UIImageView *imageInTag = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 300, 211)];
-//    
-////    [tmpCustomView addSubview:imageInTag];
-////    [tmpCustomView sendSubviewToBack:imageInTag];
-//    imageInTag.image = [UIImage imageNamed:@"nextBack"];
-//    
-//    UILabel *rewardText = [[UILabel alloc] initWithFrame:CGRectMake(imageInTag.frame.size.width/2 -60, imageInTag.frame.size.height-90, 120, 35)];
-//    [rewardText setText:@"登录奖励,天天都有！这200金币您先用着！"];
-//    
-//    [imageInTag addSubview:rewardText];
-//
-//    
-//    
-//    UIButton *getCoins = [[UIButton alloc] initWithFrame:CGRectMake(imageInTag.frame.size.width/2 -35, imageInTag.frame.size.height-50, 70, 40)];
-//    [getCoins setTitle:@"领取" forState:UIControlStateNormal];
-//    [getCoins addTarget:self action:@selector(getCoinsTapped) forControlEvents:UIControlEventTouchUpInside];
-//    
-//    [imageInTag addSubview:getCoins];
-//    
-//    [alert setContainerView:imageInTag];
-//    self.dailyRewardAlert = alert;
-//    [alert show];
-    
+
     
 }
 
@@ -1180,202 +1145,58 @@ int difficultyNow;
 }
 
 #pragma mark big advertisement
-//
-//-(void)dealloc
-//{
-//    _dmInterstitial.delegate = nil; // please set delegete = nil first
-//}
-- (NSString *)publisherId
-{
-    return  @"b33a25dc"; //@"your_own_app_id";
-}
 
-- (NSString*) appSpec
-{
-    //注意：该计费名为测试用途，不会产生计费，请测试广告展示无误以后，替换为您的应用计费名，然后提交AppStore.
-    return @"b33a25dc";
-}
-- (void)bigADshow
-{
-    // 在需要呈现插屏广告前，先通过isReady方法检查广告是否就绪
-    // before present advertisement view please check if isReady
-    NSLog(@"bigADshow!!");
-    if (self.interstitialView.isReady)
-    {
-       
-        [self.interstitialView presentFromRootViewController:self];
-        
-
-        
+- (void)createAndLoadInterstitial {
+    
+    if (self.interstitial) {
+        self.interstitial = nil;
     }
-    else
-    {
-        // 如果还没有ready，可以再调用loadAd
-        // if !ready load again
-       
-        [self.interstitialView load];
+    self.interstitial = [[GADInterstitial alloc] init];
+    self.interstitial.adUnitID = ADMOB_big;
+    self.interstitial.delegate = self;
+    
+    GADRequest *request = [GADRequest request];
+
+    [self.interstitial loadRequest:request];
+}
+-(void)bigADshow {
+    if (self.interstitial.isReady) {
+        [self.interstitial presentFromRootViewController:self];
+    } else {
+        NSLog(@"big ad not ready");
+        [self createAndLoadInterstitial];
+
         if (timer != nil)
         {
-            
-            
             [timer invalidate];
-            
-            
             timer = nil;
-            
-            
+        
         }
-        
-        
-        
-        timer = [NSTimer scheduledTimerWithTimeInterval:10.0 target:self selector:@selector(bigADshow) userInfo:nil repeats:NO];
+ 
+        timer = [NSTimer scheduledTimerWithTimeInterval:7.0 target:self selector:@selector(bigADshow) userInfo:nil repeats:NO];
     }
-}
 
-
--(void) willDisplayAd:(BaiduMobAdView*) adview
-{
-    
-    NSLog(@"delegate: will display ad");
     
 }
 
--(void) failedDisplayAd:(BaiduMobFailReason) reason;
-{
-    NSLog(@"delegate: failedDisplayAd %d", reason);
-}
--(NSArray*) keywords{
-    NSArray* keywords = [NSArray arrayWithObjects:@"猜歌",@"混音",@"音乐",@"歌曲",@"听觉",@"耳力",@"song",@"歌手",@"唱歌", nil];
-    return keywords;
+- (void)interstitial:(GADInterstitial *)interstitial
+didFailToReceiveAdWithError:(GADRequestError *)error {
+    NSLog(@"interstitialDidFailToReceiveAdWithError: %@", [error localizedDescription]);
 }
 
--(NSArray*) userHobbies{
-    NSArray* hobbies = [NSArray arrayWithObjects:@"唱歌",@"音乐", nil];
-    return hobbies;
-}
-/**
- *  广告预加载成功
- */
-- (void)interstitialSuccessToLoadAd:(BaiduMobAdInterstitial *)interstitial
-{
-    NSLog(@"[ Interstitial] success to load ad.");
-}
-
-/**
- *  广告预加载失败
- */
-- (void)interstitialFailToLoadAd:(BaiduMobAdInterstitial *)interstitial
-{
-    NSLog(@"［Interstitial] fail to load ad");
-
-}
-
-/**
- *  广告即将展示
- */
-- (void)interstitialWillPresentScreen:(BaiduMobAdInterstitial *)interstitial
-{
-}
-
-/**
- *  广告展示成功
- */
-- (void)interstitialSuccessPresentScreen:(BaiduMobAdInterstitial *)interstitial
-{
-}
-
-/**
- *  广告展示失败
- */
-- (void)interstitialFailPresentScreen:(BaiduMobAdInterstitial *)interstitial withError:(BaiduMobFailReason) reason
-{
-}
-
-/**
- *  广告展示结束
- */
-- (void)interstitialDidDismissScreen:(BaiduMobAdInterstitial *)interstitial
-{
+- (void)interstitialDidDismissScreen:(GADInterstitial *)interstitial {
+    NSLog(@"interstitialDidDismissScreen");
     if (timer != nil)
-            {
-                [timer invalidate];
-                timer = nil;
+    {
+        [timer invalidate];
+        timer = nil;
         
-            }
-        
-        
-        
-            timer = [NSTimer scheduledTimerWithTimeInterval:45.0 target:self selector:@selector(bigADshow) userInfo:nil repeats:NO];
-        
-           // 插屏广告关闭后，加载一条新广告用于下次呈现
-            //prepair for the next advertisement view
-            [self.interstitialView load];
+    }
+    [self createAndLoadInterstitial];
+
+    timer = [NSTimer scheduledTimerWithTimeInterval:50.0 target:self selector:@selector(bigADshow) userInfo:nil repeats:NO];
+
 }
-
-//
-//- (void)dmInterstitialSuccessToLoadAd:(DMInterstitialAdController *)dmInterstitial
-//{
-//    NSLog(@"[Domob Interstitial] success to load ad.");
-//}
-//
-//// 当插屏广告加载失败后，回调该方法
-//// This method will be used after failed
-//- (void)dmInterstitialFailToLoadAd:(DMInterstitialAdController *)dmInterstitial withError:(NSError *)err
-//{
-//
-//    
-//    NSLog(@"[Domob Interstitial] fail to load ad. %@", err);
-//}
-//
-//// 当插屏广告要被呈现出来前，回调该方法
-//// This method will be used before being presented
-//- (void)dmInterstitialWillPresentScreen:(DMInterstitialAdController *)dmInterstitial
-//{
-//    NSLog(@"[Domob Interstitial] will present.");
-//}
-//
-//// 当插屏广告被关闭后，回调该方法
-//// This method will be used after Interstitial view  has been closed
-//- (void)dmInterstitialDidDismissScreen:(DMInterstitialAdController *)dmInterstitial
-//{
-//    NSLog(@"[Domob Interstitial] did dismiss.");
-//    if (timer != nil)
-//    {
-//        [timer invalidate];
-//        timer = nil;
-//        
-//    }
-//    
-//    
-//    
-//    timer = [NSTimer scheduledTimerWithTimeInterval:45.0 target:self selector:@selector(bigADshow) userInfo:nil repeats:NO];
-//    
-//    // 插屏广告关闭后，加载一条新广告用于下次呈现
-//    //prepair for the next advertisement view
-//    [_dmInterstitial loadAd];
-//}
-//
-//// 当将要呈现出 Modal View 时，回调该方法。如打开内置浏览器。
-//// When will be showing a Modal View, call this method. Such as open built-in browser
-//- (void)dmInterstitialWillPresentModalView:(DMInterstitialAdController *)dmInterstitial
-//{
-//    NSLog(@"[Domob Interstitial] will present modal view.");
-//}
-//
-//// 当呈现的 Modal View 被关闭后，回调该方法。如内置浏览器被关闭。
-//// When presented Modal View is closed, this method will be called. Such as built-in browser is closed
-//- (void)dmInterstitialDidDismissModalView:(DMInterstitialAdController *)dmInterstitial
-//{
-//    NSLog(@"[Domob Interstitial] did dismiss modal view.");
-//}
-//
-//// 当因用户的操作（如点击下载类广告，需要跳转到Store），需要离开当前应用时，回调该方法
-//// When the result of the user's actions (such as clicking download class advertising, you need to jump to the Store), need to leave the current application, this method will be called
-//- (void)dmInterstitialApplicationWillEnterBackground:(DMInterstitialAdController *)dmInterstitial
-//{
-//    NSLog(@"[Domob Interstitial] will enter background.");
-//}
-
 
 #pragma mark music note animation
 -(void)dropDown

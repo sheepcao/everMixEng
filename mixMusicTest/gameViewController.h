@@ -16,7 +16,7 @@
 //#import "UMSocialSnsPlatformManager.h"
 #import "MobClick.h"
 #import "buyCoinsViewController.h"
-#import "BaiduMobAdDelegateProtocol.h"
+//#import "BaiduMobAdDelegateProtocol.h"
 
 //AD...
 //#import "DMAdView.h"
@@ -41,11 +41,11 @@
 
 
 
-@interface gameViewController : UIViewController<closeBuyViewDelegate,BaiduMobAdViewDelegate>
+@interface gameViewController : UIViewController<closeBuyViewDelegate>
 {
 //    DMAdView *_dmAdView;
   
-    BaiduMobAdView* sharedAdView;
+//    BaiduMobAdView* sharedAdView;
 
 }
 

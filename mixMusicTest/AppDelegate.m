@@ -12,6 +12,10 @@
 #import "Flurry.h"
 #import <Crashlytics/Crashlytics.h>
 #import <FacebookSDK/FacebookSDK.h>
+#import "LARSAdController.h"
+#import "TOLAdAdapter.h"
+#import "TOLAdAdapteriAds.h"
+#import "TOLAdAdapterGoogleAds.h"
 
 
 
@@ -41,6 +45,10 @@
 
     
     [Crashlytics startWithAPIKey:@"bc367a445f88cf5a5c02a54966d1432f00fe93f0"];
+    
+    [[LARSAdController sharedManager] registerAdClass:[TOLAdAdapteriAds class]];
+   [[LARSAdController sharedManager] registerAdClass:[TOLAdAdapterGoogleAds class] withPublisherId:ADMOB];
+
 
     [NSThread sleepForTimeInterval:1.0];
 
