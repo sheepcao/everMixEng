@@ -180,6 +180,9 @@
 		A4AF18BB1A8AF49E00C5F2D3 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4AF18BA1A8AF49E00C5F2D3 /* Crashlytics.framework */; };
 		A4B268A91A8377570037DA16 /* fallAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = A4B268A81A8377570037DA16 /* fallAnimation.m */; };
 		A4B76C1D1A3997600014014D /* choicesBoardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4B76C1C1A3997600014014D /* choicesBoardView.xib */; };
+		A4B77B021A923595003C6841 /* THE ONE.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A4B77B011A923595003C6841 /* THE ONE.m4a */; };
+		A4B77B061A923ED5003C6841 /* fb.png in Resources */ = {isa = PBXBuildFile; fileRef = A4B77B041A923ED5003C6841 /* fb.png */; };
+		A4B77B081A92408A003C6841 /* ask1.png in Resources */ = {isa = PBXBuildFile; fileRef = A4B77B071A92408A003C6841 /* ask1.png */; };
 		A4B9F7DF1A81AFA300076531 /* gameBack.png in Resources */ = {isa = PBXBuildFile; fileRef = A4B9F7DC1A81AFA300076531 /* gameBack.png */; };
 		A4BAEF641A8464E800757BA6 /* levelPassView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4BAEF631A8464E800757BA6 /* levelPassView.xib */; };
 		A4BAEF661A84C22D00757BA6 /* iconNew.png in Resources */ = {isa = PBXBuildFile; fileRef = A4BAEF651A84C22D00757BA6 /* iconNew.png */; };
@@ -414,6 +417,9 @@
 		A4B268A71A8377570037DA16 /* fallAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fallAnimation.h; sourceTree = "<group>"; };
 		A4B268A81A8377570037DA16 /* fallAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = fallAnimation.m; sourceTree = "<group>"; };
 		A4B76C1C1A3997600014014D /* choicesBoardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = choicesBoardView.xib; sourceTree = "<group>"; };
+		A4B77B011A923595003C6841 /* THE ONE.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "THE ONE.m4a"; sourceTree = "<group>"; };
+		A4B77B041A923ED5003C6841 /* fb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fb.png; sourceTree = "<group>"; };
+		A4B77B071A92408A003C6841 /* ask1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ask1.png; sourceTree = "<group>"; };
 		A4B9F7DC1A81AFA300076531 /* gameBack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gameBack.png; sourceTree = "<group>"; };
 		A4B9F7E41A820A9D00076531 /* globalVar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = globalVar.h; sourceTree = "<group>"; };
 		A4BAEF631A8464E800757BA6 /* levelPassView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = levelPassView.xib; sourceTree = "<group>"; };
@@ -758,6 +764,7 @@
 		A4ADE0581A9188D500FB1262 /* 2-6 */ = {
 			isa = PBXGroup;
 			children = (
+				A4B77B011A923595003C6841 /* THE ONE.m4a */,
 				A4ADE0591A9188D500FB1262 /* BEAT IT.m4a */,
 				A4ADE05A1A9188D500FB1262 /* BETTER MAN.m4a */,
 				A4ADE05B1A9188D500FB1262 /* BOTTOMS UP.m4a */,
@@ -855,6 +862,8 @@
 			children = (
 				A4DAF7351A87208300D9A94F /* UMS_sina_icon.png */,
 				A4DAF7361A87208300D9A94F /* UMS_wechat_icon.png */,
+				A4B77B071A92408A003C6841 /* ask1.png */,
+				A4B77B041A923ED5003C6841 /* fb.png */,
 				A4D77D011A89A1A8007FB122 /* back_ios7.png */,
 				A4A6C1251A6B713600C6095C /* PNGs */,
 			);
@@ -1089,6 +1098,7 @@
 				A4ADE08B1A9188D500FB1262 /* FANTASY.m4a in Resources */,
 				A4ADE0AC1A9188D500FB1262 /* MY LOVE.m4a in Resources */,
 				A4ADE07F1A9188D500FB1262 /* NO ONE.m4a in Resources */,
+				A4B77B021A923595003C6841 /* THE ONE.m4a in Resources */,
 				A4ADE0861A9188D500FB1262 /* ANIMALS.m4a in Resources */,
 				A4AE92761A8A3273005104DA /* cd9.png in Resources */,
 				A4CAD7581A8288BE00CF40D2 /* answerBack.png in Resources */,
@@ -1097,6 +1107,7 @@
 				A4ADE09C1A9188D500FB1262 /* PARTY UP.m4a in Resources */,
 				A4A0C24F1A8108430032DF0B /* reviewBtn.png in Resources */,
 				A4ADE0881A9188D500FB1262 /* COMPASS.m4a in Resources */,
+				A4B77B081A92408A003C6841 /* ask1.png in Resources */,
 				A4E0A30A1A865FBF00AFF6D5 /* nextCoin.png in Resources */,
 				A4ADE0771A9188D500FB1262 /* ANGEL.m4a in Resources */,
 				A466A1411A890500005BD67C /* SolveQuestion.mp3 in Resources */,
@@ -1135,6 +1146,7 @@
 				A4A0C24D1A8108430032DF0B /* coin.png in Resources */,
 				A4AE92731A8A3273005104DA /* cd6.png in Resources */,
 				A4E0A3031A865DBA00AFF6D5 /* mainBack10.png in Resources */,
+				A4B77B061A923ED5003C6841 /* fb.png in Resources */,
 				A4AE92771A8A3273005104DA /* cd10.png in Resources */,
 				A4A6C1331A6B713600C6095C /* cd3.png in Resources */,
 				A4ADE0A51A9188D500FB1262 /* BETTER MAN.m4a in Resources */,

@@ -69,12 +69,12 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iKE-Vm-WMA">
-                                <rect key="frame" x="28" y="478" width="40" height="40"/>
+                                <rect key="frame" x="23" y="476" width="55" height="44"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="40" id="6kX-p2-SjQ"/>
-                                    <constraint firstAttribute="height" constant="40" id="GW5-3t-fjI"/>
+                                    <constraint firstAttribute="width" constant="55" id="6kX-p2-SjQ"/>
+                                    <constraint firstAttribute="height" constant="44" id="GW5-3t-fjI"/>
                                 </constraints>
-                                <state key="normal" image="shareBtn.png">
+                                <state key="normal" image="fb.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -82,7 +82,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gaK-c0-OeE">
-                                <rect key="frame" x="104.5" y="477" width="43" height="43"/>
+                                <rect key="frame" x="104" y="477" width="43" height="43"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="43" id="0cd-cc-Oyr"/>
                                     <constraint firstAttribute="height" constant="43" id="JpN-4v-NMB"/>
@@ -138,13 +138,13 @@
                             <constraint firstItem="xpo-PE-fGQ" firstAttribute="top" secondItem="tMe-vf-byg" secondAttribute="bottom" constant="8" id="Arh-2p-krX"/>
                             <constraint firstItem="xpo-PE-fGQ" firstAttribute="top" secondItem="gaK-c0-OeE" secondAttribute="bottom" constant="48" id="Auo-pC-Nkz"/>
                             <constraint firstItem="oJy-Pu-OcZ" firstAttribute="height" secondItem="qNQ-Ph-nXm" secondAttribute="height" id="MeB-EC-suu"/>
-                            <constraint firstItem="xpo-PE-fGQ" firstAttribute="top" secondItem="iKE-Vm-WMA" secondAttribute="bottom" constant="50" id="Nvt-N5-Jj9"/>
+                            <constraint firstItem="xpo-PE-fGQ" firstAttribute="top" secondItem="iKE-Vm-WMA" secondAttribute="bottom" constant="48" id="Nvt-N5-Jj9"/>
                             <constraint firstAttribute="centerX" secondItem="e8J-Z4-tGE" secondAttribute="centerX" constant="-45" id="QOX-sB-FKd"/>
                             <constraint firstItem="I4A-bF-7f7" firstAttribute="top" secondItem="j9o-P9-UcH" secondAttribute="bottom" id="TnB-GO-8TW"/>
                             <constraint firstAttribute="centerY" secondItem="qNQ-Ph-nXm" secondAttribute="centerY" constant="147" id="Ui3-uV-8MR"/>
                             <constraint firstAttribute="centerX" secondItem="I4A-bF-7f7" secondAttribute="centerX" id="ali-pf-TKO"/>
                             <constraint firstAttribute="trailingMargin" secondItem="oJy-Pu-OcZ" secondAttribute="trailing" constant="34" id="hRb-7F-SuA"/>
-                            <constraint firstAttribute="centerX" secondItem="iKE-Vm-WMA" secondAttribute="centerX" constant="112" id="js1-nw-KZF"/>
+                            <constraint firstAttribute="centerX" secondItem="iKE-Vm-WMA" secondAttribute="centerX" constant="109.5" id="js1-nw-KZF"/>
                             <constraint firstAttribute="centerX" secondItem="tMe-vf-byg" secondAttribute="centerX" id="lD8-oE-x3W"/>
                             <constraint firstItem="qNQ-Ph-nXm" firstAttribute="leading" secondItem="ZeD-Ew-WKC" secondAttribute="leadingMargin" constant="34" id="lJc-EL-QS6"/>
                             <constraint firstAttribute="width" secondItem="I4A-bF-7f7" secondAttribute="width" id="lzO-Fe-KFw"/>
@@ -199,10 +199,10 @@
     </scenes>
     <resources>
         <image name="coin.png" width="130" height="130"/>
+        <image name="fb.png" width="140" height="140"/>
         <image name="infoBtn.png" width="300" height="300"/>
         <image name="mainBack10.png" width="1080" height="1920"/>
         <image name="reviewBtn.png" width="130" height="130"/>
-        <image name="shareBtn.png" width="114" height="114"/>
         <image name="开始.png" width="420" height="420"/>
         <image name="继续.png" width="420" height="420"/>
     </resources>

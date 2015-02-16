@@ -103,9 +103,9 @@
 - (void)startAdRequests {
     GADRequest *request = [GADRequest request];
     
-#if TARGET_IPHONE_SIMULATOR
-    request.testDevices = [NSArray arrayWithObjects:GAD_SIMULATOR_ID, nil];
-#endif
+//#if TARGET_IPHONE_SIMULATOR
+//    request.testDevices = [NSArray arrayWithObjects:GAD_SIMULATOR_ID, nil];
+//#endif
     
     [self.bannerView loadRequest:request];
 }

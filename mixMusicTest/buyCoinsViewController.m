@@ -203,7 +203,7 @@
     FBLinkShareParams *params = [[FBLinkShareParams alloc] init];
     params.link = [NSURL URLWithString:@"https://itunes.apple.com/us/app/mixing-guess-guess-magic-song/id967166808?ls=1&mt=8"];
     
-    params.picture =[NSURL URLWithString:@"http://cdn1.tnwcdn.com/wp-content/blogs.dir/1/files/2012/09/144149793-645x250.jpg"];
+    params.picture =[NSURL URLWithString:@"http://cgx.nwpu.info/image/iconEng.png"];
     // If the Facebook app is installed and we can present the share dialog
     if ([FBDialogs canPresentShareDialogWithParams:params]) {
         // Present the share dialog

@@ -324,6 +324,14 @@ int answerBtnTag;
     return cdName;
     
 }
+-(unsigned int)randomDiskNumberWithRange:(int)range
+{
+    unsigned int randomNumber = arc4random()%13+1;
+
+    
+    return randomNumber;
+    
+}
 
 - (void)diskTap:(UIButton *)sender {
 
@@ -833,19 +841,19 @@ int answerBtnTag;
     NSString *musicsURL = @"http://baidu.com";
     switch (songsCount) {
         case 1:
-            musicsURL = [NSString stringWithFormat:@"http://cgx.nwpu.info/index.php?name[]=%@.m4a",self.musicsArrayForShare[0]];
+            musicsURL = [NSString stringWithFormat:@"http://cgx.nwpu.info/index.php?name[]=%@.m4a&lang=en",self.musicsArrayForShare[0]];
             break;
         case 2:
-            musicsURL = [NSString stringWithFormat:@"http://cgx.nwpu.info/index.php?name[]=%@.m4a&name[]=%@.m4a",self.musicsArrayForShare[0],self.musicsArrayForShare[1]];
+            musicsURL = [NSString stringWithFormat:@"http://cgx.nwpu.info/index.php?name[]=%@.m4a&name[]=%@.m4a&lang=en",self.musicsArrayForShare[0],self.musicsArrayForShare[1]];
             break;
         case 3:
-            musicsURL = [NSString stringWithFormat:@"http://cgx.nwpu.info/index.php?name[]=%@.m4a&name[]=%@.m4a&name[]=%@.m4a",self.musicsArrayForShare[0],self.musicsArrayForShare[1],self.musicsArrayForShare[2]];
+            musicsURL = [NSString stringWithFormat:@"http://cgx.nwpu.info/index.php?name[]=%@.m4a&name[]=%@.m4a&name[]=%@.m4a&lang=en",self.musicsArrayForShare[0],self.musicsArrayForShare[1],self.musicsArrayForShare[2]];
             break;
         case 4:
-            musicsURL = [NSString stringWithFormat:@"http://cgx.nwpu.info/index.php?name[]=%@.m4a&name[]=%@.m4a&name[]=%@.m4a&name[]=%@.m4a",self.musicsArrayForShare[0],self.musicsArrayForShare[1],self.musicsArrayForShare[2],self.musicsArrayForShare[3]];
+            musicsURL = [NSString stringWithFormat:@"http://cgx.nwpu.info/index.php?name[]=%@.m4a&name[]=%@.m4a&name[]=%@.m4a&name[]=%@.m4a&lang=en",self.musicsArrayForShare[0],self.musicsArrayForShare[1],self.musicsArrayForShare[2],self.musicsArrayForShare[3]];
             break;
         case 5:
-            musicsURL = [NSString stringWithFormat:@"http://cgx.nwpu.info/index.php?name[]=%@.m4a&name[]=%@.m4a&name[]=%@.m4a&name[]=%@.m4a&name[]=%@.m4a",self.musicsArrayForShare[0],self.musicsArrayForShare[1],self.musicsArrayForShare[2],self.musicsArrayForShare[3],self.musicsArrayForShare[4]];
+            musicsURL = [NSString stringWithFormat:@"http://cgx.nwpu.info/index.php?name[]=%@.m4a&name[]=%@.m4a&name[]=%@.m4a&name[]=%@.m4a&name[]=%@.m4a&lang=en",self.musicsArrayForShare[0],self.musicsArrayForShare[1],self.musicsArrayForShare[2],self.musicsArrayForShare[3],self.musicsArrayForShare[4]];
             break;
             
         default:
@@ -871,14 +879,14 @@ int answerBtnTag;
     FBLinkShareParams *params = [[FBLinkShareParams alloc] init];
     params.link = [NSURL URLWithString:escaped];
     
-    params.picture =[NSURL URLWithString:@"http://cdn1.tnwcdn.com/wp-content/blogs.dir/1/files/2012/09/144149793-645x250.jpg"];
+    params.picture =[NSURL URLWithString:[NSString stringWithFormat:@"http://cgx.nwpu.info/image/cd%u.png",[self randomDiskNumberWithRange:13]]];
     // If the Facebook app is installed and we can present the share dialog
     if ([FBDialogs canPresentShareDialogWithParams:params]) {
         // Present the share dialog
         [FBDialogs presentShareDialogWithLink:params.link
                                          name:@"Mixing"
                                       caption:nil
-                                  description:@"Who knows songs most, Come and help!\nHow many songs can you find ?"
+                                  description:@"What are these songs? Come and help!\nHow many songs can you find ?"
                                       picture:params.picture
                                   clientState:nil
                                       handler:^(FBAppCall *call, NSDictionary *results, NSError *error) {

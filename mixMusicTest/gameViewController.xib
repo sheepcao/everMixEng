@@ -37,15 +37,6 @@
                                 <action selector="playBtn:" destination="-1" eventType="touchUpInside" id="Qep-KP-VuW"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Zy-EO-vTo">
-                            <rect key="frame" x="40" y="24" width="71" height="71"/>
-                            <state key="normal" image="shareBtn2.png">
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <connections>
-                                <action selector="shareButton:" destination="-1" eventType="touchUpInside" id="wu5-iE-7ni"/>
-                            </connections>
-                        </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3vv-bk-gam">
                             <rect key="frame" x="180" y="24" width="71" height="71"/>
                             <state key="normal" title="Button" image="bomb.png">
@@ -53,6 +44,15 @@
                             </state>
                             <connections>
                                 <action selector="refreshMusics:" destination="-1" eventType="touchUpInside" id="fss-dV-Mg3"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Zy-EO-vTo">
+                            <rect key="frame" x="38" y="23" width="74" height="72"/>
+                            <state key="normal" image="ask1.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="shareButton:" destination="-1" eventType="touchUpInside" id="wu5-iE-7ni"/>
                             </connections>
                         </button>
                     </subviews>
@@ -63,7 +63,7 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mxj-Ad-wKo" userLabel="downPartView">
-                    <rect key="frame" x="0.0" y="183" width="320" height="335"/>
+                    <rect key="frame" x="0.0" y="184" width="320" height="335"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="335" id="Xa0-4F-jcT"/>
@@ -76,7 +76,7 @@
                 <constraint firstItem="mxj-Ad-wKo" firstAttribute="leading" secondItem="4Wa-kH-Ij8" secondAttribute="leading" id="F3f-OW-x6u"/>
                 <constraint firstAttribute="trailing" secondItem="mxj-Ad-wKo" secondAttribute="trailing" id="Hw1-lK-o1Y"/>
                 <constraint firstAttribute="bottom" secondItem="cTZ-3e-AHo" secondAttribute="bottom" id="bE8-m6-ENN"/>
-                <constraint firstAttribute="bottom" secondItem="mxj-Ad-wKo" secondAttribute="bottom" constant="50" id="c5R-ba-I6u"/>
+                <constraint firstAttribute="bottom" secondItem="mxj-Ad-wKo" secondAttribute="bottom" constant="49" id="c5R-ba-I6u"/>
                 <constraint firstItem="cTZ-3e-AHo" firstAttribute="top" secondItem="4Wa-kH-Ij8" secondAttribute="top" id="fMH-NP-uPZ"/>
                 <constraint firstItem="cTZ-3e-AHo" firstAttribute="centerX" secondItem="EJw-dq-Ooh" secondAttribute="centerX" id="nmU-Wd-dzA"/>
                 <constraint firstItem="cTZ-3e-AHo" firstAttribute="centerY" secondItem="EJw-dq-Ooh" secondAttribute="centerY" constant="160" id="s1X-Vq-aPm"/>
@@ -109,9 +109,9 @@
         </view>
     </objects>
     <resources>
+        <image name="ask1.png" width="320" height="320"/>
         <image name="bomb.png" width="320" height="320"/>
         <image name="gameBack.png" width="1080" height="1920"/>
-        <image name="shareBtn2.png" width="320" height="320"/>
         <image name="开始.png" width="420" height="420"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
