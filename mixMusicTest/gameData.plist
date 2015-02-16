@@ -5,159 +5,244 @@
 	<key>choices</key>
 	<dict>
 		<key>COUNTING STARS</key>
-		<string>I,N,G,O,S,V,T,C,S,R,U,A,T,N,你,单,手,小,爱,见,说</string>
+		<string>I,N,G,O,S,V,T,C,S,R,U,A,T,N,A,W,N,L,S,Z,G</string>
+		<key>UPSIDE DOWN</key>
+		<string>S,O,P,K,D,J,C,N,O,M,A,F,L,E,H,G,I,V,C,U,W</string>
+		<key>WHITE HORSE</key>
+		<string>T,I,E,S,H,E,T,Y,U,W,Q,O,R,H,B,K,A,L,W,E,C</string>
 		<key>TIMBER</key>
-		<string>R,O,M,T,B,N,P,A,S,I,E,C,M,T,流,蜜,愿,容,无,树,花</string>
-		<key>就是我</key>
-		<string>你,看,月,够,人,想,让,美,是,见,想,下,我,赋,赤,不,光,你,壁,说,就</string>
-		<key>爱</key>
-		<string>冷,卷,春,里,说,听,年,在,阿,山,苦,冷,爱,远,难,你,起,买,海,恋,懂</string>
-		<key>爱情路</key>
-		<string>半,她,琵,一,相,他,懂,琶,人,不,语,情,梅,弟,随,洋,兄,路,好,爱,剪</string>
-		<key>爱相随</key>
-		<string>不,语,情,梅,弟,随,爱,阿,山,苦,怕,一,相,念,他,懂,思,睡,着,窝,小</string>
-		<key>牧马人</key>
-		<string>马,想,让,美,花,简,所,爱,你,人,包,套,甜,杆,牧,水,发,夏,如,木,雪</string>
-		<key>狼</key>
-		<string>野,秋,当,流,狼,年,在,沙,游,狂,明,家,走,我,离,寂,自,风,美,叹,年</string>
-		<key>笨小孩</key>
-		<string>儿,想,村,大,不,人,蛋,泰,开,笨,山,来,孩,缘,子,生,小,城,天,份,空</string>
-		<key>红蜻蜓</key>
-		<string>不,在,太,由,蜻,爱,恋,蜓,完,红,屈,落,自,山,果,青,日,委,见,绿,再</string>
-		<key>给你们</key>
-		<string>致,曲,你,春,角,在,散,大,我,终,人,边,女,婚,青,礼,独,人,戏,们,给</string>
-		<key>说爱你</key>
-		<string>见,想,说,我,随,爱,阿,山,苦,怕,欢,简,开,喜,没,离,他,着,单,你,过</string>
-		<key>谁</key>
-		<string>说,他,当,流,狼,年,谁,沙,游,狂,明,家,走,我,离,寂,自,风,美,叹,年</string>
-		<key>走天涯</key>
-		<string>脚,步,草,江,马,高,步,天,美,原,杆,走,人,山,兄,套,爱,红,大,吟,涯</string>
-		<key>那一天</key>
-		<string>天,歌,上,所,下,随,爱,海,首,滩,相,这,年,情,谓,难,那,些,无,一,了</string>
-		<key>为爱疯狂</key>
-		<string>执,念,我,爱,心,狂,疯,酷,的,怀,着,似,潮,冷,事,到,往,为,风,底,随</string>
-		<key>一无所有</key>
-		<string>由,单,有,跟,歌,爱,你,最,一,情,生,翔,无,自,有,身,飞,走,所,吧,我</string>
-		<key>勇敢的心</key>
-		<string>一,月,难,的,辉,生,敢,求,言,苦,石,尽,颗,沙,心,光,良,滚,用,岁,勇</string>
-		<key>匆匆那年</key>
-		<string>十,匆,而,年,立,不,那,之,笑,些,忘,一,匆,过,人,儿,念,花,念,曲,散</string>
-		<key>快乐崇拜</key>
-		<string>水,大,爱,不,乐,情,崇,如,懂,想,潮,快,歌,长,谊,开,晚,拜,深,了,始</string>
-		<key>因为爱情</key>
-		<string>晴,的,感,情,过,果,因,们,你,若,爱,有,我,雨,生,为,人,恩,天,心,我</string>
-		<key>壁虎漫步</key>
-		<string>摆,拜,眼,起,崇,背,一,漫,摇,包,快,的,步,神,乐,你,百,虎,咱,壁,姓</string>
-		<key>我们的爱</key>
-		<string>的,若,情,你,我,雨,生,为,我,晴,人,恩,天,过,果,爱,有,感,因,们,心</string>
-		<key>我怀念的</key>
-		<string>因,们,你,若,爱,有,念,我,爱,心,怀,着,似,情,无,的,为,说,天,不,话</string>
-		<key>好久不见</key>
-		<string>等,迷,花,看,一,想,我,见,不,起,久,悟,爱,好,你,执,好,摇,里,摆,雾</string>
-		<key>断桥残雪</key>
-		<string>服,钟,为,断,屏,输,人,残,生,晚,赌,缺,愿,整,而,桥,南,了,大,爱,雪</string>
-		<key>时间煮雨</key>
-		<string>下,机,热,年,光,时,雨,匆,林,盛,直,器,那,一,带,间,哪,夏,煮,匆,去</string>
-		<key>爱的供养</key>
-		<string>为,爱,小,你,我,叫,你,情,洋,养,狂,她,海,疯,微,花,笑,是,因,的,供</string>
-		<key>爱的海洋</key>
-		<string>你,我,洋,养,狂,微,花,笑,你,供,情,海,为,爱,小,的,疯,她,叫,是,因</string>
-		<key>生如夏花</key>
-		<string>一,息,新,梦,见,情,花,不,看,生,如,雾,为,爱,里,幽,夏,你,帘,生,了</string>
-		<key>花房姑娘</key>
-		<string>镇,不,一,散,开,姑,有,里,所,花,不,小,落,房,娘,雾,见,无,看,花,微</string>
-		<key>类似爱情</key>
-		<string>歌,似,非,水,人,台,已,为,因,华,年,类,情,地,过,得,电,来,不,爱,不</string>
-		<key>没离开过</key>
-		<string>烟,始,没,歌,恋,身,云,之,单,情,懂,过,不,岛,了,往,广,情,开,新,离</string>
-		<key>那些花儿</key>
-		<string>的,火,雾,乡,儿,匆,微,你,天,年,间,看,些,那,路,小,笑,花,匆,里,堂</string>
-		<key>HIGH歌</key>
-		<string>V,S,个,O,H,江,L,F,L,E,这,G,R,T,南,C,I,H,歌,Y,E</string>
-		<key>一万个理由</key>
-		<string>个,有,伤,堂,天,点,的,一,故,动,千,万,光,另,心,十,由,事,理,阴,我</string>
-		<key>一生中最爱</key>
-		<string>的,一,故,另,心,十,由,风,的,思,中,爱,光,岁,最,辉,我,月,生,国,相</string>
-		<key>如果没有你</key>
-		<string>他,不,可,我,第,天,如,一,也,果,明,世,想,界,惜,没,很,有,等,她,你</string>
-		<key>兄弟抱一下</key>
-		<string>天,点,的,一,抱,我,对,想,走,潇,完,你,弟,洒,爱,海,兄,回,是,不,下</string>
-		<key>另一个天堂</key>
-		<string>天,点,的,一,故,动,另,心,十,由,事,伤,堂,的,动,浪,最,有,迷,个,漫</string>
-		<key>可惜不是你</key>
-		<string>不,可,我,第,天,如,一,也,果,明,很,有,等,她,你,是,青,爱,想,苹,惜</string>
-		<key>不管有多苦</key>
-		<string>多,事,着,喜,往,世,欢,杯,苦,跟,恋,面,有,爱,的,干,不,外,你,管,界</string>
-		<key>听妈妈的话</key>
-		<string>爸,想,爱,怀,妈,长,听,回,话,在,了,大,西,来,我,前,念,不,的,妈,元</string>
-		<key>布拉格广场</key>
-		<string>场,很,7,幸,拉,变,你,看,每,布,喊,格,爱,2,想,他,我,一,广,次,福</string>
-		<key>心中的日月</key>
-		<string>来,爱,有,月,你,亮,初,心,是,果,验,的,上,就,爬,体,日,如,中,之,没</string>
-		<key>我从草原来</key>
-		<string>声,从,如,园,乐,的,场,有,没,来,你,草,苹,原,歌,游,我,快,里,果,青</string>
-		<key>我很想爱他</key>
-		<string>想,界,惜,没,很,有,等,她,你,一,也,果,明,不,可,我,第,他,爱,路,上</string>
-		<key>我的歌声里</key>
-		<string>里,役,是,身,我,旁,板,了,吗,声,滑,变,你,歌,有,战,在,的,最,后,鞋</string>
-		<key>我的滑板鞋</key>
-		<string>我,里,役,是,身,了,吗,在,后,鞋,的,最,声,滑,变,旁,板,你,歌,有,战</string>
-		<key>新贵妃醉酒</key>
-		<string>后,爱,有,点,酒,眼,年,睛,贵,千,的,夜,新,妃,心,零,以,动,笑,一,醉</string>
-		<key>至少还有你</key>
-		<string>中,思,果,愿,年,少,人,相,至,盛,但,夏,你,风,长,的,有,还,实,久,雨</string>
-		<key>有一点动心</key>
-		<string>酒,点,眼,后,爱,有,年,睛,笑,一,醉,贵,千,的,夜,心,新,妃,零,以,动</string>
-		<key>突然的自我</key>
-		<string>不,想,是,然,爱,起,对,的,宝,阳,我,又,朝,突,贝,我,落,海,好,自,你</string>
-		<key>终于等到你</key>
-		<string>你,在,致,曲,你,散,大,春,我,终,人,边,女,婚,青,礼,于,人,戏,到,等</string>
-		<key>BADBOY</key>
-		<string>K,P,O,E,S,A,S,E,P,B,I,V,Z,B,N,D,M,L,Y,T,X</string>
-		<key>一个人的精彩</key>
-		<string>这,会,你,里,夜,彩,也,嫁,个,不,一,要,来,的,原,人,会,在,精,给,今</string>
-		<key>因为爱所以爱</key>
-		<string>见,当,不,成,相,所,跟,爱,已,爱,如,柔,因,杯,往,以,念,事,为,干,怀</string>
-		<key>忠孝东路走九遍</key>
-		<string>心,无,爱,雨,走,情,东,跟,起,忠,你,一,的,九,无,会,孝,情,遍,路,的</string>
-		<key>像梦一样自由</key>
-		<string>自,他,好,由,定,个,一,的,爱,我,风,人,你,样,女,梦,难,像,是,很,人</string>
-		<key>像风一样自由</key>
-		<string>他,是,很,人,好,样,女,梦,难,自,像,由,一,的,爱,定,个,我,风,人,你</string>
-		<key>分手总要在雨天</key>
-		<string>心,无,爱,雨,在,分,东,跟,起,天,你,一,的,九,无,会,要,情,遍,手,总</string>
-		<key>外婆的澎湖湾</key>
-		<string>雨,谁,十,澎,七,乡,在,外,间,路,婆,小,季,泪,湖,岁,上,飞,的,眼,湾</string>
-		<key>当爱已成往事</key>
-		<string>成,回,难,放,那,味,没,已,一,能,事,只,爱,路,人,当,生,个,往,好,条</string>
-		<key>今天你要嫁给我</key>
-		<string>这,天,你,里,夜,彩,也,嫁,个,不,会,要,来,的,原,人,会,在,我,给,今</string>
-		<key>想把我唱给你听</key>
-		<string>你,爱,里,把,的,唱,一,特,我,个,冬,让,想,够,天,听,火,次,们,给,别</string>
-		<key>我的未来不是梦</key>
-		<string>的,难,路,梦,颜,未,容,眼,的,抗,是,有,以,我,小,不,只,来,拒,里,你</string>
-		<key>有没有人告诉你</key>
-		<string>有,心,熟,走,人,起,最,告,一,悉,没,人,爱,有,生,会,诉,陌,跟,你,的</string>
-		<key>流着泪的你的脸</key>
-		<string>吹,天,你,今,泪,风,的,要,想,分,着,的,和,嫁,吹,给,流,去,手,脸,我</string>
-		<key>男人哭吧不是罪</key>
-		<string>颜,男,不,难,路,人,容,眼,哭,抗,吧,有,以,罪,小,不,只,是,拒,里,你</string>
-		<key>白天不懂夜的黑</key>
-		<string>懂,起,天,有,心,不,走,告,一,爱,有,黑,的,没,人,会,跟,你,白,诉,夜</string>
-		<key>看月亮爬上来</key>
-		<string>上,外,爬,湾,月,些,婆,亮,的,有,我,看,心,湖,代,那,来,澎,事,没,表</string>
-		<key>难以抗拒你容颜</key>
-		<string>未,里,你,的,难,路,抗,是,颜,有,以,梦,容,眼,小,不,只,的,我,来,拒</string>
+		<string>R,O,M,T,B,N,P,A,S,I,E,C,M,T,B,Y,U,W,Q,O,R</string>
+		<key>ANGEL</key>
+		<string>T,B,N,P,A,S,I,E,D,G,V,N,I,D,M,O,A,W,U,L,X</string>
+		<key>BABY</key>
+		<string>A,S,I,E,D,G,V,N,I,D,M,O,Y,B,G,A,Y,B,H,N,M</string>
+		<key>BAD</key>
+		<string>D,G,V,N,I,D,M,T,M,A,Q,W,E,B,R,O,P,L,D,T,C</string>
+		<key>BLUE</key>
+		<string>A,V,L,F,L,T,I,W,U,E,H,L,A,B,M,P,R,T,B,N,P</string>
+		<key>CUBA</key>
+		<string>H,L,A,B,M,B,M,E,U,X,I,C,P,O,U,R,T,A,N,P,S</string>
+		<key>HALO</key>
+		<string>P,A,S,I,E,O,L,T,I,W,U,E,H,D,B,G,U,R,K,A,T</string>
+		<key>HOME</key>
+		<string>G,U,R,K,A,T,E,L,M,Z,C,O,V,B,H,N,M,I,P,A,S</string>
+		<key>MAPS</key>
+		<string>L,M,Z,C,O,S,E,P,M,D,B,G,U,R,K,A,J,V,I,L,A</string>
+		<key>NO ONE</key>
+		<string>Z,Q,S,C,F,N,E,Q,R,T,O,P,I,H,N,A,S,D,O,Y,S</string>
+		<key>PARTY</key>
+		<string>P,S,K,C,R,F,E,N,T,W,R,M,G,A,Y,S,K,R,P,A,I</string>
+		<key>ROAR</key>
+		<string>N,R,E,Y,J,H,A,Q,W,R,E,T,Y,A,U,I,P,O,L,R,K,L</string>
+		<key>SHAME</key>
+		<string>M,F,E,N,T,A,H,J,H,A,Q,S,S,E,P,M,D,B,G,U,E</string>
+		<key>SMILE</key>
+		<string>N,E,Q,R,T,O,P,I,I,W,R,S,M,L,M,D,B,G,U,E,K</string>
+		<key>TRY</key>
+		<string>C,A,D,S,F,H,R,E,K,R,I,N,E,T,X,Q,T,G,C,Y,O</string>
+		<key>VENUS</key>
+		<string>K,O,P,F,D,S,U,F,Y,E,R,I,O,R,D,H,V,N,M,N,B</string>
+		<key>ANIMALS</key>
+		<string>Y,N,S,W,D,N,M,A,M,L,I,S,X,N,M,B,E,A,V,C,Z</string>
+		<key>CHICAGO</key>
+		<string>S,N,C,O,F,M,E,H,W,C,G,O,T,E,C,K,L,S,I,T,A</string>
+		<key>COMPASS</key>
+		<string>S,D,A,S,B,C,M,O,A,I,E,L,N,S,V,P,S,B,L,C,R</string>
+		<key>DEMONS</key>
+		<string>T,R,S,C,O,L,W,O,E,Z,C,V,B,D,L,J,N,G,Y,M,S</string>
+		<key>FANTASY</key>
+		<string>B,Y,U,A,K,G,A,N,H,J,O,S,Y,P,Q,F,T,Q,C,Y,T</string>
+		<key>HEAVEN</key>
+		<string>W,D,R,Q,V,E,A,N,E,M,U,R,O,B,H,V,C,Z,Y,S</string>
+		<key>HOLIDAY</key>
+		<string>Y,W,A,S,Y,D,Y,O,A,S,D,F,H,G,J,I,K,A,L,C,N</string>
+		<key>IMAGINE</key>
+		<string>L,E,N,O,E,V,M,G,E,S,M,E,L,Y,A,D,C,L,I,O,U</string>
+		<key>JEALOUS</key>
+		<string>P,E,L,P,N,S,R,Y,M,E,S,O,A,W,P,J,T,E,U,M,R</string>
+		<key>LONDON CALLING</key>
+		<string>X,J,R,N,D,O,N,C,A,L,O,I,N,G,L,N,L,T,Z,E,C</string>
+		<key>MIRRORS</key>
+		<string>W,E,A,S,A,D,L,R,O,S,R,A,R,D,F,G,I,H,M,K,L</string>
+		<key>ROYALS</key>
+		<string>N,W,Y,H,G,Z,I,A,Y,S,D,O,F,G,R,H,A,J,K,L,S</string>
+		<key>SMOOTH</key>
+		<string>Y,X,H,R,C,Z,L,H,O,L,A,R,M,E,X,N,O,S,P,V,T</string>
+		<key>ALL RISE</key>
+		<string>O,G,I,D,M,R,Y,A,N,S,G,I,E,W,O,P,L,N,L,R,E</string>
+		<key>ALL STAR</key>
+		<string>R,I,S,E,T,A,L,R,K,L,O,P,E,C,A,I,M,S,B,A,T,S</string>
+		<key>AMERICAN PIE</key>
+		<string>S,Y,M,I,R,A,E,I,P,M,V,O,W,E,A,N,C,N,M,B,D</string>
+		<key>APPLAUSE</key>
+		<string>H,W,X,D,Y,C,L,A,Z,E,C,A,V,U,L,B,S,P,N,M,P</string>
+		<key>FIREWORK</key>
+		<string>I,L,A,S,W,B,R,C,K,F,Y,R,A,V,U,B,E,Y,R,O,W</string>
+		<key>FRIDAY NIGHT</key>
+		<string>G,Y,L,Y,T,H,X,A,D,G,I,H,T,I,R,F,S,J,F,N,Y</string>
+		<key>HEART ATTACK</key>
+		<string>D,Y,R,P,G,O,H,T,R,T,A,Q,E,C,K,A,I,W,H,T,A</string>
+		<key>PARTY UP</key>
+		<string>T,B,K,J,Y,L,T,S,W,R,P,Y,R,J,P,F,A,U,A,U,N</string>
+		<key>ROCKSTAR</key>
+		<string>S,J,K,U,Y,O,W,C,R,E,R,B,H,T,S,I,F,R,O,C,A</string>
+		<key>STRONGER</key>
+		<string>N,D,A,D,M,C,Z,O,A,R,E,T,D,F,H,S,R,I,P,N,G</string>
+		<key>THE MASS</key>
+		<string>C,E,U,S,Z,L,T,A,R,X,S,W,L,I,U,D,M,F,O,H,M</string>
+		<key>THE SHOW</key>
+		<string>C,Y,E,Z,T,S,R,Y,E,A,B,S,H,M,H,I,W,F,B,L,O</string>
+		<key>TREASURE</key>
+		<string>B,X,A,H,M,C,T,E,S,D,A,F,E,G,R,H,J,T,K,U,R</string>
+		<key>UMBRELLA</key>
+		<string>C,H,D,W,B,S,M,R,B,Q,L,M,W,T,Y,O,U,N,L,E,A</string>
+		<key>YELLOW RIVER</key>
+		<string>L,A,L,E,O,R,W,V,R,B,L,Y,A,E,I,L,C,R,Z,T,D</string>
+		<key>BEAT IT</key>
+		<string>T,B,A,K,F,O,M,A,K,T,R,W,E,V,B,T,G,Y,I,G,Q</string>
+		<key>BETTER MAN</key>
+		<string>T,B,A,K,F,E,M,A,K,T,R,W,E,V,B,T,G,Y,I,G,N</string>
+		<key>BOTTOMS UP</key>
+		<string>L,Y,L,B,U,U,W,S,T,O,O,M,T,C,K,P,Z,D,H,B,S</string>
+		<key>CANDY RAIN</key>
+		<string>J,G,B,F,U,D,M,R,N,I,A,A,R,S,C,N,Y,N,G,Y,Z</string>
+		<key>DANCING QUEEN</key>
+		<string>H,J,L,X,Z,Q,N,A,U,E,N,D,W,O,E,C,I,G,N,Y,F</string>
+		<key>JUST DANCE</key>
+		<string>S,N,B,I,O,G,C,T,D,S,A,E,Q,U,W,I,R,E,C,J,N</string>
+		<key>LOSE YOURSELF</key>
+		<string>N,S,C,J,F,D,L,Y,E,R,S,L,E,S,O,F,B,T,L,O,U</string>
+		<key>LOVE ME</key>
+		<string>I,P,O,L,N,E,O,H,S,E,Q,M,W,X,V,C,G,D,F,O,E</string>
+		<key>MY LOVE</key>
+		<string>Z,Y,R,S,H,D,A,Z,L,C,O,V,B,A,N,I,K,M,E,V,Y</string>
+		<key>POKER FACE</key>
+		<string>K,P,O,E,R,K,A,C,E,Z,O,C,V,B,N,F,P,L,Y,T,X</string>
+		<key>STORM WARNING</key>
+		<string>G,N,W,I,C,A,O,T,N,V,R,E,R,I,T,A,M,W,S,N,F</string>
+		<key>THE WAY</key>
+		<string>W,O,M,L,S,I,Y,T,R,N,A,U,E,H,I,N,T,A,E,T,O</string>
+		<key>TIK TOK</key>
+		<string>P,R,A,T,F,E,T,C,N,K,V,A,O,B,K,M,A,I,V,H,E</string>
+		<key>WRECKING BALL</key>
+		<string>T,I,D,Y,H,N,A,K,C,A,L,F,E,B,A,R,G,L,I,W,N</string>
+		<key>BANG BANG</key>
+		<string>S,H,T,R,P,B,A,L,N,C,O,G,B,N,A,M,B,G,N,F,R</string>
+		<key>BILLIE JEAN</key>
+		<string>I,N,L,B,C,L,E,P,A,R,,J,E,I,U,E,O,B,H,D,S,D</string>
+		<key>GET LUCKY</key>
+		<string>G,Y,T,L,E,V,W,U,C,P,Y,S,E,B,K,R,U,A,C,E,M</string>
+		<key>JUMP AROUND</key>
+		<string>C,M,A,O,B,P,T,K,J,V,U,D,N,U,R,D,S,H,L,T,E</string>
+		<key>MACHO MAN</key>
+		<string>G,M,W,I,C,A,O,H,N,V,R,E,R,I,T,A,M,N,S,N,F</string>
+		<key>NO SCRUBS</key>
+		<string>N,A,R,C,S,B,N,K,O,G,T,U,B,N,O,S,H,C,M,G,B</string>
+		<key>ONLY GIRL</key>
+		<string>L,A,L,E,O,R,W,N,R,B,L,Y,A,E,I,L,G,R,Z,T,D</string>
+		<key>PURPLE RAIN</key>
+		<string>Y,X,R,P,L,R,E,E,U,T,A,N,I,P,O,B,R,M,G,N,D</string>
+		<key>SLOW DOWN</key>
+		<string>S,A,L,E,O,R,W,N,R,B,L,Y,A,O,I,L,G,R,Z,T,D</string>
+		<key>SLOW MOTION</key>
+		<string>S,A,L,E,O,R,W,N,R,B,L,Y,A,O,I,L,G,O,Z,M,T</string>
+		<key>STRAIGHT UP</key>
+		<string>D,Q,T,P,R,T,K,O,L,G,S,H,X,T,A,I,U,G,N,S,Y</string>
+		<key>THANK YOU</key>
+		<string>Y,K,R,P,L,H,E,E,U,T,A,N,I,P,O,B,R,M,U,N,A</string>
+		<key>THE MONSTER</key>
+		<string>T,Y,R,S,H,D,A,Z,L,C,O,V,E,A,N,I,K,M,E,V,T</string>
+		<key>nonono</key>
+		<string>N,O,N,O,N,O,N,O,N,O,N,O,N,O,N,O,N,O,O</string>
 	</dict>
 	<key>musicPlaying</key>
 	<array/>
 	<key>musicUnfinished</key>
 	<array>
 		<array>
-			<string>COUNTING STARS</string>
+			<string>ALL RISE</string>
+			<string>ALL STAR</string>
+			<string>AMERICAN PIE</string>
+			<string>APPLAUSE</string>
+			<string>FIREWORK</string>
+			<string>FRIDAY NIGHT</string>
+			<string>HEART ATTACK</string>
+			<string>PARTY UP</string>
+			<string>ROCKSTAR</string>
+			<string>STRONGER</string>
+			<string>THE MASS</string>
+			<string>THE SHOW</string>
+			<string>TREASURE</string>
+			<string>UMBRELLA</string>
+			<string>YELLOW RIVER</string>
 		</array>
 		<array>
 			<string>TIMBER</string>
+			<string>SMOOTH</string>
+			<string>ROYALS</string>
+			<string>MIRRORS</string>
+			<string>LONDON CALLING</string>
+			<string>JEALOUS</string>
+			<string>IMAGINE</string>
+			<string>HOLIDAY</string>
+			<string>HEAVEN</string>
+			<string>FANTASY</string>
+			<string>DEMONS</string>
+			<string>COUNTING STARS</string>
+			<string>COMPASS</string>
+			<string>CHICAGO</string>
+			<string>ANIMALS</string>
+		</array>
+		<array>
+			<string>ANGEL</string>
+			<string>BABY</string>
+			<string>BAD</string>
+			<string>BLUE</string>
+			<string>CUBA</string>
+			<string>HALO</string>
+			<string>HOME</string>
+			<string>MAPS</string>
+			<string>NO ONE</string>
+			<string>PARTY</string>
+			<string>ROAR</string>
+			<string>SHAME</string>
+			<string>SMILE</string>
+			<string>TRY</string>
+			<string>VENUS</string>
+		</array>
+		<array>
+			<string>BANG BANG</string>
+			<string>BILLIE JEAN </string>
+			<string>GET LUCKY</string>
+			<string>JUMP AROUND</string>
+			<string>MACHO MAN</string>
+			<string>NO SCRUBS</string>
+			<string>ONLY GIRL</string>
+			<string>PURPLE RAIN</string>
+			<string>SLOW DOWN</string>
+			<string>SLOW MOTION</string>
+			<string>STRAIGHT UP</string>
+			<string>THANK YOU</string>
+			<string>THE MONSTER</string>
+			<string>UPSIDE DOWN</string>
+			<string>WHITE HORSE</string>
+		</array>
+		<array>
+			<string>BEAT IT</string>
+			<string>BETTER MAN</string>
+			<string>BOTTOMS UP</string>
+			<string>CANDY RAIN</string>
+			<string>DANCING QUEEN</string>
+			<string>JUST DANCE</string>
+			<string>LOSE YOURSELF</string>
+			<string>LOVE ME</string>
+			<string>MY LOVE</string>
+			<string>POKER FACE</string>
+			<string>STORM WARNING</string>
+			<string>THE WAY</string>
+			<string>TIK TOK</string>
+			<string>WRECKING BALL</string>
+			<string>nonono</string>
 		</array>
 	</array>
 	<key>difficulty</key>

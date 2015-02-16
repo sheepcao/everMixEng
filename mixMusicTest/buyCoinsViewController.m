@@ -9,9 +9,13 @@
 #import "buyCoinsViewController.h"
 #import "myIAPHelper.h"
 #import <StoreKit/StoreKit.h>
+#import <FacebookSDK/FacebookSDK.h>
+
+
+
 
 @interface buyCoinsViewController (){
-    NSArray *_products;
+    NSMutableArray *_products;
     NSNumberFormatter * _priceFormatter;
     UILabel *currentCoinsLabel;
     UIButton *_parentCoinsButton;
@@ -26,7 +30,7 @@
    	self = [super init];
     if (self != nil) {
         self.itemsTable = tableview;
-
+        
         _loadingView = loadingView;
         _parentCoinsButton = parentCoinsButton;
         self.parentControler = controller;
@@ -41,7 +45,7 @@
         
     }
     return self;
-
+    
     
 }
 
@@ -54,25 +58,29 @@
 - (void)productPurchased:(NSNotification *)notification {
     
     NSString * productIdentifier = notification.object;
-    [_products enumerateObjectsUsingBlock:^(SKProduct * product, NSUInteger idx, BOOL *stop) {
+    NSMutableArray *IAPProducts = [NSMutableArray arrayWithCapacity:5];
+    for (id product in _products) {
+        if ([product isKindOfClass:[SKProduct class]]) {
+            [IAPProducts addObject:product];
+        }
+    }
+    [IAPProducts enumerateObjectsUsingBlock:^(SKProduct * product, NSUInteger idx, BOOL *stop) {
         if ([product.productIdentifier isEqualToString:productIdentifier]) {
-//            [self.itemsTable reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:idx inSection:0]] withRowAnimation:UITableViewRowAnimationFade];
-//            *stop = YES;
             
             if ([product.productIdentifier isEqualToString:@"com.MagicSongGuess.coin1000"]) {
                 [MobClick event:@"ClickTier1"];
-
+                
                 
                 [CommonUtility coinsChange:1000];
                 
                 [currentCoinsLabel setText:[NSString stringWithFormat:@"%d",[CommonUtility fetchCoinAmount]]];
                 
                 [_parentCoinsButton setTitle:[NSString stringWithFormat:@"%d",[CommonUtility fetchCoinAmount]] forState:UIControlStateNormal];
-
+                
             }else if([product.productIdentifier isEqualToString:@"com.MagicSongGuess.coin2500"])
             {
                 [MobClick event:@"ClickTier2"];
-
+                
                 [CommonUtility coinsChange:2500];//2元买2500coins
                 
                 [currentCoinsLabel setText:[NSString stringWithFormat:@"%d",[CommonUtility fetchCoinAmount]]];
@@ -88,7 +96,7 @@
                 
                 [_parentCoinsButton setTitle:[NSString stringWithFormat:@"%d",[CommonUtility fetchCoinAmount]] forState:UIControlStateNormal];
             }
-                
+            
         }
     }];
     
@@ -100,7 +108,16 @@
     _products = nil;
     [[myIAPHelper sharedInstance] requestProductsWithCompletionHandler:^(BOOL success, NSArray *products) {
         if (success) {
-            _products = products;
+            //            _products = products;
+            _products = [NSMutableArray arrayWithArray:products];
+            if (![[[NSUserDefaults standardUserDefaults] objectForKey:@"FBShare"] isEqualToString:@"yes"]) {
+                [_products addObject:@"Facebook:  300 Coins"];
+            }
+            if (![[[NSUserDefaults standardUserDefaults] objectForKey:@"reviewed"] isEqualToString:@"yes"] &&[CommonUtility fetchCoinAmount] < 400) {
+                [_products addObject:@"Review us:  300 Coins"];
+            }
+            
+            
             [self.itemsTable reloadData];
         }
         [refreshControl endRefreshing];
@@ -118,18 +135,9 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    NSInteger productCount = _products.count + 3;
     
-    if ([[[NSUserDefaults standardUserDefaults] objectForKey:@"wechatShare"] isEqualToString:@"yes"]) {
-        productCount--;
-    }
-    if ([[[NSUserDefaults standardUserDefaults] objectForKey:@"sinaShare"] isEqualToString:@"yes"]) {
-        productCount--;
-    }
-    if ([[[NSUserDefaults standardUserDefaults] objectForKey:@"reviewed"] isEqualToString:@"yes"] ||[CommonUtility fetchCoinAmount] > 400) {
-        productCount--;
-    }
-    return productCount;
+    return _products.count;
+    
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -144,42 +152,17 @@
     cell.backgroundColor = [UIColor clearColor];
     [cell.textLabel setTextColor:[UIColor whiteColor]];
     cell.textLabel.font = [UIFont systemFontOfSize:17];
-
-    if (indexPath.row < _products.count) {
+    
+    if ([_products[indexPath.row] isKindOfClass:[SKProduct class]]) {
         SKProduct * product = (SKProduct *) _products[indexPath.row];
+        
         cell.textLabel.text = product.localizedTitle;
-    }else if (indexPath.row == _products.count)
+    }else if([_products[indexPath.row] isKindOfClass:[NSString class]])
     {
-        if(![[[NSUserDefaults standardUserDefaults] objectForKey:@"wechatShare"] isEqualToString:@"yes"])
-        {
-        cell.textLabel.text = @"分享朋友圈奖励300金币";
-        }else if(![[[NSUserDefaults standardUserDefaults] objectForKey:@"sinaShare"] isEqualToString:@"yes"])
-        {
-            cell.textLabel.text = @"分享新浪微博奖励300金币";
-
-        }
-
-    }else if (indexPath.row == _products.count + 1)
-    {
-        if(![[[NSUserDefaults standardUserDefaults] objectForKey:@"sinaShare"] isEqualToString:@"yes"])
-        {
-        cell.textLabel.text = @"分享新浪微博奖励300金币";
-        }
-
-    }
-    else if ([CommonUtility fetchCoinAmount] < 400 && indexPath.row == _products.count + 2)
-    {
-        NSLog(@"review!!!");
+        NSString *product = (NSString *) _products[indexPath.row];
         
-        if(![[[NSUserDefaults standardUserDefaults] objectForKey:@"reviewed"] isEqualToString:@"yes"])
-        {
-            cell.textLabel.text = @"Review me-300 coins";
-            
-        }
-        
+        cell.textLabel.text = product;
     }
-
-
     
     return cell;
 }
@@ -187,55 +170,84 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [CommonUtility tapSound:@"click" withType:@"mp3"];
-    
-    if (indexPath.row < _products.count) {
-        SKProduct *product = _products[indexPath.row];
+    if ([_products[indexPath.row] isKindOfClass:[SKProduct class]]) {
         
+        SKProduct *product = _products[indexPath.row];
         NSLog(@"Buying %@...", product.productIdentifier);
         [[myIAPHelper sharedInstance] buyProduct:product withLoadingView:_loadingView];
         
         [_loadingView setHidden:NO];
         
-    }
-    else if(indexPath.row == _products.count)
+    }else if([_products[indexPath.row] isKindOfClass:[NSString class]])
     {
-        if(![[[NSUserDefaults standardUserDefaults] objectForKey:@"wechatShare"] isEqualToString:@"yes"])
-        {
-            [self shareToWechat];
+        NSString *product = (NSString *) _products[indexPath.row];
+        if ([product isEqualToString:@"Facebook:  300 Coins"]) {
+            [self shareToFB];
             
-            
-        }else if(![[[NSUserDefaults standardUserDefaults] objectForKey:@"sinaShare"] isEqualToString:@"yes"])
+        }else if([product isEqualToString:@"Review us:  300 Coins"])
         {
-            [self shareToSina];
-
+            [self reviewUS];
         }
-        [self.closeDelegate closingBuy];
-
-
         
-    }else if(indexPath.row == _products.count + 1)
-    {
-        if(![[[NSUserDefaults standardUserDefaults] objectForKey:@"sinaShare"] isEqualToString:@"yes"])
-        {
-            
-            [self shareToSina];
-            
-        }
         [self.closeDelegate closingBuy];
-
-
-    }else if ([CommonUtility fetchCoinAmount] < 400 )
-    {
-        if(![[[NSUserDefaults standardUserDefaults] objectForKey:@"reviewed"] isEqualToString:@"yes"])
-        {
-        [self reviewUS];
-        }
-        [self.closeDelegate closingBuy];
-
+        
+        
     }
     
+    
+ }
+
+-(void)shareToFB
+{
+    
+    FBLinkShareParams *params = [[FBLinkShareParams alloc] init];
+    params.link = [NSURL URLWithString:@"https://itunes.apple.com/us/app/mixing-guess-guess-magic-song/id967166808?ls=1&mt=8"];
+    
+    params.picture =[NSURL URLWithString:@"http://cdn1.tnwcdn.com/wp-content/blogs.dir/1/files/2012/09/144149793-645x250.jpg"];
+    // If the Facebook app is installed and we can present the share dialog
+    if ([FBDialogs canPresentShareDialogWithParams:params]) {
+        // Present the share dialog
+        [FBDialogs presentShareDialogWithLink:params.link
+                                         name:@"Mixing"
+                                      caption:nil
+                                  description:@"I am playing Mixing Guess,so interesting and chanllenging."
+                                      picture:params.picture
+                                  clientState:nil
+                                      handler:^(FBAppCall *call, NSDictionary *results, NSError *error) {
+                                          if(error) {
+                                              
+                                              NSLog(@"Error publishing story: %@", error.description);
+                                          } else {
+                                              // Success
+                                              NSLog(@"result %@", results);
+                                              if ((int)[[results objectForKey:@"didComplete"] intValue] == 1 && [[results objectForKey:@"completionGesture"] isEqualToString: @"post"]) {
+                                                  NSLog(@"success!!");
+                                                  
+                                                  [CommonUtility coinsChange:300];
+                                                  [currentCoinsLabel setText:[NSString stringWithFormat:@"%d",[CommonUtility fetchCoinAmount]]];
+                                                  [_parentCoinsButton setTitle:[NSString stringWithFormat:@"%d",[CommonUtility fetchCoinAmount]] forState:UIControlStateNormal];
+                                                  [MobClick event:@"CoinFromFB"];
+                                                  
+                                                  [[NSUserDefaults standardUserDefaults] setObject:@"yes" forKey:@"FBShare"];
+                                                  
+                                                  
+                                                  [self.itemsTable reloadData];
+                                                  
+                                                  
+                                              }
+                                          }
+                                      }];
+        
+        
+    } else {
+        // Present the feed dialog
+        UIAlertView * fbAlert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Can't find facebook app on your device.Share failed." delegate:nil cancelButtonTitle:@"Continue" otherButtonTitles:nil, nil];
+        [fbAlert show];
+        
+    }
     
 }
+
 
 -(void)reviewUS
 {
@@ -249,75 +261,12 @@
     [self.itemsTable reloadData];
     
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:REVIEW_URL]];
-        
-
+    
+    
     
 }
 
--(void)shareToWechat
-{
-//    [UMSocialSnsService presentSnsIconSheetView:self.parentControler
-//                                         appKey:@"54c46ea7fd98c5071d000668"
-//                                      shareText:@"我在玩魔音大师，还挺挑战的，朋友们也来试试!"
-//                                     shareImage:[UIImage imageNamed:@"iconNew.png"]
-//                                shareToSnsNames:@[UMShareToWechatTimeline]
-//                                       delegate:(id)self];
-//    
-//    // music url
-//    [[UMSocialData defaultData].urlResource setResourceType:UMSocialUrlResourceTypeMusic url:@"http://itunes.apple.com/cn/app/mo-yin-da-shi-feng-kuang-cai-ge/id954971485?ls=1&mt=8"];
-//    
-//    [UMSocialData defaultData].extConfig.wechatTimelineData.url = @"http://itunes.apple.com/cn/app/mo-yin-da-shi-feng-kuang-cai-ge/id954971485?ls=1&mt=8";
-//    [UMSocialData defaultData].extConfig.wechatSessionData.url = @"http://itunes.apple.com/cn/app/mo-yin-da-shi-feng-kuang-cai-ge/id954971485?ls=1&mt=8";
-}
-
--(void)shareToSina
-{
-//    [UMSocialSnsService presentSnsIconSheetView:self.parentControler
-//                                         appKey:@"54c46ea7fd98c5071d000668"
-//                                      shareText:@"我在玩魔音大师，还挺挑战的，朋友们也来试试!"
-//                                     shareImage:[UIImage imageNamed:@"iconNew.png"]
-//                                shareToSnsNames:@[UMShareToSina]
-//                                       delegate:(id)self];
-//    
-//    // music url
-//    [[UMSocialData defaultData].urlResource setResourceType:UMSocialUrlResourceTypeMusic url:@"http://itunes.apple.com/cn/app/mo-yin-da-shi-feng-kuang-cai-ge/id954971485?ls=1&mt=8"];
-//    
-//    [UMSocialData defaultData].extConfig.wechatTimelineData.url = @"http://itunes.apple.com/cn/app/mo-yin-da-shi-feng-kuang-cai-ge/id954971485?ls=1&mt=8";
-//    [UMSocialData defaultData].extConfig.wechatSessionData.url = @"http://itunes.apple.com/cn/app/mo-yin-da-shi-feng-kuang-cai-ge/id954971485?ls=1&mt=8";
-}
-
-//-(void)didFinishGetUMSocialDataInViewController:(UMSocialResponseEntity *)response
-//{
-////    //根据`responseCode`得到发送结果,如果分享成功
-////    if(response.responseCode == UMSResponseCodeSuccess)
-////    {
-////        //得到分享到的微博平台名
-////        
-////
-////        NSLog(@"share to sns name is %@",[[response.data allKeys] objectAtIndex:0]);
-////        
-////        [CommonUtility coinsChange:300];
-////        [currentCoinsLabel setText:[NSString stringWithFormat:@"%d",[CommonUtility fetchCoinAmount]]];
-////        [_parentCoinsButton setTitle:[NSString stringWithFormat:@"%d",[CommonUtility fetchCoinAmount]] forState:UIControlStateNormal];
-////        if([[[response.data allKeys] objectAtIndex:0] isEqualToString:@"sina"])
-////        {
-////            [MobClick event:@"CoinFromSina"];
-////
-////            [[NSUserDefaults standardUserDefaults] setObject:@"yes" forKey:@"sinaShare"];
-////
-////        }else if ([[[response.data allKeys] objectAtIndex:0] isEqualToString:@"wxtimeline"])
-////        {
-////            [MobClick event:@"CoinFromWechat"];
-////
-////            [[NSUserDefaults standardUserDefaults] setObject:@"yes" forKey:@"wechatShare"];
-////
-////        }
-////        [self.itemsTable reloadData];
-////
-////        
-////    }
-//}
-
 
 @end
+
 

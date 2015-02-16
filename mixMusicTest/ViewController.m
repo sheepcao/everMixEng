@@ -672,9 +672,9 @@ int difficultyNow;
     if ([FBDialogs canPresentShareDialogWithParams:params]) {
         // Present the share dialog
         [FBDialogs presentShareDialogWithLink:params.link
-    name:nil
+    name:@"Mixing"
     caption:nil
-    description:nil
+    description:@"I am playing Mixing Guess,so interesting and chanllenging."
     picture:params.picture
     clientState:nil
                                       handler:^(FBAppCall *call, NSDictionary *results, NSError *error) {
@@ -692,23 +692,10 @@ int difficultyNow;
                                       }];
 
 
-//        [FBDialogs presentShareDialogWithLink:params.link
-//                                      handler:^(FBAppCall *call, NSDictionary *results, NSError *error) {
-//                                          if(error) {
-//                                              // An error occurred, we need to handle the error
-//                                              // See: https://developers.facebook.com/docs/ios/errors
-//                                              NSLog(@"Error publishing story: %@", error.description);
-//                                          } else {
-//                                              // Success
-//                                              NSLog(@"result %@", results);
-//                                              if ((int)[[results objectForKey:@"didComplete"] intValue] == 1 && [[results objectForKey:@"completionGesture"] isEqualToString: @"post"]) {
-//                                                  NSLog(@"success!!");
-//                                              }
-//                                          }
-//                                      }];
     } else {
         // Present the feed dialog
-        NSLog(@"分享失败");
+        UIAlertView * fbAlert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Can't find facebook app on your device.Share failed." delegate:nil cancelButtonTitle:@"Continue" otherButtonTitles:nil, nil];
+        [fbAlert show];
         
     }
    

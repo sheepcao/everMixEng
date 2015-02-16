@@ -10,6 +10,7 @@
 #import "globalVar.h"
 #import "fallAnimation.h"
 #import "BaiduMobAdView.h"
+#import <FacebookSDK/FacebookSDK.h>
 
 #define kAdViewPortraitRect CGRectMake(0, [[UIScreen mainScreen] bounds].size.height-48-44,[[UIScreen mainScreen] bounds].size.width,48)
 #define cdFrame  CGRectMake(5, 5,40, 40)
@@ -863,39 +864,52 @@ int answerBtnTag;
     [CommonUtility tapSound:@"click" withType:@"mp3"];
     
     [MobClick event:@"shareFromGame"];
+    NSString *musicsURL = [self jointURL];
+    NSLog(@"string1:%@",musicsURL);
+    NSMutableString * theURL = [[NSMutableString alloc]initWithString:musicsURL];
+    
+    NSString * escaped = [theURL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    NSLog(@"string2:%@",escaped);
 
-//    [UMSocialSnsService presentSnsIconSheetView:self
-//                        appKey:@"54c46ea7fd98c5071d000668"
-//                                      shareText:@"谁的耳力还有富裕,快来帮帮忙！"
-//                                     shareImage:[UIImage imageNamed:@"iconNew.png"]
-//                                shareToSnsNames:@[UMShareToSina,UMShareToWechatSession,UMShareToWechatTimeline,UMShareToWechatFavorite]
-//                                       delegate:(id)self];
-//    
-//    NSString *musicsURL = [self jointURL];
-//    NSLog(@"string1:%@",musicsURL);
-//    NSMutableString * theURL = [[NSMutableString alloc]initWithString:musicsURL];
-//    
-//    NSString * escaped = [theURL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-//    NSLog(@"string2:%@",escaped);
-//
-//    // music url
-//    [[UMSocialData defaultData].urlResource setResourceType:UMSocialUrlResourceTypeMusic url:escaped];
-//    
-//    [UMSocialData defaultData].extConfig.wechatTimelineData.url = musicsURL;
-//    [UMSocialData defaultData].extConfig.wechatSessionData.url = musicsURL;
-//    [UMSocialData defaultData].extConfig.qqData.url = musicsURL;
-//    [UMSocialData defaultData].extConfig.qzoneData.url = musicsURL;
+    
+    FBLinkShareParams *params = [[FBLinkShareParams alloc] init];
+    params.link = [NSURL URLWithString:escaped];
+    
+    params.picture =[NSURL URLWithString:@"http://cdn1.tnwcdn.com/wp-content/blogs.dir/1/files/2012/09/144149793-645x250.jpg"];
+    // If the Facebook app is installed and we can present the share dialog
+    if ([FBDialogs canPresentShareDialogWithParams:params]) {
+        // Present the share dialog
+        [FBDialogs presentShareDialogWithLink:params.link
+                                         name:@"Mixing"
+                                      caption:nil
+                                  description:@"Who knows songs most, Come and help!\nHow many songs can you find ?"
+                                      picture:params.picture
+                                  clientState:nil
+                                      handler:^(FBAppCall *call, NSDictionary *results, NSError *error) {
+                                          if(error) {
+                                              
+                                              NSLog(@"Error publishing story: %@", error.description);
+                                          } else {
+                                              // Success
+                                              NSLog(@"result %@", results);
+                                              if ((int)[[results objectForKey:@"didComplete"] intValue] == 1 && [[results objectForKey:@"completionGesture"] isEqualToString: @"post"]) {
+                                                  NSLog(@"success!!");
+                                                  
+                                              }
+                                          }
+                                      }];
+        
+        
+    } else {
+        // Present the feed dialog
+        UIAlertView * fbAlert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Can't find facebook app on your device.Share failed." delegate:nil cancelButtonTitle:@"Continue" otherButtonTitles:nil, nil];
+        [fbAlert show];
+        
+    }
 
+    
 }
-//-(void)didFinishGetUMSocialDataInViewController:(UMSocialResponseEntity *)response
-//{
-//    //根据`responseCode`得到发送结果,如果分享成功
-//    if(response.responseCode == UMSResponseCodeSuccess)
-//    {
-//        //得到分享到的微博平台名
-//        NSLog(@"share to sns name is %@",[[response.data allKeys] objectAtIndex:0]);
-//    }
-//}
+
 - (IBAction)refreshMusics:(UIButton *)sender {//delete one song
     [MobClick event:@"bombOne"];
 
