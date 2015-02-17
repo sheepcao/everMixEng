@@ -17,6 +17,8 @@
 #define cdFrame  CGRectMake(5, 5,40, 40)
 
 
+
+
 @interface gameViewController ()<UIAlertViewDelegate>
 
 @property (nonatomic ,strong) NSMutableArray *ignoreArray;
@@ -285,8 +287,16 @@ int answerBtnTag;
 
  
     CGFloat first_Y = self.downPartView.frame.size.height/2-15 - ((int)self.musicsArray.count/2)*63;
+    if (IS_IPHONE_4_OR_LESS) {
+    
+        first_Y = self.downPartView.frame.size.height/2+5 - ((int)self.musicsArray.count/2)*52;
+    }
     for (int i = 0; i<self.musicsArray.count ; i++) {
         UIButton *cdBtn = [[UIButton alloc] initWithFrame:CGRectMake(-520,first_Y + i*63, 270, 50)];
+        if (IS_IPHONE_4_OR_LESS) {
+            [cdBtn setFrame:CGRectMake(-520,first_Y + i*52, 270, 46)];
+        }
+        
         cdBtn.tag = i;
         
 //        [cdBtn setImage:[UIImage imageNamed:[self randomDiskWithRange:13-i]] forState:UIControlStateNormal];
@@ -360,7 +370,7 @@ int answerBtnTag;
     if(!self.choicesBoardView)
     {
         self.choicesBoardView = [[[NSBundle mainBundle] loadNibNamed:@"choicesBoardView" owner:self options:nil] objectAtIndex:0];
-        [self.choicesBoardView setFrame:CGRectMake(self.downPartView.frame.origin.x,[UIScreen mainScreen].bounds.size.height , self.downPartView.frame.size.width,self.downPartView.frame.size.height - 5)];
+        [self.choicesBoardView setFrame:CGRectMake(self.downPartView.frame.origin.x,[UIScreen mainScreen].bounds.size.height , self.downPartView.frame.size.width,self.downPartView.frame.size.height +3)];
         self.choicesBoardView.songName = @"";
         [self.choicesBoardView setupBoard];
         [self.view addSubview:self.choicesBoardView];
@@ -376,8 +386,16 @@ int answerBtnTag;
     }
     //only support less than 8 letters.
     NSLog(@"center:%f",self.choicesBoardView.center.x);
-    UIButton *answerButton = (UIButton *)[self.choicesBoardView viewWithTag:1];
-    CGFloat firstAnswer_Y = answerButton.frame.origin.y - 40 * songNameWord.count;
+//    UIButton *answerButton = (UIButton *)[self.choicesBoardView viewWithTag:1];
+    CGFloat firstAnswer_Y = 0;
+    if (songNameWord.count>1) {
+        firstAnswer_Y = /*answerButton.frame.origin.y*/185 - 40 * songNameWord.count;
+    }else
+    {
+        firstAnswer_Y = /*answerButton.frame.origin.y*/185 - 60;
+    }
+        
+
     UIImage *buttonBackImage = [UIImage imageNamed:@"answerBack"];
 
     for (int j = 0; j<songNameWord.count; j++) {
@@ -431,7 +449,7 @@ int answerBtnTag;
 
     
     [UIView animateWithDuration:0.9 delay:0.1 usingSpringWithDamping:0.5 initialSpringVelocity:0.89 options:0 animations:^{
-        [self.choicesBoardView setFrame:CGRectMake(self.downPartView.frame.origin.x,self.downPartView.frame.origin.y, self.downPartView.frame.size.width,self.downPartView.frame.size.height - 5)];
+        [self.choicesBoardView setFrame:CGRectMake(self.downPartView.frame.origin.x,self.downPartView.frame.origin.y, self.downPartView.frame.size.width,self.downPartView.frame.size.height+3)];
     } completion:^(BOOL finished){
         
         [self.navigationItem setHidesBackButton:YES];
@@ -513,7 +531,7 @@ int answerBtnTag;
     
     for (int i = 0;i<decisions.count;i++) {
         AnswerButton *answer = decisions[i];
-        if (!answer.titleLabel.text || [answer.titleLabel.text isEqualToString:@" "]) {
+        if (!answer.titleLabel.text || [answer.titleLabel.text isEqualToString:@" "] ||[answer.titleLabel.text isEqualToString:@""]) {
             
             [CommonUtility tapSound:@"Letter_Add" withType:@"mp3"];
 
@@ -681,12 +699,12 @@ int answerBtnTag;
     [CommonUtility coinsChange:coinReward];
     [self.coinShow setTitle:[NSString stringWithFormat:@"%d",[CommonUtility fetchCoinAmount]] forState:UIControlStateNormal];
     
-    if (levelNow == 100) {
+    if (levelNow == TOTAL_LEVEL) {
         
         UIAlertView *finishLevelAlert = [[UIAlertView alloc] initWithTitle:@"Unbelievable" message:@"You are awesome！We will update song library very soon！You may restart the game to recombine songs." delegate:self cancelButtonTitle:@"Wait patiently" otherButtonTitles:nil, nil];
         [finishLevelAlert show];
         
-    }else if (levelNow % 20 == 0) {
+    }else if (levelNow % MAX_LEVEL == 0) {
 
         
         self.gameDataForSingleLevel = [self readDataFromPlist:@"gameData"] ;
@@ -1088,7 +1106,7 @@ int answerBtnTag;
                     [ignoreLabel setTextColor:[UIColor whiteColor]];
                     ignoreLabel.textAlignment = NSTextAlignmentCenter;
 
-                    UIImageView *CDimage =(UIImageView *)[self.guessNameBtnArray[self.choicesBoardView.songNumber] viewWithTag:10];
+                    UIImageView *CDimage =(UIImageView *)[self.guessNameBtnArray[i] viewWithTag:10];
                     if (CDimage) {
                         [CDimage removeFromSuperview];
                     }
@@ -1096,6 +1114,7 @@ int answerBtnTag;
                     UIButton *buttonGuess =self.guessNameBtnArray[i];
                     [buttonGuess setTitle:@" " forState:UIControlStateNormal];
                     [buttonGuess addSubview:ignoreLabel];
+                    [buttonGuess setEnabled:NO];
 
                     
                     //            UIImageView *rightBackImg = [[UIImageView alloc] initWithFrame:songResult.frame];
@@ -1107,10 +1126,10 @@ int answerBtnTag;
                     //            }
                     //            [self.downPartView addSubview:rightBackImg];
                     
-                    UIImageView *checkMark = [[UIImageView alloc] initWithFrame:cdFrame ];
-                    [checkMark setImage:[UIImage imageNamed:@"closeBuyBtn"]];
-                    
-                    [ignoreLabel addSubview:checkMark];
+//                    UIImageView *checkMark = [[UIImageView alloc] initWithFrame:cdFrame ];
+//                    [checkMark setImage:[UIImage imageNamed:@"closeBuyBtn"]];
+//                    
+//                    [ignoreLabel addSubview:checkMark];
                     
                     
                     break;
@@ -1141,7 +1160,7 @@ int answerBtnTag;
 
     
     [UIView animateWithDuration:0.5 delay:0.1 usingSpringWithDamping:0.7 initialSpringVelocity:1.0 options:0 animations:^{
-        [self.choicesBoardView setFrame:CGRectMake(self.downPartView.frame.origin.x,[UIScreen mainScreen].bounds.size.height , self.downPartView.frame.size.width,self.downPartView.frame.size.height - 5)];
+        [self.choicesBoardView setFrame:CGRectMake(self.downPartView.frame.origin.x,[UIScreen mainScreen].bounds.size.height , self.downPartView.frame.size.width,self.downPartView.frame.size.height +3)];
     } completion:^(BOOL finished){
         [self.navigationItem setHidesBackButton:NO];
 
@@ -1177,7 +1196,7 @@ int answerBtnTag;
                           delay: 0.0f
                         options: options
                      animations: ^{
-                         destRotateView.transform = CGAffineTransformRotate(destRotateView.transform, M_PI/80 );
+                         destRotateView.transform = CGAffineTransformRotate(destRotateView.transform, M_PI/68 );
                      }
                      completion: ^(BOOL finished) {
                          if (finished) {
@@ -1254,25 +1273,23 @@ int answerBtnTag;
                      NSLog(@"nonono:%@",guessBtn);
                  
              }];
-     
-        
-        UILabel *ignoreLabel = [[UILabel alloc] initWithFrame:[self.guessNameBtnArray[i] frame]];
-        [ignoreLabel setText:@"Ignore"];
-        ignoreLabel.textAlignment = NSTextAlignmentCenter;
-        [ignoreLabel setTextColor:[UIColor whiteColor]];
-        [self.ignoreArray insertObject:ignoreLabel atIndex:i];
-        [self. downPartView addSubview:ignoreLabel];
-        [ignoreLabel setHidden:YES];
-        
-        if (i >= musicCount && i <= [self.currentDifficulty intValue]) {
-        
-            [ignoreLabel setHidden:NO];
-
-        }
-        
-        
-        
+    
     }
+//    for (int i = 0; i < [self.currentDifficulty intValue]; i++) {
+//        UILabel *ignoreLabel = [[UILabel alloc] initWithFrame:[self.guessNameBtnArray[i] frame]];
+//        [ignoreLabel setText:@"Ignore this song"];
+//        ignoreLabel.textAlignment = NSTextAlignmentCenter;
+//        [ignoreLabel setTextColor:[UIColor whiteColor]];
+//        [self.ignoreArray insertObject:ignoreLabel atIndex:i];
+//        [self. downPartView addSubview:ignoreLabel];
+//        [ignoreLabel setHidden:YES];
+//        
+//        if (i >= musicCount && i <= [self.currentDifficulty intValue]) {
+//            
+//            [ignoreLabel setHidden:NO];
+//            
+//        }
+//    }
     
     
 }
@@ -1512,7 +1529,7 @@ int answerBtnTag;
     
     
     myGameViewController.delegate = self.delegate;
-    myGameViewController.navigationItem.title = [NSString stringWithFormat:@"%d",(levelNow  - [currentDifficulty intValue]*20)];
+    myGameViewController.navigationItem.title = [NSString stringWithFormat:@"%d",(levelNow  - [currentDifficulty intValue]*MAX_LEVEL)];
     myGameViewController.currentDifficulty = [self.gameDataForSingleLevel objectForKey:@"difficulty"];
     
     NSArray *arrayControllers = self.navigationController.viewControllers;

@@ -7,7 +7,7 @@
 		<key>COUNTING STARS</key>
 		<string>I,N,G,O,S,V,T,C,S,R,U,A,T,N,A,W,N,L,S,Z,G</string>
 		<key>UPSIDE DOWN</key>
-		<string>S,O,P,K,D,J,C,N,O,M,A,F,L,E,H,G,I,V,C,U,W</string>
+		<string>S,O,P,K,D,J,C,N,O,M,A,F,L,E,H,G,I,V,C,U,D</string>
 		<key>WHITE HORSE</key>
 		<string>T,I,E,S,H,E,T,Y,U,W,Q,O,R,H,B,K,A,L,W,E,C</string>
 		<key>TIMBER</key>
@@ -52,12 +52,10 @@
 		<string>T,R,S,C,O,L,W,O,E,Z,C,V,B,D,L,J,N,G,Y,M,S</string>
 		<key>FANTASY</key>
 		<string>B,Y,U,A,K,G,A,N,H,J,O,S,Y,P,Q,F,T,Q,C,Y,T</string>
-		<key>HEAVEN</key>
-		<string>W,D,R,Q,V,E,A,N,E,M,U,R,O,B,H,V,C,Z,Y,S</string>
 		<key>HOLIDAY</key>
 		<string>Y,W,A,S,Y,D,Y,O,A,S,D,F,H,G,J,I,K,A,L,C,N</string>
 		<key>IMAGINE</key>
-		<string>L,E,N,O,E,V,M,G,E,S,M,E,L,Y,A,D,C,L,I,O,U</string>
+		<string>L,E,N,O,I,V,M,G,E,S,N,E,L,Y,A,D,C,L,I,O,U</string>
 		<key>JEALOUS</key>
 		<string>P,E,L,P,N,S,R,Y,M,E,S,O,A,W,P,J,T,E,U,M,R</string>
 		<key>LONDON CALLING</key>
@@ -129,7 +127,7 @@
 		<key>BANG BANG</key>
 		<string>S,H,T,R,P,B,A,L,N,C,O,G,B,N,A,M,B,G,N,F,R</string>
 		<key>BILLIE JEAN</key>
-		<string>I,N,L,B,C,L,E,P,A,R,,J,E,I,U,E,O,B,H,D,S,D</string>
+		<string>I,N,L,B,C,L,E,P,A,R,J,E,I,U,E,O,B,H,D,S,D</string>
 		<key>GET LUCKY</key>
 		<string>G,Y,T,L,E,V,W,U,C,P,Y,S,E,B,K,R,U,A,C,E,M</string>
 		<key>JUMP AROUND</key>
@@ -143,7 +141,7 @@
 		<key>PURPLE RAIN</key>
 		<string>Y,X,R,P,L,R,E,E,U,T,A,N,I,P,O,B,R,M,G,N,D</string>
 		<key>SLOW DOWN</key>
-		<string>S,A,L,E,O,R,W,N,R,B,L,Y,A,O,I,L,G,R,Z,T,D</string>
+		<string>S,A,L,E,O,R,W,N,R,B,L,Y,A,O,I,L,G,R,W,T,D</string>
 		<key>SLOW MOTION</key>
 		<string>S,A,L,E,O,R,W,N,R,B,L,Y,A,O,I,L,G,O,Z,M,T</string>
 		<key>STRAIGHT UP</key>
@@ -154,6 +152,8 @@
 		<string>T,Y,R,S,H,D,A,Z,L,C,O,V,E,A,N,I,K,M,E,V,T</string>
 		<key>THE ONE</key>
 		<string>L,E,N,X,H,S,L,D,V,E,A,V,A,O,T,M,R,C,E,W,U</string>
+		<key>HEAVEN</key>
+		<string>A,S,L,H,T,R,B,E,M,D,W,N,G,H,X,I,Y,V,C,O,E</string>
 	</dict>
 	<key>musicPlaying</key>
 	<array/>
@@ -212,7 +212,7 @@
 		</array>
 		<array>
 			<string>BANG BANG</string>
-			<string>BILLIE JEAN </string>
+			<string>BILLIE JEAN</string>
 			<string>GET LUCKY</string>
 			<string>JUMP AROUND</string>
 			<string>MACHO MAN</string>
@@ -242,12 +242,12 @@
 			<string>THE WAY</string>
 			<string>TIK TOK</string>
 			<string>WRECKING BALL</string>
-			<string>nonono</string>
+			<string>THE ONE</string>
 		</array>
 	</array>
 	<key>difficulty</key>
 	<string>1</string>
 	<key>currentLevel</key>
-	<string>20</string>
+	<string>15</string>
 </dict>
 </plist>

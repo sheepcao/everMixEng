@@ -9,7 +9,7 @@
 #ifndef mixMusicTest_Header_h
 #define mixMusicTest_Header_h
 
-#define REVIEW_URL @"itms-apps://itunes.apple.com/cn/app/mo-yin-da-shi-feng-kuang-cai-ge/id954971485?ls=1&mt=8"
+#define REVIEW_URL @"itms-apps://itunes.apple.com/us/app/mixing-guess-guess-magic-song/id967166808?ls=1&mt=8"
 
 #define IS_IPAD (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
 #define IS_IPHONE (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
@@ -27,6 +27,10 @@
 
 #define ADMOB @"ca-app-pub-3074684817942615/6100559886"
 #define ADMOB_big @"ca-app-pub-3074684817942615/2588690285"
+
+#define MAX_LEVEL 15
+#define TOTAL_LEVEL 75
+
 BOOL backFromGame;
 
 @protocol closeBuyViewDelegate

@@ -147,7 +147,7 @@
 		A4ADE0B01A9188D500FB1262 /* TIK TOK.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A4ADE0651A9188D500FB1262 /* TIK TOK.m4a */; };
 		A4ADE0B11A9188D500FB1262 /* WRECKING BALL.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A4ADE0661A9188D500FB1262 /* WRECKING BALL.m4a */; };
 		A4ADE0B21A9188D500FB1262 /* BANG BANG.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A4ADE0681A9188D500FB1262 /* BANG BANG.m4a */; };
-		A4ADE0B31A9188D500FB1262 /* BILLIE JEAN .m4a in Resources */ = {isa = PBXBuildFile; fileRef = A4ADE0691A9188D500FB1262 /* BILLIE JEAN .m4a */; };
+		A4ADE0B31A9188D500FB1262 /* BILLIE JEAN.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A4ADE0691A9188D500FB1262 /* BILLIE JEAN.m4a */; };
 		A4ADE0B41A9188D500FB1262 /* GET LUCKY.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A4ADE06A1A9188D500FB1262 /* GET LUCKY.m4a */; };
 		A4ADE0B51A9188D500FB1262 /* JUMP AROUND.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A4ADE06B1A9188D500FB1262 /* JUMP AROUND.m4a */; };
 		A4ADE0B61A9188D500FB1262 /* MACHO MAN.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A4ADE06C1A9188D500FB1262 /* MACHO MAN.m4a */; };
@@ -193,8 +193,8 @@
 		A4CAD7611A8288BE00CF40D2 /* playSingleBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = A4CAD7541A8288BE00CF40D2 /* playSingleBtn.png */; };
 		A4CAD7631A8288BE00CF40D2 /* showAnswerBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = A4CAD7561A8288BE00CF40D2 /* showAnswerBtn.png */; };
 		A4D050181A7612CA000D0A77 /* CustomIOS7AlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = A4D050171A7612CA000D0A77 /* CustomIOS7AlertView.m */; };
-		A4D77D001A899D5F007FB122 /* libFlurry_6.0.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A4D77CFF1A899D5F007FB122 /* libFlurry_6.0.0.a */; };
 		A4D77D021A89A1A8007FB122 /* back_ios7.png in Resources */ = {isa = PBXBuildFile; fileRef = A4D77D011A89A1A8007FB122 /* back_ios7.png */; };
+		A4D9DC6C1A92E39900145E69 /* UMS_facebook_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A4D9DC6B1A92E39900145E69 /* UMS_facebook_icon.png */; };
 		A4DAF7341A87143D00D9A94F /* infoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4DAF7331A87143D00D9A94F /* infoView.xib */; };
 		A4DAF7371A87208300D9A94F /* UMS_sina_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A4DAF7351A87208300D9A94F /* UMS_sina_icon.png */; };
 		A4DAF7381A87208300D9A94F /* UMS_wechat_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A4DAF7361A87208300D9A94F /* UMS_wechat_icon.png */; };
@@ -378,7 +378,7 @@
 		A4ADE0651A9188D500FB1262 /* TIK TOK.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TIK TOK.m4a"; sourceTree = "<group>"; };
 		A4ADE0661A9188D500FB1262 /* WRECKING BALL.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "WRECKING BALL.m4a"; sourceTree = "<group>"; };
 		A4ADE0681A9188D500FB1262 /* BANG BANG.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BANG BANG.m4a"; sourceTree = "<group>"; };
-		A4ADE0691A9188D500FB1262 /* BILLIE JEAN .m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BILLIE JEAN .m4a"; sourceTree = "<group>"; };
+		A4ADE0691A9188D500FB1262 /* BILLIE JEAN.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BILLIE JEAN.m4a"; sourceTree = "<group>"; };
 		A4ADE06A1A9188D500FB1262 /* GET LUCKY.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GET LUCKY.m4a"; sourceTree = "<group>"; };
 		A4ADE06B1A9188D500FB1262 /* JUMP AROUND.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JUMP AROUND.m4a"; sourceTree = "<group>"; };
 		A4ADE06C1A9188D500FB1262 /* MACHO MAN.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MACHO MAN.m4a"; sourceTree = "<group>"; };
@@ -432,9 +432,8 @@
 		A4CAD7561A8288BE00CF40D2 /* showAnswerBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = showAnswerBtn.png; sourceTree = "<group>"; };
 		A4D050161A7612CA000D0A77 /* CustomIOS7AlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomIOS7AlertView.h; sourceTree = "<group>"; };
 		A4D050171A7612CA000D0A77 /* CustomIOS7AlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomIOS7AlertView.m; sourceTree = "<group>"; };
-		A4D77CFE1A899D5F007FB122 /* Flurry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flurry.h; sourceTree = "<group>"; };
-		A4D77CFF1A899D5F007FB122 /* libFlurry_6.0.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFlurry_6.0.0.a; sourceTree = "<group>"; };
 		A4D77D011A89A1A8007FB122 /* back_ios7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back_ios7.png; sourceTree = "<group>"; };
+		A4D9DC6B1A92E39900145E69 /* UMS_facebook_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UMS_facebook_icon.png; sourceTree = "<group>"; };
 		A4DAF7331A87143D00D9A94F /* infoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = infoView.xib; sourceTree = "<group>"; };
 		A4DAF7351A87208300D9A94F /* UMS_sina_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UMS_sina_icon.png; sourceTree = "<group>"; };
 		A4DAF7361A87208300D9A94F /* UMS_wechat_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UMS_wechat_icon.png; sourceTree = "<group>"; };
@@ -498,7 +497,6 @@
 				A4ADE0F31A91E54B00FB1262 /* GoogleMobileAds.framework in Frameworks */,
 				A45C2E661A80CC0100CC73F6 /* UIKit.framework in Frameworks */,
 				A45C2E641A80CBF900CC73F6 /* Foundation.framework in Frameworks */,
-				A4D77D001A899D5F007FB122 /* libFlurry_6.0.0.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -615,7 +613,6 @@
 			children = (
 				A4ADE0F21A91E54B00FB1262 /* GoogleMobileAds.framework */,
 				A4B268A61A8351D30037DA16 /* frameworks */,
-				A4D77CFD1A899D5F007FB122 /* Flurry */,
 				A4ADE0C11A91E16A00FB1262 /* MixADSource */,
 				A4AC86031A36CFE700CD19CA /* mixMusicTest */,
 				A4AC861D1A36CFE700CD19CA /* mixMusicTestTests */,
@@ -787,7 +784,7 @@
 			isa = PBXGroup;
 			children = (
 				A4ADE0681A9188D500FB1262 /* BANG BANG.m4a */,
-				A4ADE0691A9188D500FB1262 /* BILLIE JEAN .m4a */,
+				A4ADE0691A9188D500FB1262 /* BILLIE JEAN.m4a */,
 				A4ADE06A1A9188D500FB1262 /* GET LUCKY.m4a */,
 				A4ADE06B1A9188D500FB1262 /* JUMP AROUND.m4a */,
 				A4ADE06C1A9188D500FB1262 /* MACHO MAN.m4a */,
@@ -861,6 +858,7 @@
 			isa = PBXGroup;
 			children = (
 				A4DAF7351A87208300D9A94F /* UMS_sina_icon.png */,
+				A4D9DC6B1A92E39900145E69 /* UMS_facebook_icon.png */,
 				A4DAF7361A87208300D9A94F /* UMS_wechat_icon.png */,
 				A4B77B071A92408A003C6841 /* ask1.png */,
 				A4B77B041A923ED5003C6841 /* fb.png */,
@@ -896,15 +894,6 @@
 			);
 			name = custonAlert;
 			path = View;
-			sourceTree = "<group>";
-		};
-		A4D77CFD1A899D5F007FB122 /* Flurry */ = {
-			isa = PBXGroup;
-			children = (
-				A4D77CFE1A899D5F007FB122 /* Flurry.h */,
-				A4D77CFF1A899D5F007FB122 /* libFlurry_6.0.0.a */,
-			);
-			path = Flurry;
 			sourceTree = "<group>";
 		};
 		A4E094FD1A4BE092001AD626 /* sound */ = {
@@ -1073,7 +1062,7 @@
 				A4ADE0801A9188D500FB1262 /* PARTY.m4a in Resources */,
 				A4DAF7501A87BD4700D9A94F /* shareBtn2.png in Resources */,
 				A4ADE0891A9188D500FB1262 /* COUNTING STARS.m4a in Resources */,
-				A4ADE0B31A9188D500FB1262 /* BILLIE JEAN .m4a in Resources */,
+				A4ADE0B31A9188D500FB1262 /* BILLIE JEAN.m4a in Resources */,
 				A4DAF7401A879C5500D9A94F /* UMS_qq_icon.png in Resources */,
 				A4ADE0A11A9188D500FB1262 /* TREASURE.m4a in Resources */,
 				A4ADB5F81A83B5C200D991F8 /* note0.png in Resources */,
@@ -1085,6 +1074,7 @@
 				A466A14F1A8908D9005BD67C /* newGame.mp3 in Resources */,
 				A4ADE09D1A9188D500FB1262 /* ROCKSTAR.m4a in Resources */,
 				A4A0C2521A8108430032DF0B /* 开始.png in Resources */,
+				A4D9DC6C1A92E39900145E69 /* UMS_facebook_icon.png in Resources */,
 				A4ADE08A1A9188D500FB1262 /* DEMONS.m4a in Resources */,
 				A4ADE0B61A9188D500FB1262 /* MACHO MAN.m4a in Resources */,
 				A4B9F7DF1A81AFA300076531 /* gameBack.png in Resources */,

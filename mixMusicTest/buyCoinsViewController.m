@@ -196,14 +196,21 @@
     
     
  }
-
+-(unsigned int)randomDiskNumberWithRange:(int)range
+{
+    unsigned int randomNumber = arc4random()%13+1;
+    
+    
+    return randomNumber;
+    
+}
 -(void)shareToFB
 {
     
     FBLinkShareParams *params = [[FBLinkShareParams alloc] init];
     params.link = [NSURL URLWithString:@"https://itunes.apple.com/us/app/mixing-guess-guess-magic-song/id967166808?ls=1&mt=8"];
     
-    params.picture =[NSURL URLWithString:@"http://cgx.nwpu.info/image/iconEng.png"];
+    params.picture =[NSURL URLWithString:[NSString stringWithFormat:@"http://cgx.nwpu.info/image/cd%u.png",[self randomDiskNumberWithRange:13]]];
     // If the Facebook app is installed and we can present the share dialog
     if ([FBDialogs canPresentShareDialogWithParams:params]) {
         // Present the share dialog

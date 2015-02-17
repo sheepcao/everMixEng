@@ -95,7 +95,7 @@ int difficultyNow;
     self.difficultyButtons = [NSArray arrayWithObjects:self.difficulty1,self.difficulty2,self.difficulty3,self.difficulty4,self.difficulty5, nil];
     
     
-    timer = [NSTimer scheduledTimerWithTimeInterval:25.0 target:self selector:@selector(bigADshow) userInfo:nil repeats:NO];
+    timer = [NSTimer scheduledTimerWithTimeInterval:15.0 target:self selector:@selector(bigADshow) userInfo:nil repeats:NO];
 
     //big AD...
     [self createAndLoadInterstitial];
@@ -397,14 +397,14 @@ int difficultyNow;
     [self changeDifficultyTo:currentDifficulty];
     NSMutableArray *currentMusics = [self.gameData objectForKey:@"musicPlaying"];
     
-    if ((currentMusics && currentMusics.count > 0) || [currentLevel intValue] %20 != 0 || [currentLevel intValue] == 100) {
+    if ((currentMusics && currentMusics.count > 0) || [currentLevel intValue] %MAX_LEVEL != 0 || [currentLevel intValue] == TOTAL_LEVEL) {
         
         [self.begainGame setImage:[UIImage imageNamed:@"重新开始"] forState:UIControlStateNormal];
         [self.begainGame setFrame:CGRectMake([[UIScreen mainScreen] bounds].size.width - self.continueGame.frame.origin.x - self.continueGame.frame.size.width, self.continueGame.frame.origin.y, self.continueGame.frame.size.width, self.continueGame.frame.size.height)];
         [self.continueGame setHidden:NO];
     }else
     {
-        if ([currentLevel intValue]!=[currentDifficulty intValue] *20) {
+        if ([currentLevel intValue]!=[currentDifficulty intValue] *MAX_LEVEL) {
             [self.begainGame setImage:[UIImage imageNamed:@"重新开始"] forState:UIControlStateNormal];
             [self.begainGame setFrame:CGRectMake([[UIScreen mainScreen] bounds].size.width - self.continueGame.frame.origin.x - self.continueGame.frame.size.width, self.continueGame.frame.origin.y, self.continueGame.frame.size.width, self.continueGame.frame.size.height)];
             [self.continueGame setHidden:NO];
@@ -526,14 +526,14 @@ int difficultyNow;
             
             [self modifyPlist:@"gameData" withValue:[NSString stringWithFormat:@"%d",difficultyNow] forKey:@"difficulty"];
             
-            [self modifyPlist:@"gameData" withValue:[NSString stringWithFormat:@"%d",difficultyNow*20] forKey:@"currentLevel"];
+            [self modifyPlist:@"gameData" withValue:[NSString stringWithFormat:@"%d",difficultyNow*MAX_LEVEL] forKey:@"currentLevel"];
 
         }
         if (alertView.tag == 2) {
             [self resetPlist];
 //            [self drawStars:2];
             [self changeDifficultyTo:@"1"];
-            [self modifyPlist:@"gameData" withValue:[NSString stringWithFormat:@"%d",20] forKey:@"currentLevel"];
+            [self modifyPlist:@"gameData" withValue:[NSString stringWithFormat:@"%d",MAX_LEVEL] forKey:@"currentLevel"];
 
             
         }
@@ -561,7 +561,7 @@ int difficultyNow;
 
     NSString *currentLevel = [self.gameData objectForKey:@"currentLevel"];
     NSString *currentDifficulty = [self.gameData objectForKey:@"difficulty"];
-    int levelNow = [currentLevel intValue] - [currentDifficulty intValue] * 20 ;
+    int levelNow = [currentLevel intValue] - [currentDifficulty intValue] * MAX_LEVEL ;
 
     
     gameViewController *myGameViewController = [[gameViewController alloc] initWithNibName:@"gameViewController" bundle:nil];
@@ -577,7 +577,7 @@ int difficultyNow;
         
     }else
     {
-        if([currentLevel intValue] == 100 )
+        if([currentLevel intValue] == TOTAL_LEVEL )
         {
         UIAlertView *finishLevelAlert = [[UIAlertView alloc] initWithTitle:@"Unbelievable" message:@"You are awesome！We will update song library very soon！You may restart the game to recombine songs." delegate:self cancelButtonTitle:@"Wait patiently" otherButtonTitles:nil, nil];
         [finishLevelAlert show];
@@ -609,7 +609,7 @@ int difficultyNow;
     NSMutableArray *currentMusics = [self.gameData objectForKey:@"musicPlaying"];
     NSString *currentLevel = [self.gameData objectForKey:@"currentLevel"];
 
-    if ((currentMusics && currentMusics.count > 0) || [currentLevel intValue]>=100) // renew game
+    if ((currentMusics && currentMusics.count > 0) || [currentLevel intValue]>=TOTAL_LEVEL) // renew game
     {
        
         [MobClick event:@"restart"];
@@ -632,13 +632,13 @@ int difficultyNow;
 
         currentLevel = [self.gameData objectForKey:@"currentLevel"];
         currentDifficulty = [self.gameData objectForKey:@"difficulty"];
-        int levelNow = [currentLevel intValue] - [currentDifficulty intValue] * 20 + 1;
+        int levelNow = [currentLevel intValue] - [currentDifficulty intValue] * MAX_LEVEL + 1;
         
 //        if(levelNow != 1)
 //        {
 //            
 //        }
-        [self modifyPlist:@"gameData" withValue:[NSString stringWithFormat:@"%d",levelNow + [currentDifficulty intValue] * 20] forKey:@"currentLevel"];
+        [self modifyPlist:@"gameData" withValue:[NSString stringWithFormat:@"%d",levelNow + [currentDifficulty intValue] * MAX_LEVEL] forKey:@"currentLevel"];
         
         gameViewController *myGameViewController = [[gameViewController alloc] initWithNibName:@"gameViewController" bundle:nil];
         myGameViewController.levelTitle = @"PLAY1234";
@@ -656,6 +656,15 @@ int difficultyNow;
 
 }
 
+-(unsigned int)randomDiskNumberWithRange:(int)range
+{
+    unsigned int randomNumber = arc4random()%13+1;
+    
+    
+    return randomNumber;
+    
+}
+
 - (IBAction)socialShare {
     
     [CommonUtility tapSound:@"click" withType:@"mp3"];
@@ -664,7 +673,7 @@ int difficultyNow;
     FBLinkShareParams *params = [[FBLinkShareParams alloc] init];
     params.link = [NSURL URLWithString:@"https://itunes.apple.com/us/app/mixing-guess-guess-magic-song/id967166808?ls=1&mt=8"];
 
-    params.picture =[NSURL URLWithString:@"http://cgx.nwpu.info/image/iconEng.png"];
+    params.picture =[NSURL URLWithString:[NSString stringWithFormat:@"http://cgx.nwpu.info/image/cd%u.png",[self randomDiskNumberWithRange:13]]];
     // If the Facebook app is installed and we can present the share dialog
     if ([FBDialogs canPresentShareDialogWithParams:params]) {
         // Present the share dialog
@@ -1130,7 +1139,7 @@ int difficultyNow;
         
         [self modifyPlist:@"gameData" withValue:[NSString stringWithFormat:@"%ld",(long)Index] forKey:@"difficulty"];
         
-        [self modifyPlist:@"gameData" withValue:[NSString stringWithFormat:@"%ld",Index*20] forKey:@"currentLevel"];
+        [self modifyPlist:@"gameData" withValue:[NSString stringWithFormat:@"%ld",Index*MAX_LEVEL] forKey:@"currentLevel"];
     }else
     {
         myAlertView *resetAlert = [[myAlertView alloc] initWithTitle:@"Attention" message:@"You will change the difficulty and your current progress will be deleted." delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Continue", nil];
