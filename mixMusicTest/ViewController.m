@@ -181,31 +181,31 @@ int difficultyNow;
     
     self.difficulty1 = [[UIButton alloc] init];
     [self.difficulty1 setTitle:@"Easy" forState:UIControlStateNormal];
-    self.difficulty1.titleLabel.font = [UIFont boldSystemFontOfSize:15.0f ];
+//    self.difficulty1.titleLabel.font = [UIFont boldSystemFontOfSize:15.0f];
     self.difficulty1.tag = 1;
     
     self.difficulty2 = [[UIButton alloc] init];
     [self.difficulty2 setTitle:@"Medium" forState:UIControlStateNormal];
     self.difficulty2.tag = 2;
-    self.difficulty2.titleLabel.font = [UIFont boldSystemFontOfSize:15.0f ];
+//    self.difficulty2.titleLabel.font = [UIFont boldSystemFontOfSize:15.0f ];
 
     
     self.difficulty3 = [[UIButton alloc] init];
     [self.difficulty3 setTitle:@"Difficult" forState:UIControlStateNormal];
     self.difficulty3.tag = 3;
-    self.difficulty3.titleLabel.font = [UIFont boldSystemFontOfSize:15.0f ];
+//    self.difficulty3.titleLabel.font = [UIFont boldSystemFontOfSize:15.0f ];
 
     
     self.difficulty4 = [[UIButton alloc] init];
     [self.difficulty4 setTitle:@"Crazy" forState:UIControlStateNormal];
     self.difficulty4.tag = 4;
-    self.difficulty4.titleLabel.font = [UIFont boldSystemFontOfSize:15.0f ];
+//    self.difficulty4.titleLabel.font = [UIFont boldSystemFontOfSize:15.0f ];
 
     
     self.difficulty5 = [[UIButton alloc] init];
     [self.difficulty5 setTitle:@"Rampage" forState:UIControlStateNormal];
     self.difficulty5.tag = 5;
-    self.difficulty5.titleLabel.font = [UIFont boldSystemFontOfSize:15.0f ];
+//    self.difficulty5.titleLabel.font = [UIFont boldSystemFontOfSize:15.0f ];
 
     
     
@@ -229,6 +229,23 @@ int difficultyNow;
     
     CGRect pframe = CGRectMake(257-20, 308+20, 63, 30);
     [self.difficulty5 setFrame:pframe];
+    
+    if (IS_IPAD) {
+        CGRect kframe = CGRectMake(50,625, 100, 50);
+        [self.difficulty1 setFrame:kframe];
+        
+        CGRect mframe = CGRectMake(170, 575, 100, 50);
+        [self.difficulty2 setFrame:mframe];
+        
+        CGRect nframe = CGRectMake(290, 710, 100, 50);
+        [self.difficulty3 setFrame:nframe];
+        
+        CGRect oframe = CGRectMake(413, 540, 100, 50);
+        [self.difficulty4 setFrame:oframe];
+        
+        CGRect pframe = CGRectMake(580, 600, 150, 50);
+        [self.difficulty5 setFrame:pframe];
+    }
     
     if(IS_IPHONE_5)
     {
@@ -379,6 +396,20 @@ int difficultyNow;
     
     [button setTitleEdgeInsets:UIEdgeInsetsMake(0, 0, 0, 50)];
     [button setImageEdgeInsets:UIEdgeInsetsMake(10, 0, 9, 52)];
+    button.titleLabel.font = [UIFont boldSystemFontOfSize:15.0f ];
+
+    if (IS_IPAD) {
+        [button setTitleEdgeInsets:UIEdgeInsetsMake(0, 0, 0, 50+20)];
+        [button setImageEdgeInsets:UIEdgeInsetsMake(15, 0, 14, 52+26)];
+        button.titleLabel.font = [UIFont boldSystemFontOfSize:24.0f ];
+        if ([button isEqual:self.difficulty5]) {
+//            button.titleLabel.font = [UIFont boldSystemFontOfSize:22.0f ];
+            [button setTitleEdgeInsets:UIEdgeInsetsMake(0, -114, 0, 0)];
+            [button setImageEdgeInsets:UIEdgeInsetsMake(15, 0, 14, 52+76)];
+
+        }
+
+    }
     [button setContentHorizontalAlignment:UIControlContentHorizontalAlignmentCenter];
     [button setContentVerticalAlignment:UIControlContentVerticalAlignmentFill];
 }
@@ -1139,7 +1170,7 @@ int difficultyNow;
         
         [self modifyPlist:@"gameData" withValue:[NSString stringWithFormat:@"%ld",(long)Index] forKey:@"difficulty"];
         
-        [self modifyPlist:@"gameData" withValue:[NSString stringWithFormat:@"%ld",Index*MAX_LEVEL] forKey:@"currentLevel"];
+        [self modifyPlist:@"gameData" withValue:[NSString stringWithFormat:@"%ld",(long)Index*MAX_LEVEL] forKey:@"currentLevel"];
     }else
     {
         myAlertView *resetAlert = [[myAlertView alloc] initWithTitle:@"Attention" message:@"You will change the difficulty and your current progress will be deleted." delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Continue", nil];

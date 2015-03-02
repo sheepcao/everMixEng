@@ -96,10 +96,10 @@
                         <constraint firstItem="qOM-aB-qh1" firstAttribute="centerY" secondItem="IEM-W5-uVA" secondAttribute="centerY" constant="15" id="xc3-rn-3Ut"/>
                     </constraints>
                 </view>
-                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q6h-8Q-Tch" userLabel="nextDifficulty">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q6h-8Q-Tch" userLabel="nextDifficulty">
                     <rect key="frame" x="15" y="144" width="290" height="180"/>
                     <subviews>
-                        <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nextBack.png" translatesAutoresizingMaskIntoConstraints="NO" id="eKc-u9-scB">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nextBack.png" translatesAutoresizingMaskIntoConstraints="NO" id="eKc-u9-scB">
                             <rect key="frame" x="0.0" y="0.0" width="290" height="180"/>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="It is time to challenge a higher difficulty!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="184" translatesAutoresizingMaskIntoConstraints="NO" id="bvr-la-mLs">

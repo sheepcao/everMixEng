@@ -35,7 +35,7 @@
 
 @protocol prepareSongsDelegate <NSObject>
 -(NSMutableArray *)configSongs;
-
+-(void)resetPlist;
 @end
 
 

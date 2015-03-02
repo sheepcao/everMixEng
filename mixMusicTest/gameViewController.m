@@ -571,15 +571,6 @@ int answerBtnTag;
             [songResult setTextColor:[UIColor whiteColor]];
             [songResult setBackgroundColor:[UIColor clearColor]];
             
-//            UIImageView *rightBackImg = [[UIImageView alloc] initWithFrame:songResult.frame];
-//            [rightBackImg setImage:[UIImage imageNamed:@"rightBack"]];
-            
-//            if (songNameGuessed.length >3) {
-//                CGRect aframe = songResult.frame;
-//                aframe.origin.y -= 6;
-//                [rightBackImg setFrame:aframe];
-//            }
-//            [self.downPartView addSubview:rightBackImg];
 
             UIImageView *CDimage =(UIImageView *)[self.guessNameBtnArray[self.choicesBoardView.songNumber] viewWithTag:10];
             if (CDimage) {
@@ -597,6 +588,8 @@ int answerBtnTag;
             
             [self.guessNameBtnArray[self.choicesBoardView.songNumber] addSubview:songResult];
             [self.musicsPlayArray removeObject:self.choicesBoardView.songName];
+            
+            [self.guessNameBtnArray[self.choicesBoardView.songNumber] setEnabled:NO];
             [self returnChoicesBoard:nil];
 
             if (self.musicsPlayArray.count == 0) {
@@ -710,11 +703,13 @@ int answerBtnTag;
         self.gameDataForSingleLevel = [self readDataFromPlist:@"gameData"] ;
         NSString *currentDifficulty = [self.gameDataForSingleLevel objectForKey:@"difficulty"];
         
-        [self modifyPlist:@"gameData" withValue:[NSString stringWithFormat:@"%d",[currentDifficulty intValue]+1] forKey:@"difficulty"];
+
         
         int levelNow = [[self.gameDataForSingleLevel objectForKey:@"currentLevel"] intValue];
-        [self modifyPlist:@"gameData" withValue:[NSString stringWithFormat:@"%d",levelNow+1] forKey:@"currentLevel"];
+        [self.delegate resetPlist];
 
+        [self modifyPlist:@"gameData" withValue:[NSString stringWithFormat:@"%d",levelNow+1] forKey:@"currentLevel"];
+        [self modifyPlist:@"gameData" withValue:[NSString stringWithFormat:@"%d",[currentDifficulty intValue]+1] forKey:@"difficulty"];
         
         [self.levelPassMessage setHidden:YES];
         [self.difficultyPass setHidden:NO];
@@ -752,10 +747,7 @@ int answerBtnTag;
             
         } completion:nil];
         
-        //                    UIButton *nextLevelBtn = (UIButton *)[self.levelPassMessage viewWithTag:11];
-        
-        
-        //                     [self nextLevel];
+
     }
 
 
@@ -1062,14 +1054,6 @@ int answerBtnTag;
             UIButton *buttonGuess =self.guessNameBtnArray[self.choicesBoardView.songNumber];
             [buttonGuess setTitle:@" " forState:UIControlStateNormal];
             
-//            UIImageView *rightBackImg = [[UIImageView alloc] initWithFrame:songResult.frame];
-//            [rightBackImg setImage:[UIImage imageNamed:@"rightBack"]];
-//           if (songName.length >3) {
-//                CGRect aframe = songResult.frame;
-//                aframe.origin.y -= 6;
-//                [rightBackImg setFrame:aframe];
-//            }
-//            [self.downPartView addSubview:rightBackImg];
             
             UIImageView *checkMark = [[UIImageView alloc] initWithFrame:cdFrame ];
             [checkMark setImage:[UIImage imageNamed:@"checkMark"]];
@@ -1077,6 +1061,7 @@ int answerBtnTag;
             [songResult addSubview:checkMark];
             
             [buttonGuess addSubview:songResult];
+            [buttonGuess setEnabled:NO];
             [self.musicsPlayArray removeObject:songName];
             
             
