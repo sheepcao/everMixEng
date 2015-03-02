@@ -95,8 +95,6 @@
 @property (strong, nonatomic) NSMutableArray *guessNameBtnArray;
 
 
-- (IBAction)guessNameTap:(id)sender;
-
 
 @property (strong, nonatomic) NSMutableArray *diskButtonFrameArray;
 //choiceBoard

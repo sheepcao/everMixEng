@@ -11,6 +11,7 @@
 		A40EFBBC1A7A0AC500F7D6D2 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A40EFBBB1A7A0AC500F7D6D2 /* libz.dylib */; };
 		A41384371A6FADAF00B7B10E /* IAPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A41384341A6FADAF00B7B10E /* IAPHelper.m */; };
 		A41384381A6FADAF00B7B10E /* myIAPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A41384361A6FADAF00B7B10E /* myIAPHelper.m */; };
+		A41A42CB1AA446B8003A5444 /* UIButton+customNav.m in Sources */ = {isa = PBXBuildFile; fileRef = A41A42CA1AA446B8003A5444 /* UIButton+customNav.m */; };
 		A41D8B9A1A722A26008F9240 /* itemTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A41D8B981A722A26008F9240 /* itemTableViewCell.m */; };
 		A41D8B9B1A722A26008F9240 /* itemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A41D8B991A722A26008F9240 /* itemTableViewCell.xib */; };
 		A422F35E1A851512008209D4 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A422F35D1A851512008209D4 /* Security.framework */; };
@@ -229,6 +230,8 @@
 		A41384341A6FADAF00B7B10E /* IAPHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IAPHelper.m; sourceTree = "<group>"; };
 		A41384351A6FADAF00B7B10E /* myIAPHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = myIAPHelper.h; sourceTree = "<group>"; };
 		A41384361A6FADAF00B7B10E /* myIAPHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = myIAPHelper.m; sourceTree = "<group>"; };
+		A41A42C91AA446B8003A5444 /* UIButton+customNav.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+customNav.h"; sourceTree = "<group>"; };
+		A41A42CA1AA446B8003A5444 /* UIButton+customNav.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+customNav.m"; sourceTree = "<group>"; };
 		A41D8B971A722A26008F9240 /* itemTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = itemTableViewCell.h; sourceTree = "<group>"; };
 		A41D8B981A722A26008F9240 /* itemTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = itemTableViewCell.m; sourceTree = "<group>"; };
 		A41D8B991A722A26008F9240 /* itemTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = itemTableViewCell.xib; sourceTree = "<group>"; };
@@ -637,6 +640,8 @@
 				A4D050151A7612CA000D0A77 /* custonAlert */,
 				A450C7511A6F97F300E63ED6 /* IAP class */,
 				A4A375041A47D37F0064AF00 /* mixMusicTest.entitlements */,
+				A41A42C91AA446B8003A5444 /* UIButton+customNav.h */,
+				A41A42CA1AA446B8003A5444 /* UIButton+customNav.m */,
 				A4DDB6E11A4D036F00CFF980 /* AnswerButton.h */,
 				A4DDB6E21A4D036F00CFF980 /* AnswerButton.m */,
 				A4B9F7E41A820A9D00076531 /* globalVar.h */,
@@ -1185,6 +1190,7 @@
 				A4AC860A1A36CFE700CD19CA /* AppDelegate.m in Sources */,
 				A4AC86401A36F47100CD19CA /* ViewController.m in Sources */,
 				A4DDB6E31A4D036F00CFF980 /* AnswerButton.m in Sources */,
+				A41A42CB1AA446B8003A5444 /* UIButton+customNav.m in Sources */,
 				A4E47CE81A539FC00039BDF6 /* myAlertView.m in Sources */,
 				A4AC86071A36CFE700CD19CA /* main.m in Sources */,
 				A4B268A91A8377570037DA16 /* fallAnimation.m in Sources */,

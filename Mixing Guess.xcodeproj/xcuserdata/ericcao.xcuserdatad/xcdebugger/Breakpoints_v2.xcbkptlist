@@ -10,12 +10,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "mixMusicTest/gameViewController.m"
-            timestampString = "445947680.751619"
+            timestampString = "446978556.678957"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1318"
-            endingLineNumber = "1318"
-            landmarkName = "-tapSound:withType:"
+            startingLineNumber = "1365"
+            endingLineNumber = "1365"
+            landmarkName = "-setupButtonsView"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "mixMusicTest/gameViewController.m"
-            timestampString = "445850892.505369"
+            timestampString = "446977755.13835"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "108"
-            endingLineNumber = "108"
+            startingLineNumber = "118"
+            endingLineNumber = "118"
             landmarkName = "-viewDidLoad"
             landmarkType = "5">
          </BreakpointContent>
@@ -52,28 +52,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "mixMusicTest/gameViewController.m"
-            timestampString = "445947680.751619"
+            timestampString = "446978556.678957"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1394"
-            endingLineNumber = "1394"
-            landmarkName = "@implementation gameViewController"
-            landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "mixMusicTest/gameViewController.m"
-            timestampString = "445947680.751619"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1321"
-            endingLineNumber = "1321"
-            landmarkName = "-tapSound:withType:"
+            startingLineNumber = "1441"
+            endingLineNumber = "1441"
+            landmarkName = "-setupButtonsView"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -84,12 +68,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "mixMusicTest/gameViewController.m"
-            timestampString = "445947680.751619"
+            timestampString = "446978556.678957"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1315"
-            endingLineNumber = "1315"
-            landmarkName = "-tapSound:withType:"
+            startingLineNumber = "1368"
+            endingLineNumber = "1368"
+            landmarkName = "-setupButtonsView"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -100,12 +84,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "mixMusicTest/gameViewController.m"
-            timestampString = "445947680.751619"
+            timestampString = "446978556.678957"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1329"
-            endingLineNumber = "1329"
-            landmarkName = "-tapSound:withType:"
+            startingLineNumber = "1362"
+            endingLineNumber = "1362"
+            landmarkName = "-setupButtonsView"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -116,12 +100,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "mixMusicTest/gameViewController.m"
-            timestampString = "445947680.751619"
+            timestampString = "446978556.678957"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1349"
-            endingLineNumber = "1349"
-            landmarkName = "-tapSound:withType:"
+            startingLineNumber = "1376"
+            endingLineNumber = "1376"
+            landmarkName = "-setupButtonsView"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -132,12 +116,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "mixMusicTest/gameViewController.m"
-            timestampString = "445947680.751619"
+            timestampString = "446978556.678957"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1129"
-            endingLineNumber = "1129"
-            landmarkName = "-alertView:clickedButtonAtIndex:"
+            startingLineNumber = "1396"
+            endingLineNumber = "1396"
+            landmarkName = "-setupButtonsView"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "mixMusicTest/gameViewController.m"
+            timestampString = "446977755.13835"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1160"
+            endingLineNumber = "1160"
+            landmarkName = "-setupButtonsView"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -196,12 +196,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "mixMusicTest/gameViewController.m"
-            timestampString = "445850892.505369"
+            timestampString = "446977755.13835"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "379"
-            endingLineNumber = "379"
-            landmarkName = "-diskTap:"
+            startingLineNumber = "410"
+            endingLineNumber = "410"
+            landmarkName = "-setupButtonsView"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -212,12 +212,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "mixMusicTest/gameViewController.m"
-            timestampString = "445850892.505369"
+            timestampString = "446977755.13835"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "512"
-            endingLineNumber = "512"
-            landmarkName = "-answerTapped:"
+            startingLineNumber = "543"
+            endingLineNumber = "543"
+            landmarkName = "-setupButtonsView"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -228,12 +228,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "mixMusicTest/gameViewController.m"
-            timestampString = "445947680.751619"
+            timestampString = "446978556.678957"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1362"
-            endingLineNumber = "1362"
-            landmarkName = "-stopMusics"
+            startingLineNumber = "1409"
+            endingLineNumber = "1409"
+            landmarkName = "-setupButtonsView"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -244,12 +244,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "mixMusicTest/gameViewController.m"
-            timestampString = "445850892.505369"
+            timestampString = "446977755.13835"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "445"
-            endingLineNumber = "445"
-            landmarkName = "-diskTap:"
+            startingLineNumber = "476"
+            endingLineNumber = "476"
+            landmarkName = "-setupButtonsView"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -260,12 +260,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "mixMusicTest/gameViewController.m"
-            timestampString = "445850892.505369"
+            timestampString = "446977755.13835"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "440"
-            endingLineNumber = "440"
-            landmarkName = "-diskTap:"
+            startingLineNumber = "471"
+            endingLineNumber = "471"
+            landmarkName = "-setupButtonsView"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -276,12 +276,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "mixMusicTest/gameViewController.m"
-            timestampString = "445850892.505369"
+            timestampString = "446977755.13835"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "479"
-            endingLineNumber = "479"
-            landmarkName = "-handleSwipeFrom:"
+            startingLineNumber = "510"
+            endingLineNumber = "510"
+            landmarkName = "-setupButtonsView"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -292,12 +292,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "mixMusicTest/gameViewController.m"
-            timestampString = "445850892.505369"
+            timestampString = "446977755.13835"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "522"
-            endingLineNumber = "522"
-            landmarkName = "-choicesTaped:"
+            startingLineNumber = "553"
+            endingLineNumber = "553"
+            landmarkName = "-setupButtonsView"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -308,12 +308,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "mixMusicTest/gameViewController.m"
-            timestampString = "445947680.751619"
+            timestampString = "446977755.13835"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "936"
-            endingLineNumber = "936"
-            landmarkName = "-refreshMusics:"
+            startingLineNumber = "967"
+            endingLineNumber = "967"
+            landmarkName = "-setupButtonsView"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -340,12 +340,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "mixMusicTest/gameViewController.m"
-            timestampString = "445850892.505369"
+            timestampString = "446977755.13835"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "552"
-            endingLineNumber = "552"
-            landmarkName = "-choicesTaped:"
+            startingLineNumber = "583"
+            endingLineNumber = "583"
+            landmarkName = "-setupButtonsView"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -420,12 +420,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "mixMusicTest/gameViewController.m"
-            timestampString = "445850892.505369"
+            timestampString = "446977755.13835"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "570"
-            endingLineNumber = "570"
-            landmarkName = "-choicesTaped:"
+            startingLineNumber = "601"
+            endingLineNumber = "601"
+            landmarkName = "-setupButtonsView"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -436,12 +436,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "mixMusicTest/gameViewController.m"
-            timestampString = "445947680.751619"
+            timestampString = "446977755.13835"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "926"
-            endingLineNumber = "926"
-            landmarkName = "-refreshMusics:"
+            startingLineNumber = "957"
+            endingLineNumber = "957"
+            landmarkName = "-setupButtonsView"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -484,12 +484,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "mixMusicTest/gameViewController.m"
-            timestampString = "445947680.751619"
+            timestampString = "446977755.13835"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1156"
-            endingLineNumber = "1156"
-            landmarkName = "-returnChoicesBoard:"
+            startingLineNumber = "1187"
+            endingLineNumber = "1187"
+            landmarkName = "-setupButtonsView"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -574,12 +574,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "mixMusicTest/gameViewController.m"
-            timestampString = "445947680.751619"
+            timestampString = "446977755.13835"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "658"
-            endingLineNumber = "658"
-            landmarkName = "-choicesTaped:"
+            startingLineNumber = "689"
+            endingLineNumber = "689"
+            landmarkName = "-setupButtonsView"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -622,12 +622,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "mixMusicTest/gameViewController.m"
-            timestampString = "445947680.751619"
+            timestampString = "446977755.13835"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1027"
-            endingLineNumber = "1027"
-            landmarkName = "-alertView:clickedButtonAtIndex:"
+            startingLineNumber = "1058"
+            endingLineNumber = "1058"
+            landmarkName = "-setupButtonsView"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -654,12 +654,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "mixMusicTest/gameViewController.m"
-            timestampString = "445850892.505369"
+            timestampString = "446977755.13835"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "359"
-            endingLineNumber = "359"
-            landmarkName = "-diskTap:"
+            startingLineNumber = "390"
+            endingLineNumber = "390"
+            landmarkName = "-setupButtonsView"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -670,11 +670,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "mixMusicTest/gameViewController.m"
-            timestampString = "445850892.505369"
+            timestampString = "446977755.13835"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "144"
-            endingLineNumber = "144"
+            startingLineNumber = "154"
+            endingLineNumber = "154"
             landmarkName = "-viewDidLoad"
             landmarkType = "5">
          </BreakpointContent>
@@ -686,11 +686,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "mixMusicTest/gameViewController.m"
-            timestampString = "445850892.505369"
+            timestampString = "446977755.13835"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "150"
-            endingLineNumber = "150"
+            startingLineNumber = "160"
+            endingLineNumber = "160"
             landmarkName = "-viewDidLoad"
             landmarkType = "5">
          </BreakpointContent>
@@ -702,12 +702,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "mixMusicTest/gameViewController.m"
-            timestampString = "445947680.751619"
+            timestampString = "446978556.678957"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1207"
-            endingLineNumber = "1207"
-            landmarkName = "-startSpin"
+            startingLineNumber = "1254"
+            endingLineNumber = "1254"
+            landmarkName = "-setupButtonsView"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -734,23 +734,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "mixMusicTest/gameViewController.m"
-            timestampString = "445850892.505369"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "154"
-            endingLineNumber = "154"
-            landmarkName = "-viewDidLoad"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "mixMusicTest/gameViewController.m"
-            timestampString = "445850892.505369"
+            timestampString = "446977755.13835"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "164"
@@ -766,12 +750,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "mixMusicTest/gameViewController.m"
-            timestampString = "445850892.505369"
+            timestampString = "446977755.13835"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "382"
-            endingLineNumber = "382"
-            landmarkName = "-diskTap:"
+            startingLineNumber = "174"
+            endingLineNumber = "174"
+            landmarkName = "-viewDidLoad"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "mixMusicTest/gameViewController.m"
+            timestampString = "446977755.13835"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "413"
+            endingLineNumber = "413"
+            landmarkName = "-setupButtonsView"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -856,12 +856,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "mixMusicTest/gameViewController.m"
-            timestampString = "445947680.751619"
+            timestampString = "446977755.13835"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "612"
-            endingLineNumber = "612"
-            landmarkName = "-choicesTaped:"
+            startingLineNumber = "643"
+            endingLineNumber = "643"
+            landmarkName = "-setupButtonsView"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -936,11 +936,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "mixMusicTest/gameViewController.m"
-            timestampString = "445850892.505369"
+            timestampString = "446977755.13835"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "187"
-            endingLineNumber = "187"
+            startingLineNumber = "197"
+            endingLineNumber = "197"
             landmarkName = "-viewDidAppear:"
             landmarkType = "5">
          </BreakpointContent>
@@ -952,12 +952,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "mixMusicTest/gameViewController.m"
-            timestampString = "445947680.751619"
+            timestampString = "446977755.13835"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "669"
-            endingLineNumber = "669"
-            landmarkName = "-goOnNext"
+            startingLineNumber = "700"
+            endingLineNumber = "700"
+            landmarkName = "-setupButtonsView"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -968,12 +968,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "mixMusicTest/gameViewController.m"
-            timestampString = "445850892.505369"
+            timestampString = "446977755.13835"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "369"
-            endingLineNumber = "369"
-            landmarkName = "-diskTap:"
+            startingLineNumber = "400"
+            endingLineNumber = "400"
+            landmarkName = "-setupButtonsView"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -984,11 +984,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "mixMusicTest/gameViewController.m"
-            timestampString = "445850892.505369"
+            timestampString = "446977755.13835"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "61"
-            endingLineNumber = "61"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
             landmarkName = "-viewDidLoad"
             landmarkType = "5">
          </BreakpointContent>
@@ -1000,11 +1000,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "mixMusicTest/gameViewController.m"
-            timestampString = "445850892.505369"
+            timestampString = "446977755.13835"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "122"
-            endingLineNumber = "122"
+            startingLineNumber = "132"
+            endingLineNumber = "132"
             landmarkName = "-viewDidLoad"
             landmarkType = "5">
          </BreakpointContent>
@@ -1016,12 +1016,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "mixMusicTest/gameViewController.m"
-            timestampString = "445850892.505369"
+            timestampString = "446977755.13835"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "329"
-            endingLineNumber = "329"
-            landmarkName = "-randomDiskWithRange:"
+            startingLineNumber = "360"
+            endingLineNumber = "360"
+            landmarkName = "-setupButtonsView"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1064,12 +1064,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "mixMusicTest/gameViewController.m"
-            timestampString = "445947680.751619"
+            timestampString = "446978556.678957"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1485"
-            endingLineNumber = "1485"
-            landmarkName = "-nextLevel"
+            startingLineNumber = "1532"
+            endingLineNumber = "1532"
+            landmarkName = "-setupButtonsView"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1080,12 +1080,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "mixMusicTest/gameViewController.m"
-            timestampString = "445947680.751619"
+            timestampString = "446978556.678957"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1513"
-            endingLineNumber = "1513"
-            landmarkName = "-nextLevel"
+            startingLineNumber = "1560"
+            endingLineNumber = "1560"
+            landmarkName = "-setupButtonsView"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1112,43 +1112,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "mixMusicTest/gameViewController.m"
-            timestampString = "445947680.751619"
+            timestampString = "446978556.678957"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1369"
-            endingLineNumber = "1369"
-            landmarkName = "-stopMusics"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "mixMusicTest/gameViewController.m"
-            timestampString = "445947680.751619"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1239"
-            endingLineNumber = "1239"
-            landmarkName = "-diskHideToTop"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "mixMusicTest/gameViewController.m"
-            timestampString = "445850892.505369"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "301"
-            endingLineNumber = "301"
+            startingLineNumber = "1416"
+            endingLineNumber = "1416"
             landmarkName = "-setupButtonsView"
             landmarkType = "5">
          </BreakpointContent>
@@ -1160,11 +1128,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "mixMusicTest/gameViewController.m"
-            timestampString = "445850892.505369"
+            timestampString = "446978556.678957"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "288"
-            endingLineNumber = "288"
+            startingLineNumber = "1286"
+            endingLineNumber = "1286"
             landmarkName = "-setupButtonsView"
             landmarkType = "5">
          </BreakpointContent>
@@ -1176,11 +1144,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "mixMusicTest/gameViewController.m"
-            timestampString = "445850892.505369"
+            timestampString = "446977755.13835"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "323"
-            endingLineNumber = "323"
+            startingLineNumber = "326"
+            endingLineNumber = "326"
             landmarkName = "-setupButtonsView"
             landmarkType = "5">
          </BreakpointContent>
@@ -1192,12 +1160,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "mixMusicTest/gameViewController.m"
-            timestampString = "445947680.751619"
+            timestampString = "446977755.13835"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1243"
-            endingLineNumber = "1243"
-            landmarkName = "-diskHideToTop"
+            startingLineNumber = "313"
+            endingLineNumber = "313"
+            landmarkName = "-setupButtonsView"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1208,12 +1176,44 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "mixMusicTest/gameViewController.m"
-            timestampString = "445850892.505369"
+            timestampString = "446977755.13835"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "349"
-            endingLineNumber = "349"
-            landmarkName = "-diskTap:"
+            startingLineNumber = "354"
+            endingLineNumber = "354"
+            landmarkName = "-setupButtonsView"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "mixMusicTest/gameViewController.m"
+            timestampString = "446978556.678957"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1290"
+            endingLineNumber = "1290"
+            landmarkName = "-setupButtonsView"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "mixMusicTest/gameViewController.m"
+            timestampString = "446977755.13835"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "380"
+            endingLineNumber = "380"
+            landmarkName = "-setupButtonsView"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1224,12 +1224,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "mixMusicTest/gameViewController.m"
-            timestampString = "445850892.505369"
+            timestampString = "446977755.13835"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "364"
-            endingLineNumber = "364"
-            landmarkName = "-diskTap:"
+            startingLineNumber = "395"
+            endingLineNumber = "395"
+            landmarkName = "-setupButtonsView"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1240,12 +1240,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "mixMusicTest/gameViewController.m"
-            timestampString = "445850892.505369"
+            timestampString = "446977755.13835"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "388"
-            endingLineNumber = "388"
-            landmarkName = "-diskTap:"
+            startingLineNumber = "419"
+            endingLineNumber = "419"
+            landmarkName = "-setupButtonsView"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1256,12 +1256,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "mixMusicTest/gameViewController.m"
-            timestampString = "445850892.505369"
+            timestampString = "446977755.13835"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "418"
-            endingLineNumber = "418"
-            landmarkName = "-diskTap:"
+            startingLineNumber = "449"
+            endingLineNumber = "449"
+            landmarkName = "-setupButtonsView"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1272,12 +1272,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "mixMusicTest/gameViewController.m"
-            timestampString = "445850892.505369"
+            timestampString = "446977755.13835"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "402"
-            endingLineNumber = "402"
-            landmarkName = "-diskTap:"
+            startingLineNumber = "433"
+            endingLineNumber = "433"
+            landmarkName = "-setupButtonsView"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1288,12 +1288,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "mixMusicTest/gameViewController.m"
-            timestampString = "445850892.505369"
+            timestampString = "446977755.13835"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "531"
-            endingLineNumber = "531"
-            landmarkName = "-choicesTaped:"
+            startingLineNumber = "562"
+            endingLineNumber = "562"
+            landmarkName = "-setupButtonsView"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1304,11 +1304,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "mixMusicTest/gameViewController.m"
-            timestampString = "445850892.505369"
+            timestampString = "446977755.13835"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "66"
-            endingLineNumber = "66"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
             landmarkName = "-viewDidLoad"
             landmarkType = "5">
          </BreakpointContent>
@@ -1320,12 +1320,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "mixMusicTest/gameViewController.m"
-            timestampString = "445947680.751619"
+            timestampString = "446977755.13835"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1161"
-            endingLineNumber = "1161"
-            landmarkName = "-returnChoicesBoard:"
+            startingLineNumber = "1192"
+            endingLineNumber = "1192"
+            landmarkName = "-setupButtonsView"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1336,12 +1336,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "mixMusicTest/gameViewController.m"
-            timestampString = "445947680.751619"
+            timestampString = "446977755.13835"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1033"
-            endingLineNumber = "1033"
-            landmarkName = "-alertView:clickedButtonAtIndex:"
+            startingLineNumber = "1064"
+            endingLineNumber = "1064"
+            landmarkName = "-setupButtonsView"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1352,12 +1352,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "mixMusicTest/gameViewController.m"
-            timestampString = "445947680.751619"
+            timestampString = "446977755.13835"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1029"
-            endingLineNumber = "1029"
-            landmarkName = "-alertView:clickedButtonAtIndex:"
+            startingLineNumber = "1060"
+            endingLineNumber = "1060"
+            landmarkName = "-setupButtonsView"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1384,12 +1384,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "mixMusicTest/gameViewController.m"
-            timestampString = "445850892.505369"
+            timestampString = "446977755.13835"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "389"
-            endingLineNumber = "389"
-            landmarkName = "-diskTap:"
+            startingLineNumber = "420"
+            endingLineNumber = "420"
+            landmarkName = "-setupButtonsView"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1400,12 +1400,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "mixMusicTest/gameViewController.m"
-            timestampString = "445850892.505369"
+            timestampString = "446977755.13835"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "397"
-            endingLineNumber = "397"
-            landmarkName = "-diskTap:"
+            startingLineNumber = "428"
+            endingLineNumber = "428"
+            landmarkName = "-setupButtonsView"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1416,12 +1416,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "mixMusicTest/gameViewController.m"
-            timestampString = "445947680.751619"
+            timestampString = "446977755.13835"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1091"
-            endingLineNumber = "1091"
-            landmarkName = "-alertView:clickedButtonAtIndex:"
+            startingLineNumber = "1122"
+            endingLineNumber = "1122"
+            landmarkName = "-setupButtonsView"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1432,12 +1432,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "mixMusicTest/gameViewController.m"
-            timestampString = "445947680.751619"
+            timestampString = "446978556.678957"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1218"
-            endingLineNumber = "1218"
-            landmarkName = "-diskHideToTop"
+            startingLineNumber = "1265"
+            endingLineNumber = "1265"
+            landmarkName = "-setupButtonsView"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1448,13 +1448,29 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "mixMusicTest/gameViewController.m"
-            timestampString = "445947680.751619"
+            timestampString = "446977755.13835"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "591"
-            endingLineNumber = "591"
-            landmarkName = "-choicesTaped:"
+            startingLineNumber = "622"
+            endingLineNumber = "622"
+            landmarkName = "-setupButtonsView"
             landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "mixMusicTest/MyCustomNavigationBar.m"
+            timestampString = "446972224.548879"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "@implementation MyCustomNavigationBar"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

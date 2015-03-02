@@ -15,6 +15,8 @@
 
 #define kAdViewPortraitRect CGRectMake(0, [[UIScreen mainScreen] bounds].size.height-48-44,[[UIScreen mainScreen] bounds].size.width,48)
 #define cdFrame  CGRectMake(5, 5,40, 40)
+#define cdFrame_iPad  CGRectMake(10, 8,74, 74)
+
 
 
 
@@ -68,7 +70,10 @@ int answerBtnTag;
     answerBtnTag = 0;
     
     [self dropDown];
-
+//
+//    if ([self.navigationController.navigationBar isKindOfClass:[MyCustomNavigationBar class]]) {
+//        NSLog(@"yeesssssssssssss");
+//    }
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"topbar"] forBarMetrics: UIBarMetricsDefault];
 
     [self.navigationController setNavigationBarHidden:NO];
@@ -102,6 +107,11 @@ int answerBtnTag;
     
     UIBarButtonItem *barButton = [[UIBarButtonItem alloc] initWithCustomView:buttonView];
     self.navigationItem.rightBarButtonItem = barButton;
+    
+
+//    if (IS_IPAD) {
+//        self.navigationController.navigationBar.frame.size.height = 62;
+//    }
     
     self.navigationController.interactivePopGestureRecognizer.enabled = NO;
 
@@ -283,16 +293,31 @@ int answerBtnTag;
 
 -(void)setupButtonsView
 {
+    CGFloat cdBtnWidth;
+    CGFloat cdBtnHeight;
+    CGFloat cdBtnDistance;
+    if (IS_IPAD) {
+        cdBtnWidth =600;
+        cdBtnHeight = 90;
+        cdBtnDistance = 120;
+    }else
+    {
+        cdBtnWidth = 270;
+        cdBtnHeight = 50;
+        cdBtnDistance = 63;
+
+    }
+    
     self.guessNameBtnArray = [[NSMutableArray alloc] initWithCapacity:5];
 
  
-    CGFloat first_Y = self.downPartView.frame.size.height/2-15 - ((int)self.musicsArray.count/2)*63;
+    CGFloat first_Y = self.downPartView.frame.size.height/2-15 - ((int)self.musicsArray.count/2)*60;
     if (IS_IPHONE_4_OR_LESS) {
     
-        first_Y = self.downPartView.frame.size.height/2+5 - ((int)self.musicsArray.count/2)*52;
+        first_Y = self.downPartView.frame.size.height/2+5 - ((int)self.musicsArray.count/2)*63;
     }
     for (int i = 0; i<self.musicsArray.count ; i++) {
-        UIButton *cdBtn = [[UIButton alloc] initWithFrame:CGRectMake(-520,first_Y + i*63, 270, 50)];
+        UIButton *cdBtn = [[UIButton alloc] initWithFrame:CGRectMake(-cdBtnWidth*2,first_Y + i*cdBtnDistance, cdBtnWidth, cdBtnHeight)];
         if (IS_IPHONE_4_OR_LESS) {
             [cdBtn setFrame:CGRectMake(-520,first_Y + i*52, 270, 46)];
         }
@@ -300,18 +325,22 @@ int answerBtnTag;
         cdBtn.tag = i;
         
 //        [cdBtn setImage:[UIImage imageNamed:[self randomDiskWithRange:13-i]] forState:UIControlStateNormal];
-        UIImageView *cdImage = [[UIImageView alloc] initWithFrame:cdFrame];
+        UIImageView *cdImage;
+        if (IS_IPAD) {
+            cdImage = [[UIImageView alloc] initWithFrame:cdFrame_iPad];
+        }else
+        {
+            cdImage = [[UIImageView alloc] initWithFrame:cdFrame];
+        }
         [cdImage setImage:[UIImage imageNamed:[self randomDiskWithRange:13-i]]];
         [cdBtn addSubview:cdImage];
         cdImage.tag = 10;
         
         [cdBtn addTarget:self action:@selector(diskTap:) forControlEvents:UIControlEventTouchUpInside];
-        cdBtn.titleLabel.font = [UIFont systemFontOfSize:14.0f];
+        cdBtn.titleLabel.font = [UIFont boldSystemFontOfSize:22.0f];
         
         [cdBtn setTitleEdgeInsets:UIEdgeInsetsMake(0, 28, 0, 0)];
-//        [cdBtn setImageEdgeInsets:UIEdgeInsetsMake(0, 10, 0, 0)];
-//        [cdBtn setContentHorizontalAlignment:UIControlContentHorizontalAlignmentCenter];
-//        [cdBtn setContentVerticalAlignment:UIControlContentVerticalAlignmentFill];
+
         [cdBtn setBackgroundImage:[UIImage imageNamed:@"nextBtn"] forState:UIControlStateNormal];
         
 
@@ -1177,11 +1206,27 @@ int answerBtnTag;
 #pragma mark disk animation
 
 - (void)spinWithOptions: (UIViewAnimationOptions) options :(UIView *)destRotateView {
-    [UIView animateWithDuration: 0.01f
+    
+    CGFloat duration ;
+    CGFloat spinAngle ;
+
+    
+    if(IS_IPAD)
+    {
+        duration = 0.03f;
+        spinAngle = M_PI/54;
+        
+    }else
+    {
+        duration = 0.01f;
+        spinAngle = M_PI/68;
+    }
+    
+    [UIView animateWithDuration: duration
                           delay: 0.0f
                         options: options
                      animations: ^{
-                         destRotateView.transform = CGAffineTransformRotate(destRotateView.transform, M_PI/68 );
+                         destRotateView.transform = CGAffineTransformRotate(destRotateView.transform, spinAngle );
                      }
                      completion: ^(BOOL finished) {
                          if (finished) {
@@ -1622,7 +1667,5 @@ int answerBtnTag;
 //    
 //    [self modifyPlist:@"gameData" withValue:[NSString stringWithFormat:@"%d",[currentDifficulty intValue]+1] forKey:@"difficulty"];
     [self nextLevel];
-}
-- (IBAction)guessNameTap:(id)sender {
 }
 @end
