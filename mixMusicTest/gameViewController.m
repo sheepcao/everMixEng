@@ -305,6 +305,7 @@ int answerBtnTag;
         cdBtnWidth = 270;
         cdBtnHeight = 50;
         cdBtnDistance = 63;
+        
 
     }
     
@@ -337,7 +338,14 @@ int answerBtnTag;
         cdImage.tag = 10;
         
         [cdBtn addTarget:self action:@selector(diskTap:) forControlEvents:UIControlEventTouchUpInside];
-        cdBtn.titleLabel.font = [UIFont boldSystemFontOfSize:22.0f];
+        if (IS_IPAD) {
+            cdBtn.titleLabel.font = [UIFont boldSystemFontOfSize:22.0f];
+
+        }else
+        {
+            cdBtn.titleLabel.font = [UIFont systemFontOfSize:14.0f];
+
+        }
         
         [cdBtn setTitleEdgeInsets:UIEdgeInsetsMake(0, 28, 0, 0)];
 

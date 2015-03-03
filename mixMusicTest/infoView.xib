@@ -141,7 +141,7 @@
                             </constraints>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Producer:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="75" translatesAutoresizingMaskIntoConstraints="NO" id="lWE-6H-69U">
-                            <rect key="frame" x="57" y="66" width="75" height="21"/>
+                            <rect key="frame" x="57" y="66" width="74.5" height="21"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="lWE-6H-69U" secondAttribute="height" multiplier="50:21" constant="25" id="PCk-dq-06B"/>
                             </constraints>
@@ -150,7 +150,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Visual:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="50" translatesAutoresizingMaskIntoConstraints="NO" id="n1w-j1-FDg">
-                            <rect key="frame" x="81" y="105" width="50" height="21"/>
+                            <rect key="frame" x="81" y="105" width="50.5" height="21"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="n1w-j1-FDg" secondAttribute="height" multiplier="50:21" id="4N4-pZ-BV8"/>
                             </constraints>
@@ -159,7 +159,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Server:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="55" translatesAutoresizingMaskIntoConstraints="NO" id="xEi-KN-7eC">
-                            <rect key="frame" x="77" y="144" width="55" height="21"/>
+                            <rect key="frame" x="77" y="144" width="54.5" height="21"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="xEi-KN-7eC" secondAttribute="height" multiplier="50:21" constant="5" id="4Vr-X8-3Ei"/>
                             </constraints>
@@ -168,7 +168,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quality:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="59" translatesAutoresizingMaskIntoConstraints="NO" id="uiC-J4-cSy">
-                            <rect key="frame" x="73" y="183" width="59" height="21"/>
+                            <rect key="frame" x="73" y="183" width="59.5" height="21"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="uiC-J4-cSy" secondAttribute="height" multiplier="50:21" constant="9" id="jbZ-lA-Fhq"/>
                             </constraints>
@@ -177,7 +177,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="sheepcao" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="113" translatesAutoresizingMaskIntoConstraints="NO" id="FFl-sn-M1R">
-                            <rect key="frame" x="157" y="66" width="113" height="21"/>
+                            <rect key="frame" x="156" y="66" width="113" height="21"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="FFl-sn-M1R" secondAttribute="height" multiplier="113:21" id="Slu-Ah-hjT"/>
                             </constraints>
@@ -195,7 +195,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="        qy" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="113" translatesAutoresizingMaskIntoConstraints="NO" id="OiR-Xw-JpN">
-                            <rect key="frame" x="137" y="144" width="113" height="21"/>
+                            <rect key="frame" x="136" y="144" width="113" height="21"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="OiR-Xw-JpN" secondAttribute="height" multiplier="113:21" id="Y0h-ts-L6D"/>
                             </constraints>

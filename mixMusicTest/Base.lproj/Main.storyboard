@@ -71,8 +71,12 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gaK-c0-OeE">
                                 <rect key="frame" x="244" y="509" width="43" height="43"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="43" id="0cd-cc-Oyr"/>
-                                    <constraint firstAttribute="height" constant="43" id="JpN-4v-NMB"/>
+                                    <constraint firstAttribute="width" constant="43" id="0cd-cc-Oyr">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="46"/>
+                                    </constraint>
+                                    <constraint firstAttribute="height" constant="43" id="JpN-4v-NMB">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="56"/>
+                                    </constraint>
                                 </constraints>
                                 <state key="normal" image="coin.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -130,8 +134,12 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iKE-Vm-WMA">
                                 <rect key="frame" x="163" y="508" width="55" height="44"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="55" id="6kX-p2-SjQ"/>
-                                    <constraint firstAttribute="height" constant="44" id="GW5-3t-fjI"/>
+                                    <constraint firstAttribute="width" constant="55" id="6kX-p2-SjQ">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="63"/>
+                                    </constraint>
+                                    <constraint firstAttribute="height" constant="44" id="GW5-3t-fjI">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="56"/>
+                                    </constraint>
                                 </constraints>
                                 <state key="normal" image="fb.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -149,7 +157,7 @@
                             </constraint>
                             <constraint firstItem="oJy-Pu-OcZ" firstAttribute="height" secondItem="qNQ-Ph-nXm" secondAttribute="height" id="MeB-EC-suu"/>
                             <constraint firstItem="xpo-PE-fGQ" firstAttribute="top" secondItem="iKE-Vm-WMA" secondAttribute="bottom" constant="48" id="Nvt-N5-Jj9">
-                                <variation key="heightClass=regular-widthClass=regular" constant="80"/>
+                                <variation key="heightClass=regular-widthClass=regular" constant="81"/>
                             </constraint>
                             <constraint firstAttribute="centerX" secondItem="e8J-Z4-tGE" secondAttribute="centerX" constant="-45" id="QOX-sB-FKd">
                                 <variation key="heightClass=regular-widthClass=regular" constant="-55"/>
@@ -163,7 +171,7 @@
                                 <variation key="heightClass=regular-widthClass=regular" constant="100"/>
                             </constraint>
                             <constraint firstAttribute="centerX" secondItem="iKE-Vm-WMA" secondAttribute="centerX" constant="109.5" id="js1-nw-KZF">
-                                <variation key="heightClass=regular-widthClass=regular" constant="190"/>
+                                <variation key="heightClass=regular-widthClass=regular" constant="194.5"/>
                             </constraint>
                             <constraint firstAttribute="centerX" secondItem="tMe-vf-byg" secondAttribute="centerX" id="lD8-oE-x3W"/>
                             <constraint firstItem="qNQ-Ph-nXm" firstAttribute="leading" secondItem="ZeD-Ew-WKC" secondAttribute="leadingMargin" constant="34" id="lJc-EL-QS6">
@@ -174,7 +182,7 @@
                                 <variation key="heightClass=regular-widthClass=regular" constant="-179"/>
                             </constraint>
                             <constraint firstAttribute="centerX" secondItem="gaK-c0-OeE" secondAttribute="centerX" constant="34" id="mri-9i-9fX">
-                                <variation key="heightClass=regular-widthClass=regular" constant="70"/>
+                                <variation key="heightClass=regular-widthClass=regular" constant="72"/>
                             </constraint>
                             <constraint firstItem="oJy-Pu-OcZ" firstAttribute="centerY" secondItem="qNQ-Ph-nXm" secondAttribute="centerY" id="p0y-at-jvI"/>
                             <constraint firstItem="xpo-PE-fGQ" firstAttribute="top" secondItem="I4A-bF-7f7" secondAttribute="bottom" id="sP0-5h-mUC"/>
@@ -226,7 +234,7 @@
                 </view>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1rk-KA-T0l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-879.375" y="-99.295774647887313"/>
+            <point key="canvasLocation" x="-879.75" y="-99.75"/>
         </scene>
     </scenes>
     <resources>

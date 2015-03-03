@@ -18,7 +18,7 @@
     }else
     {
         newSize = CGSizeMake([[UIScreen mainScreen] bounds].size.width,44);
-
+        
     }
 
     

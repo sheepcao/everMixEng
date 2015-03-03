@@ -46,7 +46,6 @@
     }
     return self;
     
-    
 }
 
 
@@ -113,7 +112,7 @@
             if (![[[NSUserDefaults standardUserDefaults] objectForKey:@"FBShare"] isEqualToString:@"yes"]) {
                 [_products addObject:@"Facebook:  300 Coins"];
             }
-            if (![[[NSUserDefaults standardUserDefaults] objectForKey:@"reviewed"] isEqualToString:@"yes"] &&[CommonUtility fetchCoinAmount] < 400) {
+            if (![[[NSUserDefaults standardUserDefaults] objectForKey:@"reviewed"] isEqualToString:@"yes"] /*&&[CommonUtility fetchCoinAmount] < 400*/) {
                 [_products addObject:@"Review us:  300 Coins"];
             }
             
