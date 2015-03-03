@@ -12,6 +12,7 @@
 		A41384371A6FADAF00B7B10E /* IAPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A41384341A6FADAF00B7B10E /* IAPHelper.m */; };
 		A41384381A6FADAF00B7B10E /* myIAPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A41384361A6FADAF00B7B10E /* myIAPHelper.m */; };
 		A41A42CB1AA446B8003A5444 /* UIButton+customNav.m in Sources */ = {isa = PBXBuildFile; fileRef = A41A42CA1AA446B8003A5444 /* UIButton+customNav.m */; };
+		A41A42CD1AA45E00003A5444 /* choiceBoardView_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = A41A42CC1AA45E00003A5444 /* choiceBoardView_iPad.xib */; };
 		A41D8B9A1A722A26008F9240 /* itemTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A41D8B981A722A26008F9240 /* itemTableViewCell.m */; };
 		A41D8B9B1A722A26008F9240 /* itemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A41D8B991A722A26008F9240 /* itemTableViewCell.xib */; };
 		A422F35E1A851512008209D4 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A422F35D1A851512008209D4 /* Security.framework */; };
@@ -232,6 +233,7 @@
 		A41384361A6FADAF00B7B10E /* myIAPHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = myIAPHelper.m; sourceTree = "<group>"; };
 		A41A42C91AA446B8003A5444 /* UIButton+customNav.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+customNav.h"; sourceTree = "<group>"; };
 		A41A42CA1AA446B8003A5444 /* UIButton+customNav.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+customNav.m"; sourceTree = "<group>"; };
+		A41A42CC1AA45E00003A5444 /* choiceBoardView_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = choiceBoardView_iPad.xib; sourceTree = "<group>"; };
 		A41D8B971A722A26008F9240 /* itemTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = itemTableViewCell.h; sourceTree = "<group>"; };
 		A41D8B981A722A26008F9240 /* itemTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = itemTableViewCell.m; sourceTree = "<group>"; };
 		A41D8B991A722A26008F9240 /* itemTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = itemTableViewCell.xib; sourceTree = "<group>"; };
@@ -661,6 +663,7 @@
 				A4DAF7511A87BD6300D9A94F /* gameViewController.xib */,
 				A4DAF7331A87143D00D9A94F /* infoView.xib */,
 				A4BAEF631A8464E800757BA6 /* levelPassView.xib */,
+				A41A42CC1AA45E00003A5444 /* choiceBoardView_iPad.xib */,
 				A4B76C1C1A3997600014014D /* choicesBoardView.xib */,
 				A4AC86041A36CFE700CD19CA /* Supporting Files */,
 			);
@@ -1150,6 +1153,7 @@
 				A4A0C2581A810C810032DF0B /* pointYellow.png in Resources */,
 				A4AC86121A36CFE700CD19CA /* Images.xcassets in Resources */,
 				A4ADE0AF1A9188D500FB1262 /* THE WAY.m4a in Resources */,
+				A41A42CD1AA45E00003A5444 /* choiceBoardView_iPad.xib in Resources */,
 				A4DAF74F1A87BD4700D9A94F /* bomb.png in Resources */,
 				A466A1511A890BAD005BD67C /* comprar_coins.mp3 in Resources */,
 			);

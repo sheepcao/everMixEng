@@ -392,13 +392,18 @@ int answerBtnTag;
 
     NSString *songAnswer = [allAnswers objectForKey:songName];
     NSArray *songAnswerSingleLetter = [songAnswer componentsSeparatedByString:@","];
-//    NSLog(@"answer count:%ld",(unsigned long)songAnswerSingleLetter.count);
-//    NSLog(@"songName:%@",songName);
-
     
     if(!self.choicesBoardView)
     {
-        self.choicesBoardView = [[[NSBundle mainBundle] loadNibNamed:@"choicesBoardView" owner:self options:nil] objectAtIndex:0];
+       
+        if(IS_IPAD)
+        {
+             self.choicesBoardView = [[[NSBundle mainBundle] loadNibNamed:@"choiceBoardView_iPad" owner:self options:nil] objectAtIndex:0];
+            
+        }else
+        {
+             self.choicesBoardView = [[[NSBundle mainBundle] loadNibNamed:@"choicesBoardView" owner:self options:nil] objectAtIndex:0];
+        }
         [self.choicesBoardView setFrame:CGRectMake(self.downPartView.frame.origin.x,[UIScreen mainScreen].bounds.size.height , self.downPartView.frame.size.width,self.downPartView.frame.size.height +3)];
         self.choicesBoardView.songName = @"";
         [self.choicesBoardView setupBoard];
@@ -417,11 +422,27 @@ int answerBtnTag;
     NSLog(@"center:%f",self.choicesBoardView.center.x);
 //    UIButton *answerButton = (UIButton *)[self.choicesBoardView viewWithTag:1];
     CGFloat firstAnswer_Y = 0;
-    if (songNameWord.count>1) {
-        firstAnswer_Y = /*answerButton.frame.origin.y*/185 - 40 * songNameWord.count;
+    CGFloat base_Y;
+    CGFloat upDownDistance;
+    CGFloat answerBtnSize;
+    CGFloat fontSize;
+    if (IS_IPAD) {
+        base_Y = 350;
+        upDownDistance = 55;
+        answerBtnSize = 45;
+        fontSize = 22;
     }else
     {
-        firstAnswer_Y = /*answerButton.frame.origin.y*/185 - 60;
+        base_Y = 185;
+        upDownDistance = 40;
+        answerBtnSize = 25;
+        fontSize = 15;
+    }
+    if (songNameWord.count>1) {
+        firstAnswer_Y = /*answerButton.frame.origin.y*/base_Y - upDownDistance * songNameWord.count;
+    }else
+    {
+        firstAnswer_Y = /*answerButton.frame.origin.y*/base_Y - upDownDistance*3/2;
     }
         
 
@@ -429,14 +450,14 @@ int answerBtnTag;
 
     for (int j = 0; j<songNameWord.count; j++) {
         
-        CGFloat firstAnswerSquare_X = (self.choicesBoardView.center.x - (26+4) *((NSString *)songNameWord[j]).length/2 - self.choicesBoardView.frame.origin.x);//
+        CGFloat firstAnswerSquare_X = (self.choicesBoardView.center.x - (answerBtnSize+5) *((NSString *)songNameWord[j]).length/2 - self.choicesBoardView.frame.origin.x);//
 
         for (int i = 0; i<((NSString *)songNameWord[j]).length; i++) {
             
-            AnswerButton *myAnswerBtn = [[AnswerButton alloc] initWithFrame:CGRectMake(firstAnswerSquare_X+1 + i*(4+26), firstAnswer_Y+j*38, 25, 25)];
+            AnswerButton *myAnswerBtn = [[AnswerButton alloc] initWithFrame:CGRectMake(firstAnswerSquare_X+1 + i*(answerBtnSize+5), firstAnswer_Y+(j*upDownDistance-2), answerBtnSize, answerBtnSize)];
             
             [myAnswerBtn addTarget:self action:@selector(answerTapped:) forControlEvents:UIControlEventTouchUpInside];
-            myAnswerBtn.titleLabel.font = [UIFont fontWithName:@"Helvetica Neue" size:15];
+            myAnswerBtn.titleLabel.font = [UIFont fontWithName:@"Helvetica Neue" size:fontSize];
             [myAnswerBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
             myAnswerBtn.tag = 100 + answerBtnTag;
             answerBtnTag ++;
@@ -1067,7 +1088,6 @@ int answerBtnTag;
 
 
             UILabel *songResult = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, diskFrame.size.width, diskFrame.size.height)];
-//            songResult.center = [(UIButton *)self.diskButtons[self.choicesBoardView.songNumber] center];
           
             songResult.text = songName;
             songResult.font = [UIFont fontWithName:@"Oriya Sangam MN" size:18];
