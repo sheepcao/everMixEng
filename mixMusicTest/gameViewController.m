@@ -270,7 +270,9 @@ int answerBtnTag;
     [coinsLabel setText:[NSString stringWithFormat:@"%d",[CommonUtility fetchCoinAmount]]];
     self.itemsToBuy = (UITableView *)[self.buyCoinsView viewWithTag:10];
 
-    self.myBuyController = [[buyCoinsViewController alloc] initWithCoinLabel:coinsLabel andParentController:self andParentCoinButton:self.coinShow andLoadingView:self.loadingView andTableView:self.itemsToBuy];
+    if (!self.myBuyController) {
+        self.myBuyController = [[buyCoinsViewController alloc] initWithCoinLabel:coinsLabel andParentController:self andParentCoinButton:self.coinShow andLoadingView:self.loadingView andTableView:self.itemsToBuy];
+    }
     
     [self.buyCoinsView setFrame:CGRectMake(0, [UIScreen mainScreen].bounds.size.height, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
     
@@ -283,8 +285,10 @@ int answerBtnTag;
     self.itemsToBuy.delegate = self.myBuyController;
     self.itemsToBuy.dataSource = self.myBuyController;
 
-    self.refreshControl = [[UIRefreshControl alloc] init];
-    [self.itemsToBuy addSubview:self.refreshControl];
+    if (!self.refreshControl) {
+        self.refreshControl = [[UIRefreshControl alloc] init];
+        [self.itemsToBuy addSubview:self.refreshControl];
+    }
     
     [self.refreshControl addTarget:self.myBuyController action:@selector(reloadwithRefreshControl:) forControlEvents:UIControlEventValueChanged];
     [self.myBuyController reloadwithRefreshControl:self.refreshControl];

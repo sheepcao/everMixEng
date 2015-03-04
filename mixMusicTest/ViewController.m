@@ -463,10 +463,11 @@ int difficultyNow;
             [self.continueGame setHidden:NO];
         }else
         {
-        
-        [self.begainGame setImage:[UIImage imageNamed:@"开始"] forState:UIControlStateNormal];
-        [self.begainGame setFrame:CGRectMake([[UIScreen mainScreen] bounds].size.width/2 - self.continueGame.frame.size.width/2 , self.continueGame.frame.origin.y, self.continueGame.frame.size.width, self.continueGame.frame.size.height)];
-        [self.continueGame setHidden:YES];
+            
+            [self.begainGame setImage:[UIImage imageNamed:@"开始"] forState:UIControlStateNormal];
+            CGPoint center = CGPointMake([[UIScreen mainScreen] bounds].size.width/2, self.continueGame.center.y);
+            [self.begainGame setCenter:center];
+            [self.continueGame setHidden:YES];
         }
         
     }
@@ -558,8 +559,9 @@ int difficultyNow;
 
     
     [self.begainGame setImage:[UIImage imageNamed:@"开始"] forState:UIControlStateNormal];
-    [self.begainGame setFrame:CGRectMake([[UIScreen mainScreen] bounds].size.width/2 - self.continueGame.frame.size.width/2 , self.continueGame.frame.origin.y, self.continueGame.frame.size.width, self.continueGame.frame.size.height)];
-
+    CGPoint center = CGPointMake([[UIScreen mainScreen] bounds].size.width/2, self.continueGame.center.y);
+    [self.begainGame setCenter:center];
+    
     [self.continueGame setHidden:YES];
     
     
@@ -890,8 +892,9 @@ int difficultyNow;
     
     
 
-    
-    self.myBuyController = [[buyCoinsViewController alloc] initWithCoinLabel:coinsLabel andParentController:self andParentCoinButton:self.coinsShowing andLoadingView:self.loadingView andTableView:self.itemsToBuy];
+    if (!self.myBuyController) {
+        self.myBuyController = [[buyCoinsViewController alloc] initWithCoinLabel:coinsLabel andParentController:self andParentCoinButton:self.coinsShowing andLoadingView:self.loadingView andTableView:self.itemsToBuy];
+    }
  
     [self.buyCoinsView setFrame:CGRectMake(0, [UIScreen mainScreen].bounds.size.height, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
     
@@ -903,8 +906,11 @@ int difficultyNow;
     
     self.itemsToBuy.delegate = self.myBuyController;
     self.itemsToBuy.dataSource = self.myBuyController;
-    self.refreshControl = [[UIRefreshControl alloc] init];
-    [self.itemsToBuy addSubview:self.refreshControl];
+    if(!self.refreshControl)
+    {
+        self.refreshControl = [[UIRefreshControl alloc] init];
+        [self.itemsToBuy addSubview:self.refreshControl];
+    }
     
     [self.refreshControl addTarget:self.myBuyController action:@selector(reloadwithRefreshControl:) forControlEvents:UIControlEventValueChanged];
     [self.myBuyController reloadwithRefreshControl:self.refreshControl];

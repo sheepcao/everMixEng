@@ -1386,7 +1386,7 @@
 					"-lstdc++",
 				);
 				PRODUCT_NAME = "Mixing Guess";
-				PROVISIONING_PROFILE = "15b9f57a-c0b3-4652-a017-8bf43af86e1d";
+				PROVISIONING_PROFILE = "0d058540-3f1c-441f-8b28-bd2995260055";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
